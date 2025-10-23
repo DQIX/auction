@@ -1,0 +1,1091 @@
+Code,Item #,Type #,Type,English,Japanese,Alt,Spanish,French,German,Italian
+4E24,0,1,Swords,Copper sword,どうのつるぎ,,Espada de cobre,Épée de cuivre,Kupferschwert,Spada di rame
+4E25,1,1,Swords,Soldier's sword,兵士の剣,,Espada de soldado,Épée de soldat,Soldatenschwert,Spada del soldato
+4E20,2,1,Swords,Warrior's sword,戦士の剣,,Espada de guerrero,Épée du guerrier,Kriegerschwert,Lama del guerriero
+4E23,3,1,Swords,Rapier,レイピア,,Estoque,Rapière,Florett,Stocco
+4E29,4,1,Swords,Fizzle foil,まけんしのレイピア,,Florete negamagia,Fleuret antimagie,Ätschflorett,Stocco magico
+4E26,5,1,Swords,Iron broadsword,てつのつるぎ,,Espada ancha de hierro,Épée large de fer,Eisenbreitschwert,Spadone di ferro
+4E27,6,1,Swords,Steel broadsword,はがねのつるぎ,,Espada de acero,Épée large d'acier,Stahlbreitschwert,Spada d'acciaio
+4E28,7,1,Swords,Gigasteel broadsword,たまはがねのつるぎ,,Espada de gigacero,Épée large trempacier,Gigastahl-breitschwert,Megalama Inox
+4E2A,8,1,Swords,Cautery sword,はじゃのつるぎ,,Cauterizadora,Épée ardente,Brandklinge,Spada tagliafuoco
+4E2B,9,1,Swords,Aurora blade,ひかりのつるぎ,,Espada boreal,Lame de l'aurore,Auroraklinge,Lama dell'aurora
+4E2C,10,1,Swords,Platinum sword,プラチナソード,,Espada de platino,Épée de platine,Platinschwert,Spada di platino
+4E21,11,1,Swords,Bandit blade,さんぞくのサーベル,,Arma de ladrón,Lame de brigand,Räuberklinge,Lama del brigante
+4E22,12,1,Swords,Valkyrie sword,ヴァルキリーソード,,Espada de valkiria,Épée de Valkyrie,Walkürenschwert,Lama della valchiria
+4E2D,13,1,Swords,Dragonsbane,ドラゴンキラー,,Dañadragones,Fléau des dragons,Drachenspalter,Ammazzadraghi
+4E2E,14,1,Swords,Dragon slayer,ドラゴンスレイヤー,,Matadragones,Tueuse de dragons,Drachentöter,Stramazzadraghi
+4E2F,15,1,Swords,Falcon blade,はやぶさの剣,,Falcoespada,Lame du Faucon,Falkenklinge,Falcon
+4E30,16,1,Swords,Über falcon blade,はやぶさの剣改,,Überfalcoespada,Pure lame du Faucon,Über-Falkenklinge,Ultrafalcon
+4E31,17,1,Swords,Miracle sword,きせきのつるぎ,,Espada milagrosa,Épée miracle,Wunderschwert,Spada dei miracoli
+4E32,18,1,Swords,Über miracle sword,きせきのつるぎ改,,Espada übermilagrosa,Pure épée miracle,Über-Wunderschwert,Spada suprema
+4E33,19,1,Swords,Fire blade,ほのおのつるぎ,,Espada de fuego,Lame de feu,Feuerklinge,Spada ignea
+4E34,20,1,Swords,Inferno blade,インフェルノソード,,Arma infernal,Lame des limbes,Infernoklinge,Lama infernale
+4E35,21,1,Swords,Metal slime sword,メタスラの剣,,Espada limometálica,Épée de gluant de métal,Metallschleim-schwert,Spada dello Slime grigio
+4E36,22,1,Swords,Liquid metal sword,はぐれメタルの剣,,Espada metalíquida,Épée de mercure,Flüssigmetall-schwert,Spada del Liquislime
+4E37,23,1,Swords,Metal king sword,メタルキングの剣,,Espada real de metal,Épée royale,Metallkönig-schwert,Spada del Re Slime grigio
+4E38,24,1,Swords,Rusty sword,さびついた剣,,Espada oxidada,Épée rouillée,Rostiges Schwert,Spada arrugginita
+4E39,25,1,Swords,Erdrick's sword,ロトのつるぎ,,Espada de Erdrick,Épée d'Elric,Erdrickschwert,Lama di Erdrick
+4E3A,26,1,Swords,Stardust sword,ほしくずのつるぎ,,Espada sideral,Épée nébuleuse,Sternenstaub-schwert,Spada delle stelle
+4E3B,27,1,Swords,Nebula sword,りゅうせいのつるぎ,,Espada nebulosa,Épée stellaire,Nebelschwert,Spada Nebula
+4E3C,28,1,Swords,Supernova sword,すいせいのつるぎ,,Espada supernova,Épée galactique,Supernovaschwert,Spada Supernova
+4E3D,29,1,Swords,Hypernova sword,ぎんがのつるぎ,,Espada hipernova,Épée cosmique,Hypernovaschwert,Spada Hypernova
+5014,30,2,Spears,Bamboo lance,たけやり,,Lanza de bambú,Lance de bambou,Bambuslanze,Asta di bambù
+5017,31,2,Spears,Iron lance,てつのやり,,Lanza de hierro,Lance de fer,Eisenlanze,Lancia di ferro
+5018,32,2,Spears,Steel lance,はがねのやり,,Lanza de acero,Lance d'acier,Stahllanze,Giavellotto d'acciaio
+5019,33,2,Spears,Gigasteel lance,たまはがねのやり,,Lanza de gigacero,Lance de trempacier,Gigastahllanze,Lancia Inox
+501A,34,2,Spears,Long spear,ロングスピア,,Lanza larga,Grande lance,Langspeer,Lancia lunga
+5015,35,2,Spears,Celestial spear,ディバインスピア,,Lanza celestial,Lance céleste,Himmlischer Speer,Lancia del cielo
+501B,36,2,Spears,Holy lance,ホーリーランス,,Lanza sagrada,Lance sacrée,Heilige Lanze,Lancia sacra
+501C,37,2,Spears,Battle fork,バトルフォーク,,Tridente de guerra,Fourche de combat,Kampfgabel,Forcone da battaglia
+501D,38,2,Spears,Trident,トライデント,,Tridente,Trident,Dreizack,Tridente
+501E,39,2,Spears,Gracos's trident,グラコスのやり,,Tridente de Gracos,Trident de Gracos,Gracosdreizack,Tridente di Gracos
+501F,40,2,Spears,Sandstorm spear,さじんのやり,,Lanza de torbellino,Lance des sables,Sandsturmspeer,Sandstorm
+5016,41,2,Spears,Partisan,パルチザン,,Lanza bélica,Pertuisane,Partisane,Partigiana
+5020,42,2,Spears,Halberd,ハルベルト,,Alabarda,Hallebarde,Hellebarde,Alabarda
+5021,43,2,Spears,Lightning lance,いなずまのやり,,Lanza del rayo,Lance de foudre,Blitzlanze,Giavellotto del lampo
+5022,44,2,Spears,Storm spear,らいじんのやり,,Lanza tormentosa,Lance des tempêtes,Sturmspeer,Lancia delle tempeste
+5023,45,2,Spears,Demon spear,デーモンスピア,,Lanza demoníaca,Lance de démon,Dämonenspeer,Lancia demoniaca
+5024,46,2,Spears,Hero spear,えいゆうのやり,えいゆうの槍,Lanza de héroe,Lance de héros,Heldenspeer,Lancia dell'eroe
+5025,47,2,Spears,Metal slime spear,メタスラのやり,メタスラの槍,Lanza limometálica,Lance de gluant de métal,Metallschleimspeer,Lancia dello Slime grigio
+5026,48,2,Spears,Liquid metal spear,はぐれメタルのやり,,Lanza metalíquida,Lance de mercure,Flüssigmetallspeer,Lancia del Liquislime
+5027,49,2,Spears,Metal king spear,メタルキングのやり,,Lanza real metálica,Lance royale,Metallkönigspeer,Lancia del Re Slime grigio
+5028,50,2,Spears,Poker,きしんのまそう,,Lanza mus,Peurtuisane,Schüreisen,Lancia di Lucifero
+5029,51,2,Spears,Stud poker,らせつのまそう,,Lanza juego,Supertuisane,Stecheisen,Giavellotto di Astaroth
+502A,52,2,Spears,Split-pot poker,えんまのまそう,,Lanza envite,Hypertuisane,Teufelseisen,Punta di Inferios
+502B,53,2,Spears,Red-hot poker,じごくのまそう,地獄のまそう,Lanza órdago,Étripertuisane,Heißes Eisen,Lancia di Demonias
+4A6A,54,3,Knives,Paring knife,くだものナイフ,果物ナイフ,Cuchillo patatero,Couteau de cuisine,Schälmesser,Pelapatate da guerra
+4A6B,55,3,Knives,Bronze knife,ブロンズナイフ,,Gladius de bronce,Poignard de bronze,Bronzemesser,Coltello di bronzo
+4A6C,56,3,Knives,Divine dagger,聖なるナイフ,,Daga divina,Dague divine,Göttlicher Dolch,Daga divina
+4A6D,57,3,Knives,Poison moth knife,どくがのナイフ,,Puñal envenenado,Poignard empoisonné,Giftmottenmesser,Falena velenosa
+4A6E,58,3,Knives,Batterfly knife,バタフライダガー,,Puñal chafaposa,Poignard de peurpillon,Zerschmetterlings-dolch,Falena acuminata
+4A6F,59,3,Knives,Dread dagger,よるのパピヨン,,Daga aterradora,Dague de papilon,Schreckensdolch,Lama della morte
+4A71,60,3,Knives,Poison needle,どくばり,,Púa venenosa,Aiguille empoisonnée,Giftnadel,Pungiglione
+4A75,61,3,Knives,Deadly nightblade,シーブスナイフ,,Hoja oscura mortífera,Ombrelame,Diebesdolch,Lama della notte
+4A78,62,3,Knives,Falcon knife earring,キラーピアス,,Pendiente letal,Dague d'oreille,Falkenohrring,Orecchino del falco
+4A72,63,3,Knives,Assassin's dagger,アサシンダガー,,Daga de asesino,Dague d'assassin,Meucheldolch,Daga del sicario
+4A73,64,3,Knives,Icicle dirk,こおりのやいば,,Puñal gélido,Dague de glace,Eiszapfendolch,Stiletto di ghiaccio
+4A74,65,3,Knives,Fenrir fang,フェンリルのキバ,,Colmillo de Fenrir,Croc de Fenrir,Fenriszahn,Artiglio gelido
+4A76,66,3,Knives,Sword breaker,ソードブレイカー,,Rompeespadas,Brise-sabre,Schwertbrecher,Spaccalame
+4A77,67,3,Knives,Soul breaker,ソウルブレイカー,,Rompealmas,Brise-âme,Seelenbrecher,Demoralama
+4A79,68,3,Knives,Gladius,グラディウス,,Gladius,Gladius,Gladius,Gladio
+4A7A,69,3,Knives,Flame tang,サラマンダー,,Espiga flamígera,Flammèche,Flammenzahn,Salamandra infuocata
+4A7B,70,3,Knives,Pruning knife,こがらしのダガー,,Cuchillo de poda,Serpette,Baummesser,Roncola gelida
+4A7C,71,3,Knives,Deft dagger,サウザンドダガー,,Daga diestra,Dague d'adresse,Flinker Dolch,Gladio sonico
+4A7D,72,3,Knives,Darting dagger,ミリオンダガー,,Daga veloz,Dague dard,Flotter Dolch,Daga rapida
+4A7E,73,3,Knives,Dashing dagger,ビリオンダガー,,Daga rápida,Dague filante,Flitzedolch,Lamavelox
+4A7F,74,3,Knives,Dynamo dagger,トリリオンダガー,,Daga dinamo,Dague fulgurante,Dynamodolch,Gladio Dynamo
+4FB3,75,4,Wands,Oak staff,かしの杖,,Báculo de roble,Bâton de chêne,Eichenstab,Ramo di quercia
+500E,76,4,Wands,Wizard's staff,まどうしの杖,,Báculo de mago,Bâton de sorcier,Zaubererstab,Bastone del mago
+4FB4,77,4,Wands,Staff of sentencing,さばきの杖,,Báculo de justicia,Bâton du Jugement,Stab der Strafe,Bastone del giudizio
+4FB5,78,4,Wands,Staff of divine wrath,てんばつの杖,,Báculo de ira divina,Bâton du Courroux,Stab des Gotteszorns,Dies irae
+4FB6,79,4,Wands,Stolos' staff,ストロスの杖,,Báculo de Stolas,Bâton de Stolos,Stolosstab,Bacchetta di Stolos
+4FB8,80,4,Wands,Watermaul wand,うみなりの杖,,Báculo de ola,Bâton du déluge,Schwallstab,Marea incantata
+4FB9,81,4,Wands,Tsunami staff,わだつみの杖,,Báculo de tsunami,Bâton tsunami,Tsunamistab,Bastone di Nettuno
+500F,82,4,Wands,Lightning staff,いかずちの杖,,Báculo de luz,Bâton de foudre,Blitzstab,Bastone del fulmine
+4FB7,83,4,Wands,Lightning conductor,らいていの杖,,Conductor del rayo,Bâton paratonnerre,Blitzableiter,Bacchetta elettrica
+5010,84,4,Wands,Magma staff,マグマの杖,,Báculo de magma,Bâton de lave,Magmastab,Bastone di magma
+4FC3,85,4,Wands,Faerie staff,ようせいの杖,,Báculo de hada,Bâton de fée,Feenstab,Ramo fatato
+4FB2,86,4,Wands,Brouhaha boomstick,まてきの杖,,Palo de la bruja,Bâton du tumulte,Schockstab,Bacchetta dell'urlo
+4FBA,87,4,Wands,Rune staff,ルーンスタッフ,,Báculo rúnico,Bâton runique,Runenstab,Bastone runico
+4FB0,88,4,Wands,Hieroglyph staff,ウィザードスタッフ,,Báculo jeroglífico,Bâton futhark,Hieroglyphenstab,Mazza del mistero
+500D,89,4,Wands,Magical mace,マジカルメイス,,Maza mágica,Masse magique,Zauber-streitkolben,Verga del sortilegio
+4FBB,90,4,Wands,Mega-magical mace,ミラクルメイス,,Báculo megamágico,Masse mégamagique,Mega-Zauber-streitkolben,Bacchetta immaginifica
+4FBC,91,4,Wands,Sceptre of Gitt,ガナンのおうしゃく,,Cetro von Tropp,Sceptre de Klenfer,Großbrutalien-zepter,Scettro di Dimun
+4FB1,92,4,Wands,Sage's staff,けんじゃの杖,,Báculo de sabio,Bâton du sage,Stab des Weisen,Bastone del saggio
+4FBD,93,4,Wands,Savant's staff,大けんじゃの杖,,Báculo de erudito,Bâton de l'érudit,Salomonstab,Verga dell'illuminazione
+4FBE,94,4,Wands,Wyrmwand,ドラゴンの杖,,Báculo de guiverno,Dracobâton,Wyrmstab,Serpentyne
+4FBF,95,4,Wands,Bright staff,ひかりの杖,,Báculo brillante,Bâton lumineux,Heller Stab,Scintilla ardente
+4FC0,96,4,Wands,Shining staff,かがやきの杖,,Báculo reluciente,Bâton brillant,Leuchtender Stab,Bastone della luce
+4FC1,97,4,Wands,Brilliant staff,せんこうの杖,,Báculo deslumbrante,Bâton éclatant,Strahlender Stab,Bastone brillante
+4FC2,98,4,Wands,Aurora staff,オーロラの杖,,Báculo boreal,Bâton de l'aurore,Sonnenstab,Verga dell'aurora
+4F4C,99,5,Whips,Leather whip,皮のムチ,,Látigo de cuero,Fouet de cuir,Lederpeitsche,Frusta di cuoio
+4F4D,100,5,Whips,Thorn whip,いばらのムチ,,Látigo espinoso,Fouet d'épines,Dornenpeitsche,Frusta di spine
+4F4E,101,5,Whips,Battle whip,バトルリボン,,Azote,Fouet de combat,Kampfpeitsche,Frusta da guerra
+4F4F,102,5,Whips,Snakeskin whip,へびがわのムチ,,Látigo de ofidio,Fouet du Serpent,Schlangenpeitsche,Frusta Pyton
+4F50,103,5,Whips,Serpentine whip,だいじゃのムチ,,Látigo serpentino,Fouet reptilien,Pythonpeitsche,Frusta Anaconda
+4F51,104,5,Whips,Sidewinder,サイドワインダー,,Flagelo,Claque-vent,Vipernriemen,Frusta Krotalo
+4F52,105,5,Whips,Chain whip,チェーンクロス,,Látigo de cadena,Fouet de chaîne,Kettenpeitsche,Frusta di ferro
+4F53,106,5,Whips,Iron whip,てつのムチ,,Látigo de hierro,Fouet de fer,Eisenpeitsche,Metalfrusta
+4F54,107,5,Whips,Spiked steel whip,はがねのムチ,,Látigo de acero,Fouet d'acier,Stahlstachel-peitsche,Frusta d'acciaio
+4F55,108,5,Whips,Gigaspike whip,たまはがねのムチ,,Látigo gigapunzante,Gigafouet d'acier,Gigastachel-peitsche,Megafrusta Inox
+4F56,109,5,Whips,Dragontail whip,ドラゴンテイル,,Látigo dragoniano,Fouet du Dragon,Drachenpeitsche,Coda di drago
+4F57,110,5,Whips,Demon whip,あくまのムチ,,Látigo demoníaco,Fouet de démon,Dämonenpeitsche,Frusta del demonio
+4F58,111,5,Whips,Archdemon whip,だいあくまのムチ,,Látigo archidemoníaco,Fouet d'archidémon,Erzdämonen-peitsche,Coda infernale
+4F59,112,5,Whips,Scourge whip,バスターウィップ,,Látigo flagelador,Fouet de discipline,Geißel,Frusta dentata
+4F5A,113,5,Whips,Queen's whip,女王のムチ,,Látigo de reina,Fouet de reine,Königinnen-peitsche,Frusta della regina
+4F5B,114,5,Whips,Empress's whip,女帝のムチ,,Látigo de emperatriz,Fouet d'impératrice,Kaiserinnen-peitsche,Flagello dell'imperatrice
+4F5C,115,5,Whips,Goddess whip,女神のムチ,,Látigo de diosa,Fouet de la Déesse,Göttinnenpeitsche,Coda della dea
+4F5D,116,5,Whips,Wizardly whip,カルベロビュート,,Magilátigo,Fouet ensorcelé,Magierpeitsche,Frusta stregata
+4F5E,117,5,Whips,Gringham whip,グリンガムのムチ,,Látigo de Gringham,Fouet de Gringham,Gringham-Peitsche,Frusta Gringham
+4F5F,118,5,Whips,Mega Gringham whip,続グリンガムのムチ,,Megalátigo de Gringham,Mégafouet de Gringham,Mega-Gringham-Peitsche,Punizione di Gringham
+4F60,119,5,Whips,Giga Gringham whip,真グリンガムのムチ,,Gigalátigo de Gringham,Gigafouet de Gringham,Giga-Gringham-Peitsche,Ira di Gringham
+4F61,120,5,Whips,Über Gringham whip,超グリンガムのムチ,,Überlátigo de Gringham,Topfouet de Gringham,Über-Gringham-Peitsche,Flagello di Gringham
+5078,121,6,Staves,Laundry pole,ものほしざお,,Palo de tendedero,Perche,Wäschestange,Palo acuminato
+5079,122,6,Staves,Carrying pole,てんびんぼう,,Palo de transporte,Perche de transport,Tragestange,Bastone lungo
+507A,123,6,Staves,Oaken pole,かしのこん,,Palo de roble,Battoir de chêne,Eichenholzstange,Randello nodoso
+507B,124,6,Staves,Iron bar,てつのこん,,Barra de hierro,Barre de fer,Eisenstab,Sbarra di ferro
+507C,125,6,Staves,Steel bar,はがねのこん,,Barra de acero,Barre d'acier,Stahlstab,Sbarra d'acciaio
+507D,126,6,Staves,Gigasteel bar,たまはがねのこん,,Barra de gigacero,Barre de trempacier,Gigastahlstab,Sbarra Inox
+507E,127,6,Staves,Pillar of strength,だいこくばしら,,Pilar de fuerza,Matraque de force,Kummerkeule,Colonna della forza
+5081,128,6,Staves,Driller pillar,えんぶのこん,,Pilar perforante,Jô d'entraînement,Tanzstange,Asta sottile
+5082,129,6,Staves,Killer pillar,ぶしんのこん,,Pilar asesino,Jô de combat,Kampfstange,Mazza omicida
+507F,130,6,Staves,Sleepy stick,まどろみのこん,,Palitroque adormecedor,Baguette de somnolence,Schlummerstock,Mazza del sonno
+5080,131,6,Staves,Slumber stick,ゆめみのこん,,Palitroque de sueño,Baguette de léthargie,Schlafstock,Verga Ronf
+5083,132,6,Staves,Mistick,レイニーロッド,,Palitroque místico,Bâton de pluie,Nebelstock,Mazza mistica
+5084,133,6,Staves,Optimistick,スコールロッド,,Palitroque de ánimo,Bâton de grand vent,Dusterstock,Bastone Optimus
+5085,134,6,Staves,Ballistick,テンペストロッド,,Palitroque arrojadizo,Bâton de tempête,Finsterstock,Bastone Pessimus
+5086,135,6,Staves,Sadistick,ろうがぼう,,Palitroque sádico,Massue d'armes,Stachelstock,Bastone della cattiveria
+5087,136,6,Staves,Dragon rod,ドラゴンロッド,,Vara de dragón,Baguette du Dragon,Drachenstab,Osso di drago
+5088,137,6,Staves,Xenlon rod,シェンロンロッド,,Vara de Xenlon,Baguette de Xenlon,Xenlonstab,Mazza di Xenlon
+5089,138,6,Staves,Orichalcudgel,オリハルこん,,Vara de oricalco,Gourdin d'orichalque,Orichalkumkeule,Mazza d'orichalcum
+508A,139,6,Staves,Knockout rod,しゅらのこん,,Vara K. o.,Assommoir,Schwerenot-Stock,Bastone del KO
+508B,140,6,Staves,Senseless stick,みょうおうのこん,,Vara inconsciente,Gourdin de KO,Nirvanastock,Stenditutti
+508C,141,6,Staves,Catatonic cosh,ぼさつのこん,,Porra catatónica,Matraque catatonique,Katatonieknüppel,Inconscius
+508D,142,6,Staves,Coma cudgel,にょらいのこん,如来のこん,Cachiporra comatosa,Matracoma,Komaknüppel,Bastone del coma
+5140,143,7,Claws,Stone claws,いしのツメ,,Garras pétreas,Griffes de pierre,Steinklauen,Artigli di pietra
+5141,144,7,Claws,Iron claws,てつのツメ,,Garras de hierro,Griffes de fer,Eisenklauen,Artigli di ferro
+5142,145,7,Claws,Steel claws,はがねのツメ,,Garras duras,Griffes d'acier,Stahlklauen,Artigli d'acciaio
+5143,146,7,Claws,Gigasteel claws,たまはがねのツメ,,Garras de gigacero,Griffes de trempacier,Gigastahlklauen,Artigli Inox
+5145,147,7,Claws,Razor claws,てっこうかぎ,,Garras afiladas,Griffes sabre,Scharfe Klauen,Artigli ninja
+5144,148,7,Claws,Sacred claws,まよけのツメ,,Garras sacras,Griffes sacrées,Heilige Klauen,Artigli sacri
+5146,149,7,Claws,Crow's claws,はやぶさのツメ,,Garras de cuervo,Serres de corbeau,Krähenkrallen,Artigli del corvo
+5147,150,7,Claws,Kestrel claws,オオワシのツメ,,Garras de cernícalo,Serres de crécerelle,Habichtkrallen,Lame del nibbio
+5148,151,7,Claws,Kite claws,ガルーダのツメ,,Garras de milano,Serres de milan,Milankrallen,Artigli del rapace
+5149,152,7,Claws,Handrills,ドリルナックル,,Perforadores,Vrillons,Handbohrer,Talpax
+514A,153,7,Claws,Hammer handrills,ハイパードリル,,Guanteletes de martillo,Vrillons à percussion,Hammer-Handbohrer,Talpax a martello
+514B,154,7,Claws,Dragon claws,ドラゴンクロー,,Garras de dragón,Griffes de dragon,Drachenklauen,Artigli del drago
+514C,155,7,Claws,Fire claws,ほのおのツメ,,Garras de fuego,Griffes de feu,Feuerklauen,Artigli di fuoco
+514D,156,7,Claws,Combusticlaws,しゃくねつのツメ,,Garras combustibles,Combustigriffes,Brandklauen,Artigli ardenti
+514E,157,7,Claws,Cobra claws,あくまのツメ,,Garras de cobra,Dents de cobra,Kobraklauen,Artigli del cobra
+514F,158,7,Claws,King cobra claws,サタンネイル,,Garras de cobra real,Dents de cobra royal,Königskobraklauen,Reptilium
+5150,159,7,Claws,Beast claws,まじゅうのツメ,,Garras de bestia,Griffes de monstre,Bestienklauen,Artigli della belva
+5151,160,7,Claws,Beastmaster claws,じゅうおうのツメ,,Garras bestiales,Griffes maître-monstre,Bestienmeister-klauen,Artigli mostruosi
+5152,161,7,Claws,Orichalcum claws,オリハルコンのツメ,,Garras de oricalco,Griffes d'orichalque,Orichalkumklauen,Artigli d'orichalcum
+5153,162,7,Claws,Dragonlord claws,竜王のツメ,,Garras de guiverno,Griffes de lordragon,Drachenfürst-klauen,Artigli del Dragonlord
+5154,163,7,Claws,Dragovian claws,竜神のツメ,,Garras dragovianas,Griffes dragoviennes,Dragovianerklauen,Artigli dragoviani
+5155,164,7,Claws,Dragovian lord claws,竜神王のツメ,,Garras de dragoviano,Griffes de sgr dragovien,Dragovianerfürst-klauen,Lame del Sire Dragoviano
+5156,165,7,Claws,Xenlon claws,神竜のツメ,,Garras de Xenlon,Griffes de Xenlon,Xenlonklauen,Artigli di Xenlon
+4E84,166,8,Fans,Feather fan,はねのおうぎ,,Abanico de plumas,Éventail de plumes,Federfächer,Ventaglio piumato
+4E85,167,8,Fans,Iron fan,てつのおうぎ,,Abanico de hierro,Éventail de fer,Eisenfächer,Ventaglio di ferro
+4E86,168,8,Fans,Steel fan,はがねのおうぎ,,Abanico de acero,Éventail d'acier,Stahlfächer,Ventaglio d'acciaio
+4E87,169,8,Fans,Gigasteel fan,たまはがねのおうぎ,,Abanico de gigacero,Éventail de trempacier,Gigastahlfächer,Ventaglio Inox
+4E88,170,8,Fans,War fan,バトルファン,,Abanico de guerra,Éventail de guerre,Kriegsfächer,Ventaglio da battaglia
+4E89,171,8,Fans,Foehn fan,れっぷうのおうぎ,,Abanico ventolera,Éventail du vent,Föhnfächer,Ventaglio ardente
+4E8A,172,8,Fans,Gale force fan,たつまきのおうぎ,,Abanico huracanado,Éventail de bourrasque,Orkanfächer,Ventaglio dell'uragano
+4E91,173,8,Fans,Cobra fan,へびのおうぎ,,Abanico de cobra,Éventail cobra,Kobrafächer,Ventaglio del cobra
+4E92,174,8,Fans,Azure Dragon fan,せいりゅうのおうぎ,,Abanico Dragón Azur,Éventail Dragon azur,Blaudrachen-Fächer,Ventaglio Drago Azzurro
+4E8F,175,8,Fans,Fowl fan,トリのおうぎ,,Avenico,Éventail aviaire,Flügelfächer,Ventaglio letale
+4E90,176,8,Fans,Vermillion Bird fan,すざくのおうぎ,,Abanico Ave Bermellón,Éventail Oiseau vermillon,Rotvogel-Fächer,Ventaglio Ala Rossa
+4E8D,177,8,Fans,Feline fan,ネコのおうぎ,,Abanico felino,Éventail félin,Katzenfächer,Ventaglio del micione
+4E8E,178,8,Fans,White Tiger fan,びゃっこのおうぎ,,Abanico Tigre Blanco,Éventail Tigre blanc,Weißtiger-Fächer,Ventaglio Tigre Bianca
+4E8B,179,8,Fans,Tortoiseshell fan,カメのおうぎ,,Abanico de tortuga,Éventail tortue,Schildkröten-fächer,Venguscio
+4E8C,180,8,Fans,Black Tortoise fan,げんぶのおうぎ,,Abanico Tortuga Negra,Éventail Tortue noire,Schwarzschild-Fächer,Ventaglio Tortuga Nera
+4E93,181,8,Fans,Stellar fan,ほしのおうぎ,,Abanico estelar,Éventail stellaire,Sternenfächer,Ventistella
+4E94,182,8,Fans,Lunar fan,つきのおうぎ,,Abanico lunar,Éventail lunaire,Mondfächer,Ventaglio lunare
+4E95,183,8,Fans,Solar fan,たいようのおうぎ,,Abanico solar,Éventail solaire,Sonnenfächer,Ventaglio del sole
+4E9C,184,8,Fans,White bouquet,白のブーケ,,Ramo blanco,Bouquet blanc,Weißes Bouquet,Bouquet bianco
+4E96,185,8,Fans,Friendly fan,きりんのおうぎ,,Abanico amigable,Éventail évolué,Freundlicher Fächer,Ventaglio dell'alleanza
+4E97,186,8,Fans,Attribeauty,風林火山,,Paipay atributario,Caractéventail,Anfächer,Fantaventaglio
+4E98,187,8,Fans,Critical fan,ひっさつのおうぎ,必殺の扇,Abanico crítico,Éventail critique,Fieser Fächer,Aria Critica
+4E99,188,8,Fans,Overcritical fan,むそうおうぎ,,Abanico supercrítico,Éventail surcritique,Furchtbarer Fächer,Ventaglio della morte
+4E9A,189,8,Fans,Hypercritical fan,ちょうぜつおうぎ,,Abanico hipercrítico,Éventail hypercritique,Folgenschwerer Fächer,Ventaglio Thanatos
+4E9B,190,8,Fans,Dire critical fan,さいしゅうおうぎ,,Abanico critiquérrimo,Éventail ultracritique,Fataler Fächer,Ultimo vento
+4F45,191,9,Axes,Iron axe,てつのオノ,,Hacha de hierro,Hache de fer,Eisenaxt,Ascia di ferro
+4EEA,192,9,Axes,Steel axe,はがねのオノ,,Hacha de acero,Hache d'acier,Stahlaxt,Ascia d'acciaio
+4EEB,193,9,Axes,Gigasteel axe,たまはがねのオノ,,Hacha de gigacero,Hache de trempacier,Gigastahlaxt,Ascia Inox
+4EEC,194,9,Axes,Golden axe,きんのオノ,,Hacha de oro,Hache d'or,Goldaxt,Ascia d'oro
+4EE8,195,9,Axes,Battle-axe,バトルアックス,,Hacha de guerra,Hache de guerre,Kampfaxt,Ascia da battaglia
+4EED,196,9,Axes,Moon axe,ムーンアックス,,Hacha lunar,Hache de lune,Mondaxt,Ascia della luna
+4EEE,197,9,Axes,Full moon axe,フルムーンアックス,,Hacha plenilunio,Hache de pleine lune,Vollmondaxt,Luna piena
+4F43,198,9,Axes,King axe,キングアックス,,Hacha real,Hache de roi,Königsaxt,Ascia del re
+4EEF,199,9,Axes,Kaiser axe,カイザーアックス,,Hacha de káiser,Hache d'empereur,Kaiseraxt,Ascia dell'imperatore
+4EE9,200,9,Axes,Pro's axe,たつじんのオノ,,Hacha profesional,Hache de pro,Profi-Axt,Ascia del ribelle
+4EF0,201,9,Axes,Headsman's axe,はしゃのオノ,,Decapitadora,Hache de bourreau,Scharfrichterbeil,Ascia di Hela
+4EF1,202,9,Axes,Executioner's axe,はおうのオノ,,Hacha sicaria,Hache d'exécuteur,Henkersbeil,Lama del boia
+4EF2,203,9,Axes,Ice axe,ふぶきのオノ,,Hacha de hielo,Hache de glace,Eisaxt,Gelama
+4EF3,204,9,Axes,Avalanche axe,ブリザードアックス,,Hacha avalancha,Hache avalanche,Lawinenaxt,Ascia Avalanche
+4EF4,205,9,Axes,Heavy hatchet,ふんさいのおおなた,粉砕のおおなた,Hachuela pesada,Hache lourde,Schweres Beil,Ascia Rebellion
+4EF5,206,9,Axes,Bad axe,グレートアックス,,Hacha mala,Hache oar,Verhaxt,Bandita
+4EF6,207,9,Axes,Maxi axe,ギガントアックス,,Maxihacha,Méghache,Maxi-Axt,Maxiascia
+4EF7,208,9,Axes,Climaxe,グラビティアックス,,Climhacha,Hache hop,Klimaxt,Ascia Climax
+4EF8,209,9,Axes,Galaxy axe,ゴッドアックス,,Hacha galáctica,Hache galactique,Galaktische Axt,Ascia galattica
+4ACE,210,10,Hammers,Oaken club,こんぼう,,Garrote de roble,Massue de chêne,Eichenholzknüppel,Clava
+4ACF,211,10,Hammers,Ace of clubs,ジャイアントクラブ,,Garrote vil,Massup,Riesenknüppel,Randello robusto
+4AD0,212,10,Hammers,Sledgehammer,おおかなづち,,Almádena,Masse de guerre,Eisenhammer,Martello
+4AD1,213,10,Hammers,War hammer,ウォーハンマー,,Martillo de guerra,Marteau d'armes,Kriegshammer,Martello da guerra
+4AD2,214,10,Hammers,Über war hammer,ウォーハンマー改,,Übermartillo de guerra,Marteau suprême,Über-Kriegshammer,Gran martello da guerra
+4AD3,215,10,Hammers,Giant wrench,きょだいスパナ,,Llave gigante,Clef géante,Schrauben-schlüssel,Chiave gigante
+4AD4,216,10,Hammers,Terra tamper,つちのハンマー,,Martillo apisonador,Géomarteau,Terraklopfer,Martello della terra
+4AD5,217,10,Hammers,Terra firmer,大地のかなづち,,Martillo nivelador,Géomaillet,Terrastampfer,Terra Firma
+4AD6,218,10,Hammers,Terra hammer,ガイアのてっつい,,Martillo allanador,Géomasse,Terrahammer,Mazza del suolo
+4AD7,219,10,Hammers,Marauder's maul,おにのかなぼう,,Pico de ladrón,Massue de maraudeur,Plündererprügel,Mazza del predatore
+4AD9,220,10,Hammers,Giant's hammer,きょじんのハンマー,,Martillo de gigante,Marteau de géant,Hünenhammer,Gigamartello
+4ADA,221,10,Hammers,Titan's hammer,アトラスのかなづち,,Martillo de titán,Marteau de titan,Titanenhammer,Martello titanico
+4AD8,222,10,Hammers,Hela's hammer,まじんのかなづち,,Martillo de Hela,Marteau de Hela,Hammer der Hela,Martello di Hela
+4ADB,223,10,Hammers,Megaton hammer,メガトンハンマー,,Martillo megatón,Marteau mégatonne,Megatonnen-Hammer,Martello megatonico
+4ADC,224,10,Hammers,Warlord's hammer,ギガクラッシャー,,Martillo letal,Marteau de guerre,Kriegsherren-Hammer,Megamartello
+4ADD,225,10,Hammers,Groundbreaker,大地くだき,,Rompeterrenos,Pilon,Bodenberster,Sysma
+4ADE,226,10,Hammers,Earthsplitter,たいりくくだき,,Quebrantaterrenos,Pilon terrestre,Erdspalter,Fendisuolo
+4ADF,227,10,Hammers,Moonmasher,プレートくだき,,Aplastalunas,Pilon lunaire,Mondmanscher,Spaccalune
+4AE0,228,10,Hammers,Starsmasher,ほしくだき,,Aplastaestrellas,Pilon stellaire,Sternen-schmetterer,Distruttore stellare
+50DC,229,11,Boomerangs,Boomerang,ブーメラン,,Bumerán,Boomerang,Bumerang,Boomerang
+50DD,230,11,Boomerangs,Reinforced boomerang,ハイブーメラン,,Bumerán reforzado,Boomerang renforcé,Verstärkter Bumerang,Ala del ritorno
+50DE,231,11,Boomerangs,Edged boomerang,やいばのブーメラン,,Bumerán afilado,Boomerang à lames,Klingenbumerang,Boomerang affilato
+50DF,232,11,Boomerangs,Cutting-edge boomerang,きりさきブーメラン,,Bumerán cortante,Boomerang tranchant,Zwiespalt-Bumerang,Boomerklang
+50E0,233,11,Boomerangs,Crucerang,クロスブーメラン,,Crucerán,Boomerang cruciforme,Kruzerang,Cruxirang
+50E1,234,11,Boomerangs,Razor-wing boomerang,ウイングエッジ,,Bumerán cercenador,Boomerang acéré,Schneiden-bumerang,Boomerasoio
+50E2,235,11,Boomerangs,Razer-wing boomerang,クレセントエッジ,,Bumerán arrasador,Boomerang coupe-chou,Schnitterbumerang,Boomerzero
+50E3,236,11,Boomerangs,Erazor-wing boomerang,ビクトリーエッジ,,Bumerán borrador,Boomerang rasoir,Schlitzerbumerang,Lamalata radente
+50E4,237,11,Boomerangs,Swallowtail,ツインスワロー,,Cola de golondrina,Boomerang de l'Ange,Schwalben-schwanz,Boomerang sonico
+50E5,238,11,Boomerangs,Eaglewing,イーグルフェザー,,Ala de águila,Aile d'aigle,Adlerschwinge,Ala dell'aquila
+50E6,239,11,Boomerangs,Gusterang,かぜのブーメラン,,Rafagarán,Boomerang rafale,Sturmerang,Boomeragano
+50E7,240,11,Boomerangs,Blusterang,ハリケーンエッジ,,Ventolerán,Boomerang tempête,Bömerang,Tornado
+50E8,241,11,Boomerangs,Flametang boomerang,ほのおのブーメラン,,Bumerán flamígero,Boomerang de feu,Flammenbumerang,Boomerang di fuoco
+50E9,242,11,Boomerangs,Banefire boomerang,フレイムカッター,,Pirobumerán,Boomerang incandescent,Feuerfluch-bumerang,Fiamma volante
+50EA,243,11,Boomerangs,Pentarang,ペンタグラム,,Pentarán,Pentaboomerang,Pentarang,Pentarang
+50EB,244,11,Boomerangs,Hexarang,ヘキサグラム,,Hexarán,Hexaboomerang,Hexarang,Esarang
+50EC,245,11,Boomerangs,Meteorang,メテオエッジ,,Meteorán,Météorang,Meteorang,Meteorang
+50ED,246,11,Boomerangs,Asterang,コメットエッジ,,Astrorán,Astérang,Asterang,Asterang
+50EE,247,11,Boomerangs,Stellarang,スーパーノヴァ,,Estelarán,Stellarang,Stellarang,Stellarang
+50EF,248,11,Boomerangs,Galaxarang,ハイパーノヴァ,,Galaxirán,Galaxirang,Galaxarang,Galaxiarang
+51A5,249,12,Bows,Short bow,ショートボウ,,Arco corto,Arc court,Kurzbogen,Arco Manferma
+51A6,250,12,Bows,Longbow,ロングボウ,,Arco largo,Arc long,Langbogen,Arco
+51A7,251,12,Bows,Hunter's bow,クロスボウ,,Arco de caza,Arc de chasseur,Jägerbogen,Arco da caccia
+51A8,252,12,Bows,Fuddle bow,ゆうわくの弓,,Arco Confusión,Arc de confusion,Wirrbogen,Grand'arco
+51A4,253,12,Bows,Potshot bow,かりうどの弓,,Arco de tiro,Arc de débutant,Flitzebogen,Arco del cielo
+51AA,254,12,Bows,Hotshot bow,スナイピングボウ,,Arco certero,Arc de précision,Wildererbogen,Arco di precisione
+51AB,255,12,Bows,Blowy bow,かぜきりの弓,,Arco ventoso,Arc du vent,Blasebogen,Arco Bora
+51AC,256,12,Bows,Billowing bow,あらしの弓,,Arco ululante,Arc des bourrasques,Brausebogen,Arco Tramontana
+51AD,257,12,Bows,Blustery bow,サイクロンボウ,,Arco borrascoso,Arc des tempêtes,Sturmbogen,Arco sonico
+51A9,258,12,Bows,Cheiron's bow,ケイロンの弓,,Arco de Quirón,Arc de Chiron,Chironbogen,Arco di Chirone
+51AE,259,12,Bows,Great bow,ビッグボウガン,,Arco tradicional,Grand arc,Großer Bogen,Arco da guerra
+51AF,260,12,Bows,Purblind bow,むげんの弓,,Arco cegador,Arc aveuglant,Baffbogen,Arco accecante
+51B0,261,12,Bows,Blinding bow,むげんの大弓,,Arco deslumbrador,Arc de cécité,Blendbogen,Arco dell'oscurità
+51B1,262,12,Bows,Oh-no bow,じごくの弓,,Arco oh-no,Anarc,Böser Bogen,Malarco
+51B2,263,12,Bows,Odin's bow,オーディーンボウ,,Arco de Odín,Arc d'Odin,Odinbogen,Arco di Odino
+51B3,264,12,Bows,Angel's bow,天使の弓,,Arco angelical,Arc d'ange,Engelsbogen,Arco dell'angelo
+51B4,265,12,Bows,Archangel's bow,大天使の弓,,Arco de arcángel,Arc d'archange,Erzengelsbogen,Arco dell'arcangelo
+51B5,266,12,Bows,Aeon's bow,ケルビムの弓,,Arco de trono,Arc de chérubin,Äonenbogen,Arco del cherubino
+51B6,267,12,Bows,Seraph's bow,セラフィムの弓,,Arco de serafín,Arc de séraphin,Seraphimbogen,Arco del serafino
+5330,268,13,Shields,Pot lid,おなべのふた,,Tapadera,Couvercle de tonneau,Topfdeckel,Coperchio del tegame
+532B,269,13,Shields,Leather shield,皮の盾,,Escudo de piel,Bouclier de cuir,Lederschild,Scudo di pelle
+52C8,270,13,Shields,Scale shield,うろこの盾,,Escudo de escamas,Bouclier d'écailles,Schuppenschild,Scudo a scaglie
+5331,271,13,Shields,Silver platter,シルバートレイ,,Fuente de plata,Plateau d'argent,Silberplatte,Vassoio d'argento
+5332,272,13,Shields,Gold platter,ゴールドトレイ,,Fuente de oro,Plateau d'or,Goldplatte,Vassoio d'oro
+5333,273,13,Shields,Platinum platter,プラチナトレイ,,Fuente de platino,Plateau de platine,Platinplatte,Vassoio di platino
+5263,274,13,Shields,Bronze shield,せいどうの盾,,Escudo de bronce,Bouclier de bronze,Bronzeschild,Scudo di bronzo
+5209,275,13,Shields,Shell shield,こうらの盾,,Escudo de concha,Bouclier chélonien,Schildpattschild,Tartascudo
+5264,276,13,Shields,Iron shield,てつの盾,,Escudo de hierro,Bouclier de fer,Eisenschild,Scudo di ferro
+5265,277,13,Shields,Steel shield,はがねの盾,,Escudo de acero,Bouclier d'acier,Stahlschild,Scudo d'acciaio
+5267,278,13,Shields,Gigasteel shield,たまはがねの盾,,Escudo de gigacero,Bouclier de trempacier,Gigastahlschild,Scudo Inox
+520C,279,13,Shields,Light shield,ライトシールド,,Escudo de luz,Bouclier léger,Leichter Schild,Scudo leggero
+520A,280,13,Shields,Kitty shield,キトンシールド,,Escudo felino,Bouclier chat,Katzenschild,Scudo del micio
+520B,281,13,Shields,Catty shield,キャットガーダー,,Escudo gatuno,Bouclier félin,Kätzchenschild,Scudo felino
+520D,282,13,Shields,Platinum shield,プラチナシールド,,Escudo de platino,Bouclier de platine,Platinschild,Scudo di platino
+5216,283,13,Shields,Slime shield,スライムトレイ,,Escudo limoso,Bouclier gluant,Schleimschild,Scudo Slurp
+532A,284,13,Shields,Magic shield,まほうの盾,,Escudo mágico,Bouclier magique,Zauberschild,Scudo magico
+5320,285,13,Shields,Enchanted shield,せいれいの盾,,Escudo encantado,Bouclier enchanté,Verzauberter Schild,Scudo incantato
+5321,286,13,Shields,Ethereal shield,げんまの盾,,Escudo etéreo,Bouclier ésotérique,Ätherischer Schild,Scudo etereo
+538E,287,13,Shields,Flame shield,ほのおの盾,,Escudo flamígero,Bouclier de feu,Flammenschild,Scudo di fuoco
+5393,288,13,Shields,Ice shield,こおりの盾,,Escudo de hielo,Bouclier de glace,Eisschild,Scudo di ghiaccio
+532F,289,13,Shields,White shield,ホワイトシールド,,Escudo blanco,Bouclier blanc,Weißer Schild,Scudo bianco
+5208,290,13,Shields,Warrior's shield,戦士の盾,,Escudo de guerrero,Bouclier de guerrier,Kriegerschild,Scudo da guerriero
+538F,291,13,Shields,Dragon shield,ドラゴンシールド,,Escudo de dragón,Bouclier du Dragon,Drachenschild,Scudo del drago
+520E,292,13,Shields,Tempest shield,ふうじんの盾,,Escudo de tempestad,Bouclier du Vent,Sturmschild,Scudo della tempesta
+52D0,293,13,Shields,White knight's shield,せいきしの盾,,Escudo de caballero,Écu de chevalier blanc,Ritterschild,Scudo della sacralità
+532C,294,13,Shields,Power shield,ちからの盾,,Escudo de poder,Bouclier de puissance,Energieschild,Scudo del potere
+5322,295,13,Shields,Empowered shield,ちからの盾改,,Escudo poderoso,Bouclier surpuissant,Hochenergieschild,Scudo Magis
+5394,296,13,Shields,Dark shield,ダークシールド,,Escudo oscuro,Bouclier des ténèbres,Dunkler Schild,Scudo delle tenebre
+5392,297,13,Shields,Ogre shield,オーガシールド,,Escudo de ogro,Bouclier d'ogre,Ogerschild,Scudo dell'orco
+5390,298,13,Shields,Boss shield,おやぶんの盾,,Escudo de mandamás,Bouclier autoritaire,Boss-Schild,Scudo del gran capo
+5395,299,13,Shields,Big boss shield,大おやぶんの盾,,Escudo de gran jefe,Bouclier dominateur,Oberboss-Schild,Scudo Daboss
+532E,300,13,Shields,Silver shield,みかがみの盾,,Escudo de plata,Bouclier d'argent,Silberschild,Scudo d'argento
+5391,301,13,Shields,Ruinous shield,はめつの盾,,Escudo de ruina,Bouclier du Désastre,Schild des Ruins,Scudo della rovina
+520F,302,13,Shields,Saintess shield,聖女の盾,,Escudo de santidad,Bouclier de la Sainte,Heiligenschild,Scudo santo
+5210,303,13,Shields,Goddess shield,女神の盾,,Escudo de diosa,Bouclier de la Déesse,Göttinnenschild,Scudo della dea
+52C6,304,13,Shields,Metal slime shield,メタスラの盾,,Escudo limometálico,Écu de gluant de métal,Metallschleimschild,Scudo dello Slime grigio
+52C9,305,13,Shields,Liquid metal shield,はぐれメタルの盾,,Escudo metalíquido,Bouclier de mercure,Flüssigmetallschild,Scudo del Liquislime
+52CA,306,13,Shields,Metal king shield,メタルキングの盾,,Escudo real,Bouclier royal,Metallkönigschild,Scudo del Re Slime grigio
+5211,307,13,Shields,Rusty shield,さびついた盾,,Escudo oxidado,Bouclier rouillé,Rostiger Schild,Scudo arrugginito
+52C7,308,13,Shields,Erdrick's shield,ロトの盾,,Escudo de Erdrick,Bouclier d'Elric,Erdrickschild,Scudo di Erdrick
+5212,309,13,Shields,Brain drainer,りんねの盾,,Vaciacerebros,Boucliéponge,Hirnhemmer,Cerebrus
+5213,310,13,Shields,Psyche swiper,えいえんの盾,,Limpiapsiques,Aimental,Zauberzapfer,Psikion
+5214,311,13,Shields,Devilry drinker,メビウスの盾,,Absorbemaldad,Qommaléfice,Geistgurgler,Diabolos
+5215,312,13,Shields,Soul sucker,ウロボロスの盾,,Robaalmas,Désâmenteur,Seelensauger,Scudemon
+332D,313,15,Torso,Leather armour,皮のよろい,,Armadura de cuero,Armure de cuir,Lederharnisch,Armatura di pelle
+332E,314,15,Torso,Scale armour,うろこのよろい,,Peto de escamas,Armure d'écailles,Schuppenpanzer,Armatura a scaglie
+338C,315,15,Torso,Large-scale armour,ハードスケイル,,Peto de escamazas,Armure d'écailles blindée,Super-schuppenpanzer,Gran corazza
+332F,316,15,Torso,Chain mail,くさりかたびら,,Cota de malla,Cotte de mailles,Kettenpanzer,Cotta di maglia
+338D,317,15,Torso,Bronze armour,せいどうのよろい,,Armadura de bronce,Armure de bronze,Bronzeharnisch,Armatura di bronzo
+35DE,318,15,Torso,Iron cuirass,てつのむねあて,,Peto de acero,Plastron de fer,Eisenkürass,Corazza di ferro
+35E1,319,15,Torso,Silver cuirass,ぎんのむねあて,,Peto de plata,Plastron d'argent,Silberkürass,Corazza d'argento
+3388,320,15,Torso,Iron armour,てつのよろい,,Armadura de hierro,Armure de fer,Eisenrüstung,Armatura Ferrus
+338E,321,15,Torso,Full plate armour,はがねのよろい,,Armadura compacta,Armure de plates,Ritterrüstung,Armatura a piastre
+338F,322,15,Torso,Gigasteel armour,たまはがねのよろい,,Armadura de gigacero,Armure de trempacier,Gigastahlrüstung,Armatura Inox
+35DF,323,15,Torso,Tortoise shell,カメのこうら,,Caparazón de tortuga,Carapace de tortue,Schildkröten-panzer,Guscio di tartaruga
+35E2,324,15,Torso,Tortoiseshell armour,トータスアーマー,,Armadura caparazón,Armure chélonienne,Schildkröten-rüstung,Corazza Tortuga
+337C,325,15,Torso,Silver mail,シルバーメイル,,Armadura de plata,Cuirasse d'argent,Silberpanzer,Cotta d'argento
+337D,326,15,Torso,Gold mail,ゴールドメイル,,Cota de oro,Cuirasse d'or,Goldpanzer,Cotta d'oro
+337E,327,15,Torso,Platinum mail,プラチナメイル,,Cota de platino,Cuirasse de platine,Platinpanzer,Cotta di platino
+337F,328,15,Torso,Heavy armour,あつでのよろい,,Armadura pesada,Armure lourde,Schwere Rüstung,Armatura pesante
+32C8,329,15,Torso,Warrior's armour,戦士のよろい,,Armadura de guerrero,Armure de guerrier,Kriegerrüstung,Corazza da guerriero
+3521,330,15,Torso,Femiscyran mail,アマゾネスチェイン,,Cota de Feministia,Cuirasse de Fémiscyra,Femiscyra-Panzer,Cotta di Femiscyra
+3380,331,15,Torso,Magic armour,まほうのよろい,,Armadura mágica,Armure magique,Zauberrüstung,Armatura magica
+3381,332,15,Torso,Enchanted armour,せいれいのよろい,,Armadura encantada,Armure enchantée,Verzauberte Rüstung,Corazza incantata
+3382,333,15,Torso,Ethereal armour,げんまのよろい,,Armadura etérea,Armure ésotérique,Ätherische Rüstung,Armatura eterea
+3384,334,15,Torso,Spiked armour,やいばのよろい,,Armadura con púas,Armure de piques,Stachelrüstung,Armatura con aculei
+3383,335,15,Torso,Dragon mail,ドラゴンメイル,,Cota de dragón,Cuirasse du Dragon,Drachenpanzer,Armatura del drago
+332C,336,15,Torso,Tactical vest,コンバットアーマー,,Chaleco antiespadas,Cuirasse tactique,Taktische Weste,Corazza portentosa
+3522,337,15,Torso,Brawling byrnie,コンバットメイル,,Malla larga de combate,Cotte de combat,Balgebrünne,Tunica metallica
+3390,338,15,Torso,Holy mail,ホーリーチェイン,,Malla sagrada,Cotte de mailles sacrée,Heiliger Panzer,Corazza santa
+3523,339,15,Torso,Holy femail,チェインドレス,,Malla femenina sagrada,Cocotte de mailles,Heiliger Damenpanzer,Cotta consacrata
+336A,340,15,Torso,Dragon warrior armour,竜戦士のよろい,,Malla de draconarius,Armure de dracoguerrier,Drachenkrieger-rüstung,Corazza Draconis
+3385,341,15,Torso,Sacred armour,しんぴのよろい,,Armadura sagrada,Armure sacrée,Heilige Rüstung,Armatura sacra
+3372,342,15,Torso,Sacrosanct armour,しんぴのよろい改,,Armadura sacrosanta,Armure sainte,Sakrosankte Rüstung,Cotta celeste
+3373,343,15,Torso,Veteran's armour,古強者のよろい,古強者の鎧,Armadura de veterano,Armure de vétéran,Veteranenrüstung,Armatura da veterano
+3374,344,15,Torso,Mirror armour,ミラーアーマー,,Armadura especular,Armure miroir,Spiegelrüstung,Armatura riflettente
+3375,345,15,Torso,Catoptric armour,リフレクトアーマー,,Armadura catóptrica,Armure catoptrique,Katoptrikrüstung,Corazza trasparente
+3376,346,15,Torso,Gigant armour,ギガントアーマー,,Armadura gigante,Armure de géant,Riesenrüstung,Armatura dei giganti
+3386,347,15,Torso,Metal slime armour,メタスラよろい,メタスラ鎧,Armadura limometálica,Cotte de gluant de métal,Metallschleim-rüstung,Lorica dello Slime grigio
+3377,348,15,Torso,Liquid metal armour,はぐれメタルよろい,,Armadura metalíquida,Armure de mercure,Flüssigmetall-rüstung,Corazza del Liquislime
+3378,349,15,Torso,Metal king armour,メタルキングよろい,,Armadura real,Armure royale,Metallkönigrüstung,Lorica del Re Slime grigio
+3379,350,15,Torso,Rusty armour,さびついたよろい,,Armadura oxidada,Armure rouillée,Rostige Rüstung,Armatura arrugginita
+338B,351,15,Torso,Erdrick's armour,ロトのよろい,,Armadura de Erdrick,Armure d'Elric,Erdrickrüstung,Corazza di Erdrick
+337A,352,15,Torso,Victorious armour,しょうりのよろい,勝利の鎧,Armadura victoriosa,Armure victorieuse,Siegreiche Rüstung,Armatura della vittoria
+337B,353,15,Torso,Glorious armour,えいこうのよろい,,Armadura gloriosa,Armure glorieuse,Ruhmreiche Rüstung,Armatura della gloria
+3368,354,15,Torso,Mythical armour,でんせつのよろい,,Armadura mítica,Armure mythique,Mythische Rüstung,Corazza mitica
+3369,355,15,Torso,Legendary armour,しんわのよろい,,Armadura legendaria,Armure légendaire,Legendäre Rüstung,Corazza leggendaria
+32CD,356,15,Torso,Plain clothes,ぬのの服,布の服,Vestimenta normal,Vêtement simple,Einfaches Gewand,Abito semplice
+3327,357,15,Torso,Wayfarer's clothes,たびびとの服,,Vestimenta de viaje,Tenue de voyageur,Reisegewand,Abito da viandante
+34CF,358,15,Torso,Leather dress,皮のドレス,,Vestido de cuero,Robe de cuir,Lederkleid,Vestito di pelle
+34D0,359,15,Torso,Plain dress,若草色のドレス,,Vestido normal,Robe simple,Einfaches Kleid,Abito normale
+34D1,360,15,Torso,Summer dress,サマードレス,,Vestido veraniego,Robe d'été,Sommerkleid,Abito estivo
+34D2,361,15,Torso,Jaguarment,ジャガードレス,,Jaguaraje,Costume jaguar,Jaguarkleid,Veste del giaguaro
+32CE,362,15,Torso,Training top,けいこぎ上,,Chaqueta de kimono,Veste d'entraînement,Übungs-Oberteil,Giacca da allenamento
+32D2,363,15,Torso,Tracksuit top,しゅぎょうぎ上,,Chaqueta marcial,Veste de lutte,Trainings-Oberteil,Maglietta da gara
+3393,364,15,Torso,Leather cape,レザーマント,,Capa de cuero,Cape de cuir,Lederumhang,Mantello di pelle
+32D1,365,15,Torso,Swinedimples blazer,エルシオンブレザー,,Chaqueta de Paracelso,Blazer Saint-Sévaire,Schweinspickel-Jacke,Giacca dell'Accademia
+3525,366,15,Torso,Dancer's costume,おどりこの服,,Vestido de bailarina,Costume de danseuse,Tänzerinnen-kostüm,Costume da ballerina
+32D3,367,15,Torso,Garish garb,はでな服,,Atuendo estridente,Tenue voyante,Grelles Gewand,Abito malizioso
+3394,368,15,Torso,Fur poncho,けがわのポンチョ,,Poncho de pieles,Poncho de fourrure,Pelzponcho,Scialle di pelliccia
+32EF,369,15,Torso,White t-shirt,白いＴシャツ,,Camiseta blanca,T-shirt blanc,Weißes Hemd,Maglietta bianca
+32F0,370,15,Torso,Jolly roger jumper,ドクロのＴシャツ,,Jersey pirata,Marinière,Piratenpulli,Maglia da pirata
+32F1,371,15,Torso,Shipmate's shirt,しましまＴシャツ,,Camiseta de grumete,Chemise de pirate,Matrosenhemd,Maglietta marina
+32D4,372,15,Torso,Cloak of evasion,みかわしの服,,Túnica de evasión,Manteau d'esquive,Mantel des Meidens,Veste mimetica
+32D5,373,15,Torso,Cloak of concealment,かくれみの服,,Túnica de camuflaje,Manteau de dissimulation,Tarnkappe,Abito Escapade
+32D6,374,15,Torso,Gooey gear,スライムの服,,Atuendo limoso,Tenue de gluant,Glibbergewand,Veste bi-Slime
+3526,375,15,Torso,Bunny suit,バニースーツ,,Traje de conejita,Costume de lapin,Häschenkostüm,Giacchina da coniglietta
+32D7,376,15,Torso,Smart suit,おしゃれなスーツ,,Traje de petimetre,Costume chic,Schickes Outfit,Abito elegante
+34C0,377,15,Torso,Spangled dress,スパンコールドレス,,Vestido reluciente,Robe à paillettes,Glitzerkleid,Vestito di paillettes
+3395,378,15,Torso,Velvet cape,ビロードのマント,,Capa de terciopelo,Cape de velours,Samtumhang,Mantello di velluto
+3396,379,15,Torso,Majestic mantle,ノーブルなマント,,Manto majestuoso,Manteau majestueux,Majestätischer Mantel,Veste maestosa
+32C9,380,15,Torso,Tussler's top,けんぽうぎ上,,Camisa de cachas,Veste de lutteur,Grobian-Oberteil,Veste guerresca
+34BC,381,15,Torso,Strongsam,ぶとうぎ,,Vestido para matar,Cheongsam,Cheongbamm,Abito dei mille colpi
+34C1,382,15,Torso,Dragon dress,ドラゴンスーツ,,Vestido de dragón,Robe du Dragon,Drachenkleid,Veste Dragonia
+32CA,383,15,Torso,Flamenco shirt,ダンサーのシャツ,,Camisa lolailo,Chemise flamenco,Flamenco-Hemd,Camicia da flamenco
+34BE,384,15,Torso,Dancer's dress,おどりこのドレス,,Vestido de bailarina,Robe de danseuse,Tänzerinnenkleid,Abito da ballo
+33F5,385,15,Torso,Rogue's robes,ぎぞくのジャケット,,Abrigo de pícaro,Robe de voleur,Adelsmantel,Abito di Galadro
+33F6,386,15,Torso,Roguess's robes,ぎぞくのチュニック,,Ropaje de rufiana,Robe de voleuse,Gaunerinnen-gewand,Veste di Galadrina
+32CB,387,15,Torso,Fur vest,けがわのベスト,,Abrigo de pieles,Gilet de fourrure,Pelzweste,Vestito di pelliccia
+3392,388,15,Torso,Nomadic deel,大地のキルト,,Qipao nómada,Del de nomade,Wanderrock,Gonna della natura
+32CC,389,15,Torso,Star's suit,ドハデなスーツ,,Traje de estrella,Habit de star,Star-Smoking,Vestito Star
+32D8,390,15,Torso,Superstar's suit,スターなスーツ,,Traje de superestrella,Habit de superstar,Superstar-Smoking,Giacca Superstar
+3524,391,15,Torso,Tint-tastic tutu,カラフルチュチュ,,Tutú tintástico,Tutu teintastique,Knallbuntes Tutu,Fant'abitino
+3527,392,15,Torso,Technicolour tutu,レインボーチュチュ,,Tutú en tecnicolor,Tutu technicolor,Farbenfrohes Tutu,Tutù dell'arcobaleno
+3528,393,15,Torso,Dangerous bikini top,あぶない水着上,,Bikini peligroso,Haut de bikini dangereux,Gefährliches Bikini-Top,Top pericoloso
+3529,394,15,Torso,Hot bikini top,いけない水着上,,Bikini caliente,Haut de bikini brûlant,Heißes Bikini-Top,Top millesguardi
+352A,395,15,Torso,Sizzling bikini top,きわどい水着上,,Bikini chisporroteante,Haut de bikini torride,Brandheißes Bikini-Top,Top De Fuego
+32D9,396,15,Torso,Dragon top,竜のどうぎ上,,Chaqueta de dragón,Tunique draconique,Drachen-Oberteil,Maglia del drago
+3397,397,15,Torso,Dark robe,やみのころも,,Túnica oscura,Mantelet sombre,Dunkle Robe,Mantello scuro
+3398,398,15,Torso,Macabre mantle,しっこくのマント,,Manto macabro,Manteau macabre,Makabrer Mantel,Mantello macabro
+32DA,399,15,Torso,Combat top,ぶしんのどうぎ上,,Atuendo de combate,Veste de combat,Kampf-Oberteil,Maglia da battaglia
+353B,400,15,Torso,Combat costume,ぶしんのドレス,,Atuendo de combate,Tenue de combat,Kampfkostüm,Tenuta da battaglia
+32DC,401,15,Torso,Twinkling tuxedo,ひかりのタキシード,,Esmoquin brillante,Smoking scintillant,Schimmernder Smoking,Giacca sfavillante
+34C2,402,15,Torso,Shimmering dress,ひかりのドレス,,Vestido resplandeciente,Robe chatoyante,Schimmerndes Kleid,Abito scintillante
+352C,403,15,Torso,Dangerous bustier,あぶないビスチェ,,Bustier peligroso,Bustier dangereux,Gefährliches Bustier,Guêpière
+352D,404,15,Torso,Silk bustier,シルクのビスチェ,,Bustier de seda,Bustier de soie,Seidenbustier,Bustino di seta
+352E,405,15,Torso,Divine bustier,しんぴのビスチェ,,Bustier divino,Bustier divin,Göttliches Bustier,Guêpière divina
+3399,406,15,Torso,Pallium Regale,おうじゃのマント,,Manto real,Pallium regale,Königsumhang,Pallio regale
+32DD,407,15,Torso,Tropotoga,そらのトーガ,,Tropotoga,Tropotoge,Tropotoga,Tropotoga
+32DE,408,15,Torso,Stratotoga,てんのトーガ,,Estratotoga,Stratotoge,Stratotoga,Stratotoga
+32DF,409,15,Torso,Mesotoga,おおぞらのトーガ,,Mesotoga,Mésotoge,Mesotoga,Mesotoga
+32E0,410,15,Torso,Exotoga,そうてんのトーガ,,Exotoga,Exotoge,Exotoga,Exotoga
+33F9,411,15,Torso,Silk robe,きぬのローブ,,Vestido de seda,Robe de soie,Seidenrobe,Veste di seta
+33FA,412,15,Torso,Robe of serenity,やすらぎのローブ,,Velo de serenidad,Manteau de sérénité,Robe der Ruhe,Veste della serenità
+340C,413,15,Torso,Robe of sweet dreams,ヒュプノスガウン,,Vestido de ensueño,Manteau des rêves,Robe der Süßen Träume,Abito Sogni d'oro
+32E8,414,15,Torso,Best vest,きれいなベスト,,Camisa de misa,Gilet d'apparat,Beste Weste,Camicia elegante
+340D,415,15,Torso,Magical robes,まほうのほうい,,Túnica mágica,Manteau magique,Zauberrobe,Abito della magia
+340E,416,15,Torso,Enchanted robes,せいれいのほうい,,Túnica encantada,Manteau enchanté,Verzauberte Robe,Veste dell'incanto
+340F,417,15,Torso,Ethereal robes,げんまのほうい,,Túnica etérea,Manteau ésotérique,Ätherische Robe,Veste eterea
+33F4,418,15,Torso,Ascetic robe,ぎょうじゃのほうい,,Túnica ascética,Tunique d'ascète,Asketenrobe,Veste da asceta
+3410,419,15,Torso,Saintly robe,せいじゃのほうい,,Túnica de santidad,Tunique de saint,Heiligenrobe,Tunica della santità
+34BD,420,15,Torso,Priestess's pinafore,にそうのころも,,Pichi de sacerdotisa,Robe chasuble,Priesterinnenkleid,Veste da sacerdotessa
+3584,421,15,Torso,Fizzle-retardant suit,まじないしの服,,Ropa retrasanegación,Tunique retardantimagie,Anti-Ätsch-Anzug,Veste contromagica
+3585,422,15,Torso,Fizzle-proof suit,いんじゃのころも,,Ropa antinegación,Tunique anti-Antimagie,Ätschfester Anzug,Abito contromagico
+3520,423,15,Torso,Fizzle-retardant blouse,まじょの服,,Traje retrasanegación,Blouse retardantimagie,Anti-Ätsch-Bluse,Camicia contromagica
+32E9,424,15,Torso,Glombolero,ふしぎなボレロ,,Torera de ladrón,Absorboléro,Klaubolero,Veste antimagica
+33F7,425,15,Torso,Fencing jacket,フェンサーコート,,Chaqueta de esgrima,Veste d'escrime,Fechtjacke,Giacca da spadaccino
+3391,426,15,Torso,Fencing frock,フェンサードレス,,Chaqueta de esgrima,Tenue d'escrime,Katzbalger-Kittel,Sciabolabito
+33F8,427,15,Torso,Sage's robe,けんじゃのローブ,,Túnica de sabio,Manteau de Sagesse,Robe des Weisen,Veste del saggio
+34BF,428,15,Torso,Maiden's mantle,さいじょのマント,,Manto de doncella,Manteau d'érudite,Maidenmantel,Mantello da donna
+3411,429,15,Torso,Flowing dress,水のはごろも,,Vestido vaporoso,Robe flottante,Fließendes Kleid,Veste d'acqua
+344E,430,15,Torso,Wizard's robe,だいまどうローブ,,Túnica de mago,Robe de magicien,Magierrobe,Tunica da mago
+344F,431,15,Torso,Witch's robe,ウィッチローブ,,Vestido de bruja,Robe de sorcière,Hexenrobe,Tunica della strega
+34B2,432,15,Torso,Surplice,しんかんのエプロン,,Sobrepelliz,Surplis,Chorhemd,Veste da sacerdote
+339A,433,15,Torso,Cape of good karma,さとりのマント,,Capa de buen karma,Robe karmique,Umhang der Erleuchtung,Tunica del karma
+33EC,434,15,Torso,Divine dress,さとりのワンピース,,Vestido divino,Robe divine,Himmlisches Kleid,Abito divino
+34C5,435,15,Torso,Prince's pea coat,プリンスコート,,Abrigo principesco,Habit de prince,Prinzlicher Kaban,Giacca principesca
+34C6,436,15,Torso,King's coat,キングコート,,Abrigo real,Habit de roi,Königsmantel,Abito del re
+34C7,437,15,Torso,Emperor's attire,エンペラーコート,,Atuendo de emperador,Habit d'empereur,Kaisertracht,Vestito dell'imperatore
+3516,438,15,Torso,Princess's robe,プリンセスローブ,,Vestido de princesa,Robe de princesse,Prinzessinnenrobe,Abito da principessa
+34C3,439,15,Torso,Queen's robe,クインローブ,,Vestido de reina,Robe de reine,Königinnenrobe,Veste della regina
+34C4,440,15,Torso,Empress's robe,エンプレスローブ,,Vestido de emperatriz,Robe d'impératrice,Kaiserinnenrobe,Veste dell'imperatrice
+33FB,441,15,Torso,Nightmare gown,あくむのころも,,Bata de pesadilla,Robe cauchemardesque,Albtraumkleid,Veste dell'incubo
+33FC,442,15,Torso,Celestria's gown,セレシアのころも,,Traje de Dafne,Toge de Célestelle,Celestriakleid,Tunica di Angelica
+33FD,443,15,Torso,Celestria's raiment,セレシアのはごろも,,Atuendo de Dafne,Robe de Célestelle,Celestriagewand,Veste di Angelica
+33FE,444,15,Torso,Dragon robe,ドラゴンローブ,,Túnica de dragón,Manteau du Dragon,Drachenrobe,Veste del drago
+33FF,445,15,Torso,Xenlon robe,シェンロンローブ,,Túnica de Xenlon,Manteau de Xenlon,Xenlonrobe,Veste di Xenlon
+3400,446,15,Torso,Angel's robe,天使のローブ,,Túnica de ángel,Manteau d'ange,Engelsrobe,Veste dell'angelo
+3401,447,15,Torso,Archangel's robe,大天使のローブ,,Túnica de arcángel,Manteau d'archange,Erzengelsrobe,Veste dell'arcangelo
+3402,448,15,Torso,Aeon's robe,ケルビムのローブ,,Túnica de trono,Manteau de chérubin,Äonrobe,Veste del cherubino
+3403,449,15,Torso,Seraph's robe,セラフィムのローブ,,Túnica de serafín,Manteau de séraphin,Seraphimrobe,Veste del serafino
+32E7,450,15,Torso,Muscle belt,あらくれベルト,,Cinturón de fuerza,Ceinture de force,Muskelgurt,Cintura del bandito
+3534,451,15,Torso,Maid outfit,メイド服,,Vestido de doncella,Tenue de servante,Zofenkostüm,Abito da governante
+32CF,452,15,Torso,Celestial suit,天使の服,,Traje celestial,Costume céleste,Himmlischer Anzug,Veste d'angelo
+32EB,453,15,Torso,White tuxedo,白いタキシード,,Esmoquin blanco,Smoking blanc,Weißer Smoking,Giacca bianca
+3539,454,15,Torso,Wedding dress,ウェディングドレス,,Vestido de boda,Robe de mariée,Hochzeitskleid,Abito da sposa
+32EC,455,15,Torso,Santa suit,サンタの服,,Traje de Santa Claus,Veste de Père Noël,Nikolauskostüm,Vestito delle feste
+353A,456,15,Torso,Santa's little helper suit,サンタガールの服,,Traje navideño,Tenue de lutin de Noël,Knecht-Ruprecht-Anzug,Costume da gnomo
+32ED,457,15,Torso,Skeleton suit,がいこつスーツ,,Traje de esqueleto,Veste squelette,Skelettkostüm,Veste ossea
+32EE,458,15,Torso,Captain's coat,かいぞくスーツ,,Abrigo de capitán,Capote du Cap'taine,Kapitäns-Kombination,Giacca del capitano
+338A,459,15,Torso,Alefgard armour,ラダトームよろい,,Armadura de Alefgrado,Armure d'Alefgard,Alefgard-Rüstung,Armatura di Alefgard
+3318,460,15,Torso,Midenhall garb,ローレシアの服,,Atuendo de Centrumbría,Tenue de Médiévande,Mitthall-Gewand,Veste di Midenhall
+33EA,461,15,Torso,Aliahan clothes,ゆうしゃの服,,Ropa de Aliana,Tenue d'Aliah,Aliahan-Gewand,Veste di Aliahan
+332B,462,15,Torso,Zenithian clothes,天空の服,,Ropa de Zenithia,Tenue zénithienne,Zenithia-Gewand,Abito di Zenithia
+357F,463,15,Torso,Zenithian leotard,天空のレオタード上,,Maillot de Zenithia,Body zénithien,Zenithia-Trikot,Body di Zenithia
+33EB,464,15,Torso,Gothan robe,グランバニアローブ,,Atuendo de Pankraz,Tenue de Gotha,Humburg-Robe,Abito di Denim
+3329,465,15,Torso,Somnia clothes,レイドックの服,,Ropa de Somnia,Tenue de Somnia,Somnia-Gewand,Abito di Somnia
+332A,466,15,Torso,Estard clothes,エスタードの服,,Ropa estardana,Tenue de Melyor,Estard-Gewand,Vestito di Estard
+3328,467,15,Torso,Trodain togs,トロデーンの服,,Ropajes trodianos,Tenue de Trodain,Trodain-Tracht,Abito di Trodain
+34B3,468,15,Torso,Cannock cloak,サマルトリアの服,,Manto de Cannock,Cape de Cannock,Cannock-Umhang,Manto di Cannock
+34C9,469,15,Torso,Moonbrooke dress,ムーンブルクドレス,,Vestido de Arroyo Luna,Robe de Ruisselune,Mondbach-Kleid,Veste di Moonbrooke
+3389,470,15,Torso,Ragnar's armour,ライアンのよろい,,Armadura de Ragnar,Armure de Ragnar,Ragnar-Rüstung,Armatura di Galiardo
+3580,471,15,Torso,Alena's dress,アリーナの服,,Vestido de Alena,Robe d'Alina,Alena-Kleid,Vestito di Alena
+3404,472,15,Torso,Kiryl's clothes,クリフトの服,,Ropa de Kiryl,Tenue de Kiryl,Kyrill-Gewand,Abito di Kiryl
+3405,473,15,Torso,Borya's robe,ブライのローブ,,Túnica de Borya,Tenue de Borya,Borja-Robe,Veste di Boris
+3406,474,15,Torso,Torneko's clothes,トルネコの服,,Ropa de Torneko,Tenue de Torneko,Torneko-Gewand,Abito di Baldo
+352F,475,15,Torso,Maya's outfit,マーニャのドレス上,,Sostén de Maya,Haut de Maya,Maya-Kostüm,Top di Maya
+34CA,476,15,Torso,Meena's robe,ミネアのローブ,,Sari de Meena,Robe de Mina,Mina-Robe,Abito di Myra
+3530,477,15,Torso,Bianca's clothes,ビアンカの服,,Ropa de Bianca,Tenue de Bianca,Bianca-Gewand,Abito di Bianca
+34CB,478,15,Torso,Nera's dress,フローラのドレス,,Vestido de Nera,Robe de Nera,Nera-Kleid,Vestito di Nera
+3535,479,15,Torso,Debora's dress,デボラワンピース,,Vestido de Stefania,Robe de Pandora,Griselda-Kleid,Abito di Viola
+32E1,480,15,Torso,Carver's vest,ハッサンのベスト,,Traje de Ebanisto,Gilet d'Olivier,Schnitzer-Weste,Vestito di Carver
+34CC,481,15,Torso,Milly's clothes,ミレーユの服,,Ropa de Mencía,Tenue d'Émilie,Milly-Gewand,Abito di Milly
+3531,482,15,Torso,Ashlynn's clothes,バーバラの服,,Ropa de Lucía,Tenue de Lauraline,Ashlynn-Gewand,Veste di Ashlynn
+32E2,483,15,Torso,Kiefer's clothes,キーファの服,,Ropa de Cleómenes,Tenue de Killyan,Kiefer-Gewand,Abito di Kiefer
+34CD,484,15,Torso,Maribel's clothes,マリベルの服,,Ropa de Gorgo,Tenue de Maribel,Maribel-Gewand,Vestito di Maribel
+3408,485,15,Torso,Trode's robes,トロデのローブ,,Ropajes de Trode,Robe de Trode,Trode-Robe,Saio di Trode
+32E3,486,15,Torso,Yangus's billy,ヤンガスのベスト,,Chaleco de Yangus,Gilet de Yangus,Yangus-Joppe,Giacchetta di Yangus
+34CE,487,15,Torso,Jessica's frock,ゼシカの服,,Vestido de Jessica,Robe de Jessica,Jessica-Kleid,Vestito di Jessica
+339B,488,15,Torso,Templar's togs,ククールの服,,Ropajes de templario,Tenue de Templier,Templertracht,Giacca da Templare
+32E4,489,15,Torso,GUSTO garb,モリースーツ,,Ropajes con GUSTO,Habit magnifico,GUSTO-Gewand,Camicia di Morrie
+3533,490,15,Torso,Fleurette's frock,セティアドレス,,Vestido de Fleurette,Robe de Fleurette,Fleurette-Kleid,Abito di Fleurette
+3532,491,15,Torso,Stellar suit,ギャルの服,,Traje estelar,Tenue stellaire,Stella-Kleid,Vestito stellare
+3536,492,15,Torso,Erinn's outfit,リッカの服,,Atuendo de Sada,Tenue de Bérangère,Thekla-Tracht,Vestito di Nadine
+3537,493,15,Torso,Patty's dirndl,ルイーダの服,,Vestidito de Petricia,Robe de Tulipe,Hilda-Dirndl,Abitino di Patty
+3538,494,15,Torso,Sellma's frock,ロクサーヌドレス,,Vestido de Almoneda,Robe de Vanda,Tinnef-Tina-Tracht,Vestito di Brenda
+32EA,495,15,Torso,Aquila's armour,イザヤールの服,,Armadura de Engel,Armure d'Aquila,Aquila-Rüstung,Armatura di Falko
+3EDE,496,17,Legs,Boxer shorts,ステテコパンツ,,Calzones,Caleçon,Kurze Hose,Boxer
+3EDF,497,17,Legs,Leather kilt,皮のこしまき,,Kilt de cuero,Kilt de cuir,Lederrock,Kilt di pelle
+3F55,498,17,Legs,Cotton trousers,ぬののズボン,,Pantalones de algodón,Pantalon de toile,Baumwollhose,Calzoni di cotone
+3FB3,499,17,Legs,Red skirt,赤いスカート,,Falda roja,Jupe rouge,Roter Rock,Gonna rossa
+3FB4,500,17,Legs,Blue skirt,青いスカート,,Falda azul,Jupe bleue,Blauer Rock,Gonna blu
+3FB5,501,17,Legs,Kiltlet,チェックのスカート,,Minikilt,Mini kilt,Kilt,Gonnellina
+3FBC,502,17,Legs,Springtime skirt,はる色スカート,,Falda primaveral,Jupe printanière,Frühlingsrock,Gonna primaverile
+3FBD,503,17,Legs,Snazzy skirt,ドレススカート,,Falda de vestir,Jupe voyante,Schicker Rock,Gonna alla moda
+3FBE,504,17,Legs,Magical skirt,マジカルスカート,,Falda mágica,Jupe magique,Zauberrock,Gonna magica
+3FBF,505,17,Legs,Seabreeze skirt,うみかぜのスカート,,Falda marinera,Jupe légère,Meeresbrisenrock,Gonna del mare
+3F82,506,17,Legs,Swinedimples slacks,エルシオンズボン,,Pantalones de Paracelso,Pantalon Saint-Sévaire,Schweinspickel-Hose,Pantaloni dell'Accademia
+3FB2,507,17,Legs,Swinedimples skirt,エルシオンスカート,,Falda de Paracelso,Jupe Saint-Sévaire,Schweinspickel-Rock,Gonna dell'Accademia
+3F56,508,17,Legs,Training trousers,けいこぎ下,,Pantalones de entrenar,Pantalon d'entraînement,Trainingshose,Calzoni da allenamento
+3F7F,509,17,Legs,Tracky bottoms,しゅぎょうぎ下,,Pantalón de deporte,Pantalon d'exercice,Sporthose,Calzoni da battaglia
+3EE8,510,17,Legs,Pop socks,ニーソックス,,Calcetines altos,Chaussettes hautes,Kniestrümpfe,Calzettoni
+3FAE,511,17,Legs,Fishnet stockings,あみタイツ,,Medias de rejilla,Bas résille,Netzstrümpfe,Calze a rete
+3F58,512,17,Legs,Boomer briefs,ブーメランパンツ,,Calzones reversibles,Slip kangourou,Bumeranghose,Boxerang
+3F59,513,17,Legs,Wonder pants,ビクトリーパンツ,,Wonderpantalones,Super slip,Wunderhose,Calzoncini della vittoria
+3FB8,514,17,Legs,Blue knickers,ブルーガード,,Ropa interior azul,Culotte bleue,Blaues Höschen,Mutanda blu
+3FB9,515,17,Legs,Black knickers,ブラックガード,,Ropa interior negra,Culotte noire,Schwarzes Höschen,Mutanda nera
+3F5A,516,17,Legs,Iron kneecaps,てつのひざあて,,Rótulas de hierro,Genouillères de fer,Eisen-Knieschützer,Ginocchiere di ferro
+3F5B,517,17,Legs,Steel kneecaps,はがねのひざあて,,Rótulas de acero,Genouillères d'acier,Stahl-Knieschützer,Ginocchiere d'acciaio
+3F5C,518,17,Legs,Gigasteel kneecaps,たまはがねひざあて,,Rótulas de gigacero,Genoux de trempacier,Gigastahl-Knieschützer,Ginocchiere Inox
+3F48,519,17,Legs,Warrior's trousers,戦士のズボン,,Pantalones de guerrero,Pantalon de guerrier,Kriegerhose,Calzoni da guerriero
+3EE4,520,17,Legs,Femiscyran bottoms,アマゾネスボトム,,Pantalones de Feministia,Bas de Fémiscyra,Femiscyra-Hose,Costumino di Femiscyra
+3F4C,521,17,Legs,Wizard's trousers,まどうのズボン,,Pantalones de mago,Pantalon de magicien,Zaubererhose,Pantaloni da mago
+3F53,522,17,Legs,Blessed bottoms,しんぴのズボン,,Pantalones benditos,Pantalon béni,Heilige Hose,Calzoni benedetti
+3FAC,523,17,Legs,Sorcerer's slacks,まじゅつのズボン,,Pantalones de brujo,Pantalon de sorcier,Hexerhose,Calzoni stregati
+3F4B,524,17,Legs,Tussler's trousers,けんぽうぎ下,,Pantalones de kimono,Pantalon de lutteur,Grobian-Hose,Combat-jeans
+3FAD,525,17,Legs,Slick slacks,しんそくのパオ,,Pantalones colganderos,Pantalon de ninja,Ausgefuchste Buxe,Calzoni raffinati
+3F4A,526,17,Legs,Nicker's knickers,しのびのズボン,,Pantalón ninja,Pantalon de furtivité,Ninjahose,Calzamaglia del ninja
+3F4D,527,17,Legs,Loud trousers,はでなズボン,,Pantalones estridentes,Pantalon criard,Prächtige Hose,Calzoni della veglia
+3F5D,528,17,Legs,Fancy pants,ワンダフルズボン,,Pantalones chulones,Pantalon fantaisie,Schicke Hose,Fantacalzoni
+3F87,529,17,Legs,Blue jeans,ブルージーンズ,,Vaqueros,Jean,Blaue Jeanshose,Zena blu
+3FB7,530,17,Legs,Denim skirt,デニムスカート,,Falda vaquera,Jupe en jean,Jeansrock,Gonna Zena
+3F4E,531,17,Legs,Battle britches,バトルパンツ,,Pantalones de montar,Pantalon de bataille,Kampfhose,Pantaloni da guerra
+3EE7,532,17,Legs,Chainmail socks,チェインニーソ,,Calcetines de malla,Grèves de mailles,Kettenpanzer-Socken,Costumino di ferro
+3F4F,533,17,Legs,Swordsman's slacks,剣士のズボン,,Pantalones de esgrima,Pantalon d'escrime,Schwertkämpfer-hose,Pantaloni delle armi
+3F52,534,17,Legs,Steppe steppers,そうげんのズボン,,Pantalones esteparios,Pantalon des steppes,Steppenhose,Pantaloni della pampa
+3F50,535,17,Legs,Red tights,レッドタイツ,,Medias rojas,Collants rouges,Rote Strumpfhose,Calzamaglia rossa
+3F51,536,17,Legs,Green tights,グリーンタイツ,,Medias verdes,Collants verts,Grüne Strumpfhose,Calzamaglia verde
+3F54,537,17,Legs,White tights,ホワイトタイツ,,Medias blancas,Collants blancs,Weiße Strumpfhose,Calzamaglia bianca
+3F5E,538,17,Legs,Transparent tights,とうめいタイツ,,Medias transparentes,Collants transparents,Feinstrumpf-hose,Calzamaglia trasparente
+3FAF,539,17,Legs,Dangerous midriff wrap,あぶない水着下,,Pareo peligroso,Paréo dangereux,Gefährliche Bikini-Hose,Pareo pericoloso
+3FB0,540,17,Legs,Hot bikini bottoms,いけない水着下,,Braguita caliente,Bas de bikini brûlant,Heiße Bikini-Hose,Costumino millesguardi
+3FB1,541,17,Legs,Sizzling bikini bottoms,きわどい水着下,,Braga chisporroteante,Bas de bikini torride,Brandheiße Bikini-Hose,Costumino De Fuego
+3F80,542,17,Legs,Dragon warrior trousers,竜戦士のズボン,,Pantalón de draconarius,Culotte de dracoguerrier,Drachenkrieger-hose,Calzoni Draconis
+3F5F,543,17,Legs,Dragon trousers,竜のどうぎ下,,Pantalones de dragón,Pantalon du Dragon,Drachenhose,Calzoni del drago
+3F9B,544,17,Legs,Trinity tights,しんかんのタイツ,神官のタイツ,Medias trinitarias,Collants sacrés,Heilige Strumpfhose,Calzamaglia santa
+3F60,545,17,Legs,Combat trousers,ぶしんのどうぎ下,,Pantalones de combate,Pantalon de combat,Schlachtenhose,Panta-combat
+3F64,546,17,Legs,Tantric trousers,さとりのズボン,,Pantalones tántricos,Pantalon tantrique,Tantrahose,Calzoni del guru
+3F65,547,17,Legs,Sturdy slacks,まもりのスパッツ,,Pantalones ajustados,Pantalon robuste,Feste Hose,Calzoni robusti
+3F66,548,17,Legs,Impregnable leggings,てっぺきのレギンス,,Calzas indestructibles,Pantalon ultrarésistant,Unüberwindliche Hose,Calzoni resistenti
+3F67,549,17,Legs,Invincible trousers,むてきのズボン,,Pantalones invencibles,Pantalon d'invincibilité,Unbezwingbare Hose,Invincipantaloni
+3F68,550,17,Legs,Immortal trousers,ふめつのズボン,,Pantalones inmortales,Pantalon d'immortalité,Unsterbliche Hose,Pantaloni dell'immortalità
+3F69,551,17,Legs,Eternity trousers,ゆうきゅうのズボン,,Pantalones eternos,Pantalon d'éternité,Ewigkeitshose,Pantaloni eterni
+3F6A,552,17,Legs,Infinity trousers,ぜったいのズボン,,Pantalones infinitos,Pantalon de l'infini,Unendlichkeits-hose,Infinicalzoni
+3F7B,553,17,Legs,Toughie trousers,あらくれズボン,,Pantalones de matón,Pantalon de brute,Strolchhose,Calzoni da duro
+3F57,554,17,Legs,Celestial stockings,天使のタイツ,,Calcetines celestiales,Collants célestes,Himmlische Socken,Calze celestiali
+3F83,555,17,Legs,White tuxedo trousers,白いスラックス,,Pantalones de esmoquin,Bas de smoking blanc,Weiße Smoking-Hose,Pantaloni bianchi
+3F84,556,17,Legs,Santa's slacks,サンタのズボン,,Pantalones Papá No Es,Pantalon de Père Noël,Nikolaushose,Calzoni natalizi
+3F85,557,17,Legs,Skeletal slacks,がいこつタイツ,,Pantalones de esqueleto,Pantalon squelette,Skeletthose,Pantaloni ossei
+3F86,558,17,Legs,Pirate pantaloons,かいぞくパンツ,,Pantalones piratas,Pantalon de pirate,Piratenhose,Calzoni del corsaro
+3F9F,559,17,Legs,Alefgard trousers,ラダトームズボン,,Pantalones de Alefgrado,Pantalon d'Alefgard,Alefgard-Hose,Calzoni di Alefgard
+3F9E,560,17,Legs,Midenhall trousers,ローレシアのズボン,,Pantalón centrumbriano,Pantalon de Médiévande,Mitthall-Hose,Calzoni di Midenhall
+3FA0,561,17,Legs,Aliahan trousers,ゆうしゃのズボン,,Pantalones de Aliana,Pantalon d'Aliah,Aliahan-Hose,Pantaloni di Aliahan
+3FA1,562,17,Legs,Zenithian trousers,天空のズボン,,Pantalones de Zenithia,Pantalon zénithien,Zenithia-Hose,Pantaloni di Zenithia
+3F3F,563,17,Legs,Zenithian leggings,天空のレオタード下,,Calzas de Zenithia,Jambières zénithiennes,Zenithia-Strumpfhose,Calzamaglia di Zenithia
+3EDD,564,17,Legs,Somnia shorts,レイドックのズボン,,Shorts de Somnia,Short de Somnia,Somnia-Hose,Pantaloncini di Somnia
+3FA2,565,17,Legs,Estard trousers,エスタードのズボン,,Pantalones estardanos,Pantalon de Melyor,Estard-Hose,Pantaloni di Estard
+3FA3,566,17,Legs,Trodain trousers,トロデーンズボン,,Pantalones trodianos,Pantalon de Trodain,Trodain-Hose,Pantaloni di Trodain
+3F6B,567,17,Legs,Cannock trousers,サマルトリアズボン,,Pantalones de Cannock,Pantalon de Cannock,Cannock-Hose,Calzoni di Cannock
+4006,568,17,Legs,Alena's tights,アリーナタイツ,,Medias de Alena,Collants d'Alina,Alena-Strumpfhose,Calzamaglia di Alena
+3F6C,569,17,Legs,Kiryl's trousers,クリフトのズボン,,Pantalones de Kiryl,Pantalon de Kiryl,Kyrill-Hose,Calzoni di Kiryl
+3F6D,570,17,Legs,Torneko's trousers,トルネコのズボン,,Pantalones de Torneko,Pantalon de Torneko,Torneko-Hose,Calzoni di Baldo
+3FB6,571,17,Legs,Maya's bottoms,マーニャのドレス下,,Falda de Maya,Jupe de Maya,Maya-Hose,Velo di Maya
+3F70,572,17,Legs,Carver's shorts,ハッサンのズボン,,Shorts de Ebanisto,Culotte d'Olivier,Schnitzer-Hose,Pantaloncini di Carver
+3F71,573,17,Legs,Milly's pants,ミレーユのズボン,,Pantalones de Mencía,Pantalon d'Émilie,Milly-Hose,Pantaloni di Milly
+3F73,574,17,Legs,Kiefer's trousers,キーファのズボン,,Pantalón de Cleómenes,Pantalon de Killyan,Kiefer-Hose,Pantaloni di Kiefer
+3F74,575,17,Legs,Cor blimey trousers,ヤンガスのズボン,,Pantalones caramba,Pantalon saperlipopette,Potztausendhose,Calzoni di Yangus
+3F7C,576,17,Legs,Templar's trousers,ククールズボン,,Pantalones de templario,Pantalon de Templier,Templerhose,Calzoni da Templare
+3F75,577,17,Legs,PASSION tights,モリータイツ,,Medias con PASIÓN,Collants PASSIONE,LEIDENSCHAFTS-Hose,Calzoni di Morrie
+3F78,578,17,Legs,Fleurette's chaussettes,セティアニーソ,,Medias de Fleurette,Jambières de Fleurette,Fleurette-Chaussettes,Calze di Fleurette
+3F76,579,17,Legs,Stellar stockings,ギャルニーソ,,Calcetines estelares,Jambières stellaires,Stella-Strümpfe,Calze delle stelle
+3F81,580,17,Legs,Aquila's trousers,イザヤールのズボン,,Pantalones de Engel,Pantalon d'Aquila,Aquila-Hose,Calzoni di Falko
+2F9F,581,14,Head,Iron helmet,てつかぶと,,Yelmo de hierro,Heaume de fer,Eisenhelm,Elmetto di ferro
+2FA6,582,14,Head,Steel helmet,はがねのかぶと,,Yelmo de acero,Heaume d'acier,Stahlhelm,Elmetto d'acciaio
+2FA7,583,14,Head,Gigasteel helmet,たまはがねのかぶと,,Yelmo de gigacero,Heaume de trempacier,Gigastahlhelm,Elmetto Inox
+30D1,584,14,Head,Slime crown,スライムのかんむり,,Corona de limo,Couronne de gluant,Schleimkrone,Corona Slime
+31F6,585,14,Head,Iron mask,てっかめん,,Celada de hierro,Masque de fer,Eisenmaske,Maschera di ferro
+31F7,586,14,Head,Filigree mask,ぎんかめん,,Celada con filigranas,Masque filigrane,Filigranmaske,Maschera filigranata
+31F1,587,14,Head,Dragon warrior helm,竜戦士のかぶと,,Yelmo de draconarius,Casque de dracoguerrier,Drachenkriegerhelm,Elmo Draconis
+3070,588,14,Head,Warrior's helm,戦士のかぶと,,Yelmo de guerrero,Heaume de guerrier,Kriegerhelm,Elmo da guerriero
+31F8,589,14,Head,Platinum headgear,プラチナヘッド,,Tocado de platino,Heaume de platine,Platin-Kopfschutz,Elmo di platino
+319E,590,14,Head,Mail coif,チェインフード,,Cofia de malla,Cagoule de mailles,Panzerhaube,Cuffia di ferro
+31F9,591,14,Head,Mythril coif,ミスリルフード,,Cofia de mitrilo,Cagoule de mythril,Mythrilhaube,Cuffia di mithril
+3007,592,14,Head,Thinking cap,ちりょくのかぶと,,Corona pensante,Coiffe de réflexion,Denkdiadem,Diadema da studioso
+3008,593,14,Head,Scholar's circlet,インテリクラウン,,Tocado de erudito,Coiffe d'érudit,Gelehrtenreif,Copricapo del pensiero
+2F94,594,14,Head,Raging bull helm,もうぎゅうヘルム,,Yelmo de toro bravo,Heaume à cornes,Bullenhelm,Elmo del toro scatenato
+2F95,595,14,Head,Minotaur helm,バッファローメット,,Yelmo de minotauro,Casque de minotaure,Minotaurenhelm,Elmo del minotauro
+31FA,596,14,Head,Hades' helm,サタンヘルム,,Yelmo de Hades,Heaume d'Hadès,Hadeshelm,Elmo del diavolo
+2F96,597,14,Head,Great helm,グレートヘルム,,Yelmo grandioso,Grand heaume,Großer Helm,Grande elmo
+31FB,598,14,Head,Mythril helm,ミスリルヘルム,,Yelmo de mitrilo,Heaume de mythril,Mythrilhelm,Elmo in mithril
+2F97,599,14,Head,Veteran's helm,古強者のかぶと,,Yelmo de veterano,Casque de vétéran,Veteranenhelm,Elmo da veterano
+2FAE,600,14,Head,Crown of clarity,さとりのかんむり,,Corona de claridad,Couronne de lucidité,Krone der Klarheit,Corona della chiarezza
+2FAF,601,14,Head,Steely sweatband,ぶおうのハチガネ,,Cinta acerosa,Bandeau renforcé,Stahl-Schweißband,Fermacapelli d'acciaio
+2F98,602,14,Head,Skull helm,ドクロのかぶと,ドクロの兜,Yelmo de cráneo,Heaume d'os,Schädelhelm,Elmo del teschio
+307C,603,14,Head,Sun crown,たいようのかんむり,,Corona solar,Couronne solaire,Sonnenkrone,Corona del sole
+307D,604,14,Head,Apollo's crown,アポロンのかんむり,,Corona de Apolo,Couronne sidérale,Apollokrone,Corona di Apollo
+2FA5,605,14,Head,Metal slime helm,メタスラヘルム,,Yelmo limometálico,Heaume gluant de métal,Metallschleimhelm,Elmo dello Slime grigio
+2F99,606,14,Head,Liquid metal helm,はぐれメタルヘルム,,Yelmo metalíquido,Heaume de mercure,Flüssigmetallhelm,Elmo del Liquislime
+2F9A,607,14,Head,Metal king helm,メタルキングヘルム,,Yelmo real,Heaume royal,Metallkönighelm,Elmo del Re Slime grigio
+2F9B,608,14,Head,Rusty helmet,さびついたかぶと,,Yelmo oxidado,Heaume rouillé,Rostiger Helm,Elmo arrugginito
+2FA2,609,14,Head,Erdrick's helmet,ロトのかぶと,,Yelmo de Erdrick,Heaume d'Elric,Erdrickhelm,Elmo di Erdrick
+2F9C,610,14,Head,Hallowed helm,じあいのかぶと,,Yelmo de santidad,Heaume sacré,Geheiligter Helm,Elmo della benevolenza
+2F9D,611,14,Head,Blessed helm,しゅくふくのかぶと,,Yelmo bendito,Heaume béni,Gesegneter Helm,Elmo sacro
+2F8A,612,14,Head,Wonder helm,きせきのかぶと,,Yelmo maravilla,Heaume miraculeux,Wunderhelm,Elmo delle meraviglie
+2F8B,613,14,Head,Heavenly helm,しんぱんのかぶ,,Yelmo celestial,Heaume divin,Himmlischer Helm,Elmo celeste
+307A,614,14,Head,Bandana,バンダナ,,Pañuelo,Foulard,Kopftuch,Bandana
+307E,615,14,Head,Trailblazing bandana,おしゃれなバンダナ,,Pañuelo a la moda,Foulard de pionnier,Kesses Kopftuch,Bandana alla moda
+307F,616,14,Head,Mercury's bandana,しっぷうのバンダナ,疾風のバンダナ,Pañuelo de Mercurio,Foulard d'Hermès,Merkurkopftuch,Bandana di Mercurio
+2FAD,617,14,Head,Hairband,ヘアバンド,,Diadema,Diadème,Haarband,Fermaglio per capelli
+30D2,618,14,Head,Leather hat,皮のぼうし,,Gorro de piel,Casque de cuir,Lederhut,Cappello di pelle
+307B,619,14,Head,Hardwood headwear,木のぼうし,,Tocado de madera,Casque de bois,Holzhelm,Elmo di legno
+2FB0,620,14,Head,Silver tiara,ぎんのかみかざり,,Tiara de plata,Tiare d'argent,Silbertiara,Diadema d'argento
+2FB1,621,14,Head,Golden tiara,きんのかみかざり,,Diadema de oro,Tiare d'or,Goldtiara,Diadema d'oro
+30CF,622,14,Head,Turban,ターバン,,Turbante,Turban,Turban,Turbante
+3080,623,14,Head,Feathered cap,はねぼうし,,Gorro con plumas,Chapeau à plumes,Federkappe,Cappello piumato
+31FC,624,14,Head,Fur hood,けがわのフード,,Capucha de pieles,Capuche de fourrure,Pelzmütze,Cappuccio di pelliccia
+30D0,625,14,Head,Pointy hat,とんがりぼうし,,Gorro puntiagudo,Chapeau à pointe,Spitzhut,Cappello a punta
+3200,626,14,Head,Bunny ears,うさみみバンド,,Orejas de conejita,Oreilles de lapin,Häschenohren,Cuffia da coniglietta
+3201,627,14,Head,Cat ears,ねこみみバンド,,Orejas de gato,Oreilles de chat,Katzenohren,Cuffia da micio
+31FD,628,14,Head,Slood,スライムヘッド,,Limomáscara,Glurin,Schleimhut,Cappuccio Slurp
+2FA8,629,14,Head,Feather headband,はねかざりバンド,,Cinta emplumada,Turban à plume,Federhaarband,Fascia piumata
+2FA9,630,14,Head,Circlet,サークレット,,Tocado,Troubandeau,Reif,Cerchietto
+2FB3,631,14,Head,Gold circlet,きんのサークレット,,Tocado de oro,Bandeau d'or,Goldreif,Cerchietto d'oro
+2FB4,632,14,Head,Star circlet,ほしのサークレット,,Tocado estrellado,Bandeau stellaire,Sternreif,Cerchietto delle stelle
+3077,633,14,Head,Hunter's hat,ハンターぼうし,,Sombrero de cazador,Chapeau de chasseur,Jägerhut,Copricapo da caccia
+3078,634,14,Head,Ear cosy,ぬくもりのシャプカ,,Gorro peludo,Toque de fourrure,Ohrenwärmer,Coda di castoro
+308D,635,14,Head,Holy hat,聖なるカロット,,Sombrero sagrado,Casque sacré,Heiliger Hut,Berretto sacro
+3072,636,14,Head,Hermetic hat,しんぴのカロット,,Sombrero hermético,Chapeau hermétique,Hermetischer Hut,Ermeticappello
+3071,637,14,Head,Hocus hat,まがんのぼうし,,Sombrero cadabra,Abracadacoiffe,Hokushut,Cappello degli incanti
+3138,638,14,Head,Tricky turban,まじょのターバン,,Turbante con truco,Turban talisman,Trickturban,Turbante turbolento
+319C,639,14,Head,Thief's turban,かげのターバン,,Turbante de ladrón,Turban de voleur,Diebesturban,Turbante del brigante
+319D,640,14,Head,Disturbin' turban,やみのターバン,,Turbante disturbante,Turban troublant,Turbulenter Turban,Disturbante
+3207,641,14,Head,Malleable mask,バタフライマスク,,Máscara maleable,Masque de mobilité,Maske der Mobilität,Maschera della mobilità
+3208,642,14,Head,Papillon mask,パピヨンマスク,,Máscara de mariposa,Masque papillon,Schmetterlings-maske,Maschera Papillon
+3081,643,14,Head,Magical hat,マジカルハット,,Sombrero mágico,Chapeau magique,Zauberhut,Cappello magico
+3082,644,14,Head,Mega-magical hat,マジカルハット改,,Sombrero megamágico,Chapeau mégamagique,Mega-Zauberhut,Copricapo incantato
+3073,645,14,Head,Musketeer hat,ビーバーハット,,Sombrero de mosquetero,Coiffe de mousquetaire,Musketierhut,Cappello Rouge
+3074,646,14,Head,Cavalier hat,ブリリアンハット,,Sombrero de caballero,Chapeau de cavalier,Kavaliershut,Cappello da cavaliere
+2FAA,647,14,Head,Battler's band,ヘッドバンド,,Cinta de batallador,Bandeau d'effort,Bataille-Band,Fascia del combattente
+3075,648,14,Head,Minerva's mitre,ミネルヴァミトル,,Mitra de Minerva,Mitre de Minerve,Minerva-Mitra,Tiara di Minerva
+3076,649,14,Head,Canny cap,ちしきのぼうし,,Gorra astuta,Galurin malin,Kluge Kappe,Copricapo Cent'astuzie
+3079,650,14,Head,Top hat,スターハット,,Sombrero de copa,Haut-de-forme,Zylinderhut,Cappello a cilindro
+2FAC,651,14,Head,Ravishing ribbon,オレンジリボン,,Lazo deslumbrante,Ruban ravissant,Schicke Schleife,Fiocco fatato
+30D3,652,14,Head,Wizard's hat,だいまどうぼうし,,Sombrero de mago,Chapeau de sorcier,Magierhut,Cappello da mago
+3083,653,14,Head,Witch's hat,ウィッチハット,,Gorro de bruja,Chapeau de sorcière,Hexenhut,Cappello da strega
+30C0,654,14,Head,Mitre,しんかんのぼうし,,Mitra,Mitre,Mitra,Mitra
+3084,655,14,Head,Unhappy hat,しわよせのぼうし,しわよせの帽子,Sombrero triste,Chapeau misérable,Schlapphut,Infelicappello
+3085,656,14,Head,Happy hat,しあわせのぼうし,,Sombrero alegre,Chapeau de félicité,Faschingshut,Cappello della gioia
+3003,657,14,Head,Spellward circlet,おうごんのティアラ,,Tocado anticonjuros,Tiare antisort,Zauberbann-Reif,Tiara splendente
+3202,658,14,Head,Phantom mask,ファントムマスク,,Máscara fantasmal,Masque de fantôme,Phantommaske,Maschera da fantasma
+3086,659,14,Head,Spring breeze hat,はるかぜのぼうし,,Sombrero primaveral,Coiffe printanière,Frühlingsbrisenhut,Turbante della primavera
+3087,660,14,Head,Summer cloud hat,なつぐものぼうし,,Sombrero veraniego,Coiffe estivale,Sommerwolkenhut,Turbante dell'estate
+3088,661,14,Head,Autumn shower hat,あきさめのぼうし,,Sombrero otoñal,Coiffe automnale,Herbstschauerhut,Turbante dell'autunno
+3089,662,14,Head,Winter sky hat,ふゆぞらのぼうし,,Sombrero invernal,Coiffe hivernale,Winterhimmelhut,Turbante dell'inverno
+30D4,663,14,Head,Thug's mug,あらくれマスク,,Jeta de matón,Masque de brute,Gaunerfresse,Maschera da duro
+3209,664,14,Head,Maid's mop,ヘッドドレス,,Diadema de fregona,Coiffe de servante,Zofenzöpfchen,Cuffia da governante
+3205,665,14,Head,Halo,天使のわっか,,Halo,Auréole,Glorienschein,Aureola
+3091,666,14,Head,Tip-top topper,白いシルクハット,,Chistera sin chiste,Haut-de-forme de luxe,Weißer Zylinder,Cappello Blanko
+3092,667,14,Head,Proper topper,くろいシルクハット,,Sombrero de alto copete,Haut-de-forme élégant,Schwarzer Zylinder,Cappello Nirum
+320A,668,14,Head,Silken veil,シルクのベール,,Velo de seda,Voile de soie,Seidenschleier,Velo di seta
+308C,669,14,Head,Santa's hat,サンタのぼうし,,Gorro de Papá No Es,Bonnet de Père Noël,Nikolausmütze,Cappello della festa
+320B,670,14,Head,Supernatural specs,マジカルメガネ,,Gafas sobrenaturales,Lunettes surnaturelles,Übernatürliche Brille,Occhiali magici
+320E,671,14,Head,X-ray specs,いやしのメガネ,,Gafas de rayos X,Lunettes à rayons X,Röntgenbrille,Occhiali X
+320F,672,14,Head,Silver specs,ぎんぶちメガネ,,Gafas plateadas,Lunettes d'argent,Silberne Sehhilfe,Occhiali d'argento
+320C,673,14,Head,Sharp shades,サングラス,,Gafas de sol,Lunettes pointues,Scharfe Sonnenbrille,Occhiali da sole
+320D,674,14,Head,Monarchic moustache,おうさまのヒゲ,,Bigote monárquico,Noble moustache,Souveräner Schnurrbart,Baffi imperiali
+30D7,675,14,Head,Skull cap,がいこつマスク,,Máscara de calavera,Cagoule squelette,Schädelmütze,Maschera del teschio
+3094,676,14,Head,Swashbuckler's bonnet,かいぞくハット,,Sombrero de Alamustia,Chapeau de pirate,Korsarenkappe,Cappello da filibustiere
+30D6,677,14,Head,Pumpkin head,パンプキンヘッド,,Cabeza de calabaza,Tête de citrouille,Kürbiskopf,Faccia da zucca
+3274,678,14,Head,Brown afro,くろいアフロ,,Pelo afro castaño,Perruque afro brune,Brauner Afro,Taglio afro castano
+3275,679,14,Head,Red afro,赤いアフロ,,Pelo afro pelirrojo,Perruque afro rousse,Roter Afro,Taglio afro rosso
+2FA1,680,14,Head,Alefgard helm,ラダトームかぶと,,Yelmo de Alefgrado,Casque d'Alefgard,Alefgard-Helm,Elmo di Alefgard
+2FA3,681,14,Head,Midenhall helm,ローレシアメット,,Casco de Centrumbría,Casque de Médiévande,Mitthall-Helm,Casco di Midenhall
+3002,682,14,Head,Aliahan headpiece,ゆうしゃのかんむり,,Tocado de Aliana,Coiffe d'Aliah,Aliahan-Helm,Copricapo di Aliahan
+3004,683,14,Head,Zenithian helm,天空のかぶと,,Yelmo de Zenithia,Casque zénithien,Zenithia-Helm,Elmo Zenithiano
+30CC,684,14,Head,Gothan turban,グランターバン,,Turbante de Pankraz,Turban de Gotha,Humburg-Turban,Turbante di Denim
+3264,685,14,Head,Somnia hair,レイドックヘア,,Cabello de Somnia,Coiffure de Somnia,Somnia-Frisur,Acconciatura di Somnia
+30CD,686,14,Head,Estard hood,エスタードずきん,,Capucha estardana,Capuche de Melyor,Estard-Kapuze,Cappuccio di Estard
+30CB,687,14,Head,Trodain bandana,トロデーンバンダナ,,Pañuelo trodiano,Foulard de Trodain,Trodain-Bandana,Bandana di Trodain
+3265,688,14,Head,Cannock helm,サマルトリアヘア,,Yelmo de Cannock,Casque de Cannock,Cannock-Helm,Elmo di Cannock
+31EC,689,14,Head,Moonbrooke hood,ムーンブルクフード,,Capucha de Arroyo Luna,Capuche de Ruisselune,Mondbach-Kapuze,Copricapo di Moonbrooke
+2FA0,690,14,Head,Ragnar's helm,ライアンのかぶと,,Yelmo de Ragnar,Casque de Ragnar,Ragnar-Helm,Elmo di Galiardo
+30CE,691,14,Head,Alena's hat,アリーナハット,,Sombrero de Alena,Chapeau d'Alina,Alena-Hut,Cappellino di Alena
+308A,692,14,Head,Kiryl's kamilavka,クリフトのぼうし,,Kamilavka de Kiryl,Kamilavka de Kiryl,Kyrill-Kamilavkion,Copricapo di Kiryl
+3266,693,14,Head,Borya's bouffant,ブライヘア,,Cabeza de Borya,Bouille de Borya,Borja-Pludermütze,Maschera di Boris
+308E,694,14,Head,Torneko's cap,トルネコのぼうし,,Gorro de Torneko,Chapeau de Torneko,Torneko-Kappe,Berretto di Baldo
+3267,695,14,Head,Maya's mane,マーニャヘア,,Melena de Maya,Chevelure de Maya,Maya-Mähne,Acconciatura di Maya
+3268,696,14,Head,Meena's mane,ミネアヘア,,Melena de Meena,Chevelure de Mina,Mina-Mähne,Acconciatura di Myra
+326B,697,14,Head,Bianca's braid,ビアンカヘア,,Trenza de Bianca,Tresse de Bianca,Bianca-Zopf,Acconciatura di Bianca
+326C,698,14,Head,Nera's hair,フローラヘア,,Pelo de Nera,Coiffure de Nera,Nera-Frisur,Acconciatura di Nera
+3206,699,14,Head,Debora's damasks,デボラコサージュ,,Floripondios de Stefania,Barrette de Pandora,Griselda-Rosenfrisur,Acconciatura di Viola
+326D,700,14,Head,Carver's hair,ハッサンヘア,,Pelo de Ebanisto,Chevelure d'Olivier,Schnitzer-Frisur,Taglio alla Carver
+326E,701,14,Head,Milly's hair,ミレーユヘア,,Pelo de Mencía,Chevelure d'Émilie,Milly-Frisur,Acconciatura di Milly
+326F,702,14,Head,Ashlynn's hair,バーバラヘア,,Pelo de Lucía,Chevelure de Lauraline,Ashlynn-Frisur,Acconciatura di Ashlynn
+3270,703,14,Head,Kiefer's hair,キーファヘア,,Pelo de Cleómenes,Chevelure de Killyan,Kiefer-Frisur,Taglio alla Kiefer
+31ED,704,14,Head,Maribel's hood,マリベルのずきん,,Capucha de Gorgo,Capuchon de Maribel,Maribel-Kapuze,Cappuccio di Maribel
+30D5,705,14,Head,Trodeface,トロデマスク,,Cara de Trode,Tête de Trode,Trode-Gesicht,Maschera di Trode
+308F,706,14,Head,Yangus's titfer,ヤンガスのかぶと,,Sombrero de Yangus,Casque de Yangus,Yangus-Käppi,Zucchetto di Yangus
+3271,707,14,Head,Jess's tresses,ゼシカヘア,,Cabellera de Jess,Couettes de Jess,Jessica-Frisur,Acconciatura di Jessica
+3272,708,14,Head,Templar's tresses,ククールヘア,,Cabellera templaria,Chevelure de Templier,Templerfrisur,Taglio alla Templare
+3273,709,14,Head,Morrie's mullet,モリーヘア,,Mullet de Morrie,Coiffure de Morry,Morrie-Halbglatze,Taglio alla Morrie
+3204,710,14,Head,Fleurette's floret,セティアコサージュ,,Flor de Fleurette,Fleur de Fleurette,Fleurette-Blümchen,Ornamento di Fleurette
+3203,711,14,Head,Stellar starflower,ギャルのコサージュ,,Flor estelar,Fleur stellaire,Sternenblume,Fiore delle stelle
+3090,712,14,Head,Erinn's headkerchief,リッカのバンダナ,,Pañuelo de Sada,Mouchoir de Bérangère,Thekla-Kopftuch,Foulard di Nadine
+3B60,713,16,Arms,Leather gauntlets,皮のこて,,Guanteletes de cuero,Gantelets de cuir,Fehdehandschuhe,Guanti del dragone
+3BBB,714,16,Arms,Iron gauntlets,てつのこて,,Guanteletes de hierro,Gantelets de fer,Eisenhandschuhe,Guanti di ferro
+3BBD,715,16,Arms,Steel gauntlets,はがねのこて,,Guanteletes de acero,Gantelets d'acier,Stahlhandschuhe,Guanti d'acciaio
+3BBE,716,16,Arms,Gigasteel gauntlets,たまはがねのこて,,Guanteletes de gigacero,Gantelets de trempacier,Gigastahl-handschuhe,Guanti Inox
+3AB9,717,16,Arms,Silver bracelets,ぎんのリスト,,Brazaletes de plata,Bracelets d'argent,Silberne Armschienen,Bracciali d'argento
+3BC2,718,16,Arms,Magic mittens,まほうのこて,,Guantes mágicos,Mitaines magiques,Fidibusfäustlinge,Guanti magici
+3BC3,719,16,Arms,Enchanted gloves,せいれいのこて,,Guantes encantados,Gants enchantés,Verzauberte Fäustlinge,Guanti incantati
+3BB0,720,16,Arms,Ethereal gloves,げんまのこて,,Guantes etéreos,Gants ésotériques,Ätherische Handschuhe,Guanti eterei
+3AFE,721,16,Arms,Femiscyran fingerwear,アマゾネスのこて,,Cubrededos feminísticos,Gants de Fémiscyra,Femiscyra-Handschuhe,Guanti di Femiscyra
+3AFD,722,16,Arms,Bruiser's bracers,ぶおうのうであて,,Protección destructora,Brassards de brute,Schläger-Armschienen,Fasce da combattimento
+3BB6,723,16,Arms,Dragon warrior gloves,竜戦士のこて,,Guantes de draconarius,Gants de dracoguerrier,Drachenkrieger-stulpen,Guanti Draconis
+3B01,724,16,Arms,Light gauntlets,ライトガントレット,,Guanteletes ligeros,Gantelets légers,Leichte Handschuhe,Guanti leggeri
+3B03,725,16,Arms,Sturdy gauntlets,ミドルガントレット,,Guanteletes resistentes,Gantelets solides,Robuste Handschuhe,Guanti robusti
+3B04,726,16,Arms,Heavy gauntlets,ヘビーガントレット,,Guanteletes pesados,Gantelets lourds,Schwere Handschuhe,Guanti pesanti
+3AFF,727,16,Arms,Metallic mitts,メタルグラブ,,Guantes metálicos,Mitaines de métal,Metallhandschuhe,Guanti metallici
+3AC3,728,16,Arms,Battler's bracers,とうしのうであて,,Protectores de batalla,Brassards d'effort,Kampf-Armschienen,Bracciali Jolly
+3A9F,729,16,Arms,Riotous wristbands,ぶしんのリスト,,Muñequeras desenfreno,Poignets d'émeutier,Aufruhrarmbänder,Bracciali da rissa
+3AA0,730,16,Arms,Blessed bindings,さとりのうでまき,,Ribetes benditos,Poignets bénis,Segensreiche Armbänder,Fasce benedette
+3BBF,731,16,Arms,Metal slime gauntlets,メタスラのこて,,Guantes limometálicos,Gants gluant de métal,Metallschleim-handschuhe,Guanti dello Slime grigio
+3BC0,732,16,Arms,Liquid metal slime gloves,はぐれメタルのこて,,Limoguantes metalíquidos,Gants gluant de mercure,Flüssigmetall-handschuhe,Guanti del Liquislime
+3BC1,733,16,Arms,Metal king slime gloves,メタルキングのこて,,Limoguantes reales,Gants roi gluant métal,Metallkönig-handschuhe,Guanti del Re Slime grigio
+3BB1,734,16,Arms,Rusty gauntlets,さびついたこて,,Guanteletes oxidados,Gantelets rouillés,Rostige Handschuhe,Guanti arrugginiti
+3BBC,735,16,Arms,Erdrick's gauntlets,ロトのこて,,Guanteletes de Erdrick,Gantelets d'Elric,Erdrick-handschuhe,Guanti di Erdrick
+3BB2,736,16,Arms,Vesta gauntlets,カグツチのこて,,Guanteletes de Vesta,Gantelets de Vesta,Vestahandschuhe,Guanti Flamma
+3BB3,737,16,Arms,Diana gauntlets,ツクヨミのこて,,Guanteletes de Diana,Gantelets de Diane,Dianahandschuhe,Guanti Lunaria
+3BB4,738,16,Arms,Tempestes gauntlets,スサノオのこて,,Guantes de Tempestes,Gantelets de Jupiter,Tempestes-handschuhe,Guanti Tempestas
+3BB5,739,16,Arms,Sol Invictus gauntlets,アマテラスのこて,,Guanteletes Sol Invictus,Gants de Sol Invictus,Sol-Invictus-Stulpen,Guanti Solaria
+3A9B,740,16,Arms,Cotton gloves,ぬののてぶくろ,布の手袋,Guantes de algodón,Gants de coton,Baumwoll-handschuhe,Guanti di cotone
+3A9C,741,16,Arms,Linen gloves,あさのぐんて,,Guantes de lino,Gants de lin,Leinenhandschuhe,Guanti di lino
+3A9D,742,16,Arms,Leather gloves,皮のてぶくろ,,Guantes de cuero,Gants de cuir,Lederhandschuhe,Guanti di pelle
+3AA1,743,16,Arms,Rubber gloves,ゴームのてぶくろ,,Guantes de goma,Gants de caoutchouc,Gummihandschuhe,Guanti di gomma
+3AA2,744,16,Arms,Wayfarer's gloves,たびびとのてぶくろ,,Mitones de viaje,Gants de voyageur,Reisehandschuhe,Guanti da viandante
+3ABF,745,16,Arms,Ultramarine mittens,あおのグローブ,青のグローブ,Mitones ultramarinos,Mitaines outremer,Ultramarin-Fäustlinge,Guanti oceanici
+3A98,746,16,Arms,Warrior's gloves,戦士のグローブ,,Guantes de guerrero,Gants de guerrier,Krieger-handschuhe,Guanti da guerriero
+3AC8,747,16,Arms,Lockpicker's mitts,かぎあけグローブ,,Manoplas de cerrajero,Mitaines de crocheteur,Ganoven-handschuhe,Guanti da scassinatore
+3AFC,748,16,Arms,Fingerless gauntlets,ゆびぬきグローブ,,Guanteletes sin dedos,Gantelets-mitaines,Fingerlose Stulpen,Guanti Sindedos
+3B02,749,16,Arms,Archer's armguard,射手のてぶくろ,,Protección de arquero,Gants d'archer,Bogenschützen-bänder,Guanti da arciere
+3A99,750,16,Arms,Gorgeous gloves,おしゃれなグローブ,,Guantes fantásticos,Gants élégants,Herrliche Handschuhe,Guanti eleganti
+3A9A,751,16,Arms,Mental mittens,剣士のグローブ,,Guantes locos,Mitaines psychiques,Wahnsinns-fäustlinge,Guanti Menaman
+3AC5,752,16,Arms,Einhänder,かたてグローブ,片手グローブ,Einhänder,Einhänder,Einhänder,Unicum
+3AA5,753,16,Arms,Mayoress's mittens,きふじんのてぶくろ,,Guantes de alcaldesa,Gants de dame,Herzoginnen-handschuhe,Guanti delle meraviglie
+3AA6,754,16,Arms,Marquess's mittens,ひめのてぶくろ,,Guantes de marqués,Gants de marquise,Fürstinnen-fäustlinge,Guanti della marchesa
+3AA7,755,16,Arms,Monarch's mittens,女王のてぶくろ,,Guantes de monarca,Gants de reine,Hoheits-handschuhe,Guanti del trono
+3AB8,756,16,Arms,Heavy handwear,あつでのグローブ,,Protección pesada,Gants épais,Harte Handschuhe,Guanti della difesa
+3AA8,757,16,Arms,Veteran's gloves,古強者のグローブ,,Guantes de veterano,Gants de vétéran,Veteranen-handschuhe,Guanti da veterano
+3AA9,758,16,Arms,Enchantress's gloves,まじょのてぶくろ,,Guantes de pitonisa,Gants d'enchanteresse,Zauberinnen-handschuhe,Guanti da ammaliatrice
+3AAA,759,16,Arms,Minister's mittens,しんかんのグローブ,,Guantes de ministro,Gants de prêtre,Priester-handschuhe,Guanti del sacerdote
+3B05,760,16,Arms,Fingerless gloves,オープンフィンガー,,Guantes sin dedos,Mitaines,Fingerlose Handschuhe,Guanti senza dita
+3AAB,761,16,Arms,Glommer's gloves,かいとうグローブ,,Guantes de chorizo,Gants de gloire,Diebeshandschuhe,Guanti del destino
+3AAC,762,16,Arms,Guru's gloves,さとりのてぶくろ,,Guantes de gurú,Gants de gourou,Harehare-Handschuhe,Guanti da guru
+3AC7,763,16,Arms,Crimson gauntlets,しんくのグローブ,,Guanteletes carmesís,Gantelets pourpres,Purpurhandschuhe,Guanti rossi
+3AAD,764,16,Arms,Gloomy gloves,くらやみのミトン,,Guantes fúnebres,Gants lugubres,Düstere Handschuhe,Guanti fatali
+3AAE,765,16,Arms,Murky mittens,やみわだのミトン,,Manoplas turbias,Gants ténébreux,Finstere Fäustlinge,Guanti delle tenebre
+3AAF,766,16,Arms,Matador's gloves,マタドールグラブ,,Guantes lolailo,Gants de matador,Matador-handschuhe,Guanti da matador
+3AB0,767,16,Arms,Apprentice's gloves,わざしのてぶくろ,,Guantes de aprendiz,Gants d'apprenti,Lehrlings-handschuhe,Guanti da apprendista
+3AB1,768,16,Arms,Master's gloves,めいじんのてぶくろ,,Guantes de señor,Gants de maître,Meister-handschuhe,Guanti da maestro
+3AB2,769,16,Arms,Grandmaster's gloves,たつじんのてぶくろ,,Guantes de gran señor,Gants de grand maître,Großmeister-handschuhe,Guanti da preside
+3AB3,770,16,Arms,Godly gloves,かみわざのてぶくろ,,Guantes divinos,Gants divins,Himmlische Handschuhe,Guanti divini
+3AF4,771,16,Arms,Alefgard gloves,ラダトームグローブ,,Guantes de Alefgrado,Gants d'Alefgard,Alefgard-Handschuhe,Guanti di Alefgard
+3AF5,772,16,Arms,Midenhall gloves,ローレシアグローブ,,Guantes de Centrumbría,Gants de Médiévande,Mitthall-Handschuhe,Guanti di Midenhall
+3AF7,773,16,Arms,Aliahan gloves,ゆうしゃのグローブ,,Guantes de Aliana,Gants d'Aliah,Aliahan-Handschuhe,Guanti di Aliahan
+3AB4,774,16,Arms,Zenithian gauntlet,天空のグローブ,,Guante de Zenithia,Gantelet zénithien,Zenithia-Handschuh,Guanto di Zenithia
+3AB5,775,16,Arms,Gothan wristbands,グランバニアリスト,,Muñequeras de Pankraz,Poignets de Gotha,Humburg-Armbänder,Fasce di Denim
+3B56,776,16,Arms,Somnia gloves,レイドックグローブ,,Guantes de Somnia,Gants de Somnia,Somnia-Handschuhe,Guanti di Somnia
+3AF6,777,16,Arms,Cannock gloves,サマルトリアグラブ,,Guantes de Cannock,Gants de Cannock,Cannock-Handschuhe,Guanti di Cannock
+3AF8,778,16,Arms,McRyan's mittens,ライアンのグローブ,,Mitones de McRyan,Gants de McRyan,Ragnar-Handschuhe,Guanti di Galiardo
+3AF9,779,16,Arms,Alena's gloves,アリーナのてぶくろ,,Guantes de Alena,Gants d'Alina,Alena-Handschuhe,Guanti di Alena
+3AB6,780,16,Arms,Maya's bracelets,マーニャのリスト,,Brazaletes de Maya,Bracelets de Maya,Maya-Armreife,Bracciali di Maya
+3AB7,781,16,Arms,Meena's bracelets,ミネアのうでかざり,,Brazaletes de Meena,Bracelets de Mina,Mina-Armreife,Bracciali di Myra
+3ABA,782,16,Arms,Bianca's bracelets,ビアンカのリスト,,Brazaletes de Bianca,Bracelets de Bianca,Bianca-Armreife,Bracciali di Bianca
+3ABB,783,16,Arms,Nera's bracelets,フローラのリスト,,Brazaletes de Nera,Bracelets de Nera,Nera-Armreife,Bracciali di Nera
+3ABC,784,16,Arms,Carver's bracers,ハッサンのリスト,,Protectores de Ebanisto,Bracelets d'Olivier,Schnitzer-Armschienen,Bracciali di Carver
+3ABD,785,16,Arms,Milly's bracers,ミレーユのうであて,,Protectores de Mencía,Brassards d'Émilie,Milly-Armreife,Bracciali di Milly
+3ABE,786,16,Arms,Ashlynn's gloves,バーバラのグローブ,,Guantes de Lucía,Gants de Lauraline,Ashlynn-Handschuhe,Guanti di Ashlynn
+3AF3,787,16,Arms,Kiefer's gloves,キーファのてぶくろ,,Guantes de Cleómenes,Gants de Killyan,Kiefer-Handschuhe,Guanti di Kiefer
+3AC0,788,16,Arms,Blindin' bracers,ヤンガスのリスト,,Protectores cegadores,Brassards éblouissants,Blendende Armschienen,Bracciali abbacinanti
+3AC1,789,16,Arms,Angelo's gloves,ククールのグローブ,,Guantes de Angelo,Gants d'Angelo,Angelo-Handschuhe,Guanti di Angelo
+3AC2,790,16,Arms,Grandissimo gloves,モリーグローブ,,Guantes grandissime,Gants belissimi,Morrie-Handschuhe,Guanti di Morrie
+42DE,791,18,Feet,Leather boots,皮のブーツ,,Botas de cuero,Bottes de cuir,Lederstiefel,Stivali di pelle
+432B,792,18,Feet,Hobnail boots,エンジニアブーツ,,Botas claveteadas,Chaussures ferrées,Nagelstiefel,Stivali da lavoro
+42DF,793,18,Feet,Wellington boots,ゴームのながぐつ,,Botas de agua,Bottes en caoutchouc,Gummistiefel,Stivali di gomma
+43EF,794,18,Feet,Iron sabatons,てつのグリーブ,,Escarpes de hierro,Solerets de fer,Eiserne Sabatons,Gambali di ferro
+43F3,795,18,Feet,Steel sabatons,はがねのグリーブ,,Escarpes de acero,Solerets d'acier,Stahl-Sabatons,Gambali d'acciaio
+43F4,796,18,Feet,Gigasteel sabatons,たまはがねグリーブ,,Escarpes de gigacero,Solerets de trempacier,Gigastahl-Sabatons,Gambali Inox
+42CC,797,18,Feet,Warrior's boots,戦士のブーツ,,Botas de guerrero,Bottes de guerrier,Kriegerstiefel,Stivali da guerriero
+42D4,798,18,Feet,Femiscyran footwear,アマゾネスブーツ,,Zapatos de Feministia,Bottes de Fémiscyra,Femiscyra-Schuhe,Stivali di Femiscyra
+42CD,799,18,Feet,Frugal footwear,じゅんれいのブーツ,,Calzado frugal,Bottes ordinaires,Schlichte Schuhe,Scarponi semplici
+42D1,800,18,Feet,Wizard wellies,とんがりブーツ,,Botas de mago,Brodequins de magicien,Spitze Stiefel,Stivali da mago
+42CE,801,18,Feet,Bandit boots,ちんもくのブーツ,,Botas de bandido,Bottes de bandit,Schurkenstiefel,Stivaloni da bandito
+42D2,802,18,Feet,Acroboots,かるわざしのブーツ,,Acrobotas,Acrobottes,Sportstiefel,Stivali Acrobax
+4394,803,18,Feet,Payback pumps,スパイクレガース,,Zapatos vengadores,Chaussures à talion,Vergeltungs-galoschen,Scarponi della vendetta
+42D5,804,18,Feet,Cowboy boots,ウエスタンブーツ,,Botas de vaquero,Bottes de cow-boy,Cowboystiefel,Stivali da mandriano
+42D6,805,18,Feet,Hip boots,おしゃれなブーツ,,Botas molonas,Bottes tendance,Elegante Stiefel,Stivaloni alti
+4396,806,18,Feet,Saintly sollerets,ホーリーグリーブ,,Escarpes sagrados,Solerets sacrés,Heiligenschuhe,Gambali santi
+42D8,807,18,Feet,Clever clogs,ちえのブーツ,,Zuecos de inteligencia,Souliers futés,Clevere Clogs,Scarponi resistenti
+42DD,808,18,Feet,Crimson boots,しんくのブーツ,,Botas carmesís,Bottes pourpres,Blutrote Stiefel,Stivali purpurei
+42DA,809,18,Feet,Agiliboots,はやてのブーツ,,Agilibotas,Agilibottes,Siebenmeilenstiefel,Stivagili
+42DB,810,18,Feet,Hiking boots,あらしのブーツ,,Botas de montaña,Bottes de marche,Wanderstiefel,Forestivali
+4397,811,18,Feet,Dragon warrior boots,竜戦士のブーツ,,Botas de draconarius,Bottes de dracoguerrier,Drachenkrieger-stiefel,Stivali Draconis
+42CF,812,18,Feet,Sneakers,せいじゃくのブーツ,,Botas sigilosas,Baskets,Turnschuhe,Gambalagili
+432C,813,18,Feet,Veteran's boots,古強者のブーツ,,Botas de veterano,Bottes de vétéran,Veteranenstiefel,Stivali da veterano
+432E,814,18,Feet,She-mage shoes,まじょのブーツ,,Zapatos de maga,Bottines de magicienne,Zauberinnen-schuhe,Scarponcini da strega
+432F,815,18,Feet,Blessed boots,しんかんのブーツ,神官のブーツ,Botas benditas,Bottes bénies,Segensstiefel,Stivali benedetti
+432D,816,18,Feet,Combat boots,ぶしんのブーツ,,Botas de combate,Bottes de combat,Kampfstiefel,Stivali da battaglia
+431D,817,18,Feet,Brahman boots,さとりのブーツ,,Botas de brahmán,Bottes brahmaniques,Brahmanenstiefel,Stivali bicolore
+43F2,818,18,Feet,Metal slime sollerets,メタスラブーツ,,Escarpes limometálicos,Bottes gluant de métal,Metallschleim-schuhe,Scarponi dello Slime grigio
+43F5,819,18,Feet,Liquid metal slime boots,はぐれメタルブーツ,,Limobotas metalíquidas,Bottes gluant mercure,Flüssigmetall-stiefel,Scarponi del Liquislime
+43F6,820,18,Feet,Metal king slime boots,メタルキングブーツ,,Limometabotas reales,Bottes roi gluant métal,Metallkönigstiefel,Cioce del Re Slime grigio
+431E,821,18,Feet,Hero's boots,えいゆうのブーツ,,Botas de héroe,Bottes de héros,Heldenstiefel,Stivali dell'eroe
+431F,822,18,Feet,Basilic boots,おうじゃのブーツ,,Botas reales,Bottes épiscopales,Gesundungs-galoschen,Stivali regali
+4320,823,18,Feet,Emperor's boots,ていおうのブーツ,,Botas imperiales,Bottes impériales,Kaiserstiefel,Stivaloni imperiali
+4321,824,18,Feet,Boots of beatitude,てんていのブーツ,,Botas beatíficas,Bottes de béatitude,Stiefel der Seligkeit,Stivali della beatitudine
+43FE,825,18,Feet,Sandals,サンダル,,Sandalias,Sandales,Sandalen,Sandali
+43FC,826,18,Feet,Leather shoes,皮のくつ,,Zapatos de piel,Chaussures de cuir,Lederschuhe,Scarponi di pelle
+4400,827,18,Feet,High heels,ハイヒール,,Zapatos de tacón,Talons hauts,Stöckelschuhe,Tacchi alti
+4401,828,18,Feet,Stiletto heels,ピンヒール,,Zapatos de aguja,Talons aiguilles,Stilettos,Tacchi a spillo
+4402,829,18,Feet,Highness heels,クインヒール,,Zapatos de altura,Talons sérénissimes,Hoheitsschuhe,Tacchi imperiali
+43FD,830,18,Feet,Clogs,木のくつ,,Zuecos,Socques,Clogs,Zoccoli
+43FF,831,18,Feet,Classy clogs,すてきなサボ,,Zuecos elegantes,Socques chic,Prima Pantinen,Zoccoli eleganti
+4403,832,18,Feet,Galvanised geta,てつゲタ,,Getas galvanizadas,Sandales galvanisées,Stahlsandalen,Sandali d'acciaio
+43FA,833,18,Feet,Sheepskin shoes,白のシューズ,,Zapatos de borrego,Bottines en agneau,Schafsleder-schuhe,Zampe di pecora
+43F8,834,18,Feet,Siren sandals,まどうしのサンダル,,Sandalias de sirena,Sandales de sirène,Sirenensandalen,Sandali da sirena
+4404,835,18,Feet,Sorceress sandals,むまのサンダル,,Sandalias de hechicera,Sandales de sorcière,Hexerinnen-sandalen,Sandali da strega
+43FB,836,18,Feet,Starlet sandals,イケてるミュール,,Sandalias de corista,Sandales de starlette,Sternchensandalen,Sandali delle stelle
+42D0,837,18,Feet,Kung fu shoes,カンフーシューズ,,Zapatos de kung fu,Chaussures de kung-fu,Kung-Fu-Schuhe,Scarponi da ninja
+42D3,838,18,Feet,Wu shoes,ウーシュシューズ,,Zapatos de ante,Chaussures martiales,Wu-Schuhe,Scarponi Wu
+43F9,839,18,Feet,She-fu shoes,ぶとうのくつ,,Zapatos de kung-fa,Ballerines de kung-fu,Fu-Frauenschuhe,Scarponi Comballo
+42D7,840,18,Feet,Safety shoes,あんぜんぐつ,,Zapatos de seguridad,Bottes de sécurité,Sicherheitschuhe,Scarponi sicuri
+4322,841,18,Feet,Safer shoes,ばんぜんぐつ,,Zapatos seguros,Bottes de protection,Sicherere Schuhe,Scarponi Sicurplus
+4323,842,18,Feet,Safest shoes,かんぜんぐつ,,Zapatos segurísimos,Bottes de surprotection,Supersichere Schuhe,Scarponi Sicurextra
+42D9,843,18,Feet,Shaman shoes,いのりのローファー,,Zapatos de chamán,Chaussures de shaman,Schamanenschuhe,Scarponi sciamanici
+42DC,844,18,Feet,Bardic boots,エナメルのくつ,,Botas de bardo,Bottes de barde,Troubadourtreter,Stivaletti illuminanti
+4307,845,18,Feet,Spellspadrilles,だいまどうシューズ,大魔道シューズ,Conjupargatas,Sorsouliers,Magiekassins,Magimocassini
+4324,846,18,Feet,Depressing shoes,しわよせのくつ,しわよせの靴,Zapatos deprimentes,Chaussures de malheur,Gramgaloschen,Scarponi deprimenti
+4325,847,18,Feet,Elevating shoes,しあわせのくつ,,Zuecos de ánimo,Chaussures à talons,Erhebende Schuhe,Scarponi santi
+4312,848,18,Feet,Pixie boots,ようせいのくつ,,Botas de duendecillo,Bottines lutines,Koboldstiefel,Scarponi fatati
+4313,849,18,Feet,Tricksie boots,オベロンのくつ,,Botas de trastolillo,Bottines mutines,Tricktreter,Scarponi giocosi
+4406,850,18,Feet,Sensible sandals,りせいのサンダル,理性のサンダル,Sandalias sensatas,Spartiates adéquates,Sinnvolle Sandalen,Sandali sensibili
+4407,851,18,Feet,Sagacious sandals,しんりのサンダル,,Sandalias sagaces,Spartiates sagaces,Kluge Sandalen,Sandali sagaci
+4408,852,18,Feet,Sapient sandals,えいちのサンダル,,Sandalias eruditas,Spartiates spéciales,Schlaue Sandalen,Sandali sapienti
+4409,853,18,Feet,Sentient sandals,イデアのサンダル,,Sandalias sensibles,Spartiates subtiles,Weise Sandalen,Sandali senzienti
+4303,854,18,Feet,Thug boots,あらくれブーツ,,Botas de matón,Bottes de brute,Gaunerstiefel,Stivali da duro
+42E0,855,18,Feet,Celestial shoes,天使のブーツ,,Zapatos celestiales,Chaussures célestes,Himmlische Schuhe,Calzari celestiali
+42F7,856,18,Feet,White wing-tips,白いエナメルぐつ,,Zapatos de charol,Chaussures blanches,Weiße Flügelspitzen,Scarponcini eleganti
+4405,857,18,Feet,High-class heels,エナメルのヒール,,Taconazos,Talons sophistiqués,Hochklassige Hacken,Scarponcini da cerimonia
+4328,858,18,Feet,Alefgard boots,ラダトームブーツ,,Botas de Alefgrado,Bottes d'Alefgard,Alefgard-Stiefel,Stivali di Alefgard
+4329,859,18,Feet,Midenhall boots,ローレシアブーツ,,Botas de Centrumbría,Bottes de Médiévande,Mitthall-Stiefel,Stivali di Midenhall
+42C7,860,18,Feet,Aliahan boots,ゆうしゃのブーツ,,Botas de Aliana,Bottes d'Aliah,Aliahan-Stiefel,Stivali di Aliahan
+42C6,861,18,Feet,Zenithian boots,天空のブーツ,,Botas de Zenithia,Bottes zénithiennes,Zenithia-Stiefel,Stivali di Zenithia
+42C3,862,18,Feet,Gothan gumboots,グランバニアのくつ,,Botas de Pankraz,Bottes de Gotha,Humburg-Stiefel,Stivali di Denim
+42C4,863,18,Feet,Somnia boots,レイドックブーツ,,Botas de Somnia,Bottes de Somnia,Somnia-Stiefel,Stivali di Somnia
+42C5,864,18,Feet,Estard shoes,エスタードのくつ,,Zapatos estardanos,Bottillons de Melyor,Estard-Schuhe,Scarponi di Estard
+42C8,865,18,Feet,Trodainers,トロデーンブーツ,,Zapatrodianas,Bottes de Trodain,Trodain-Treter,Stivali di Trodain
+432A,866,18,Feet,Cannock boots,サマルトリアブーツ,,Botas de Cannock,Bottes de Cannock,Cannock-Stiefel,Stivali di Cannock
+4314,867,18,Feet,Moonbrooke shoes,ムーンブルクのくつ,,Zapatos de Arroyo Luna,Bottines de Ruisselune,Mondbach-Schuhe,Scarponi di Moonbrooke
+43F0,868,18,Feet,Highland boots,ライアンのブーツ,,Botas de montaraz,Bottes de montagne,Hochland-Stiefel,Stivali degli altipiani
+4327,869,18,Feet,Valenki,アリーナのながぐつ,,Botas de invierno,Valenki,Valenki-Stiefel,Valenki
+4315,870,18,Feet,Kiryl's boots,クリフトのくつ,,Botas de Kiryl,Bottes de Kiryl,Kyrill-Stiefel,Stivali di Kiryl
+4306,871,18,Feet,Borya's boots,ブライのくつ,,Zapatos de Borya,Souliers de Borya,Borja-Stiefel,Scarponi di Boris
+440B,872,18,Feet,Torneko's sandals,トルネコのサンダル,,Sandalias de Torneko,Sandales de Torneko,Torneko-Sandalen,Sandali di Baldo
+440C,873,18,Feet,Sattriya sandals,マーニャのサンダル,,Sandalias de Sattriya,Sandales de sattriya,Sattriya-Sandalen,Sandali Sattriya
+440D,874,18,Feet,Samhita sandals,ミネアのサンダル,,Sandalias de Samhita,Sandales de samhita,Samhita-Sandalen,Sandali Samhita
+4318,875,18,Feet,Bianca's boots,ビアンカのくつ,,Botas de Bianca,Bottes de Bianca,Bianca-Stiefel,Stivali di Bianca
+4319,876,18,Feet,Nera's boots,フローラのくつ,,Botas de Nera,Bottines de Nera,Nera-Stiefel,Calzari di Nera
+431A,877,18,Feet,Carver's shoes,ハッサンのくつ,,Zapatos de Ebanisto,Chaussures d'Olivier,Schnitzer-Schuhe,Scarponi di Carver
+431B,878,18,Feet,Milly's shoes,ミレーユのくつ,,Zapatos de Mencía,Bottines d'Émilie,Milly-Schuhe,Stivali di Milly
+4308,879,18,Feet,Ashlynn's shoes,バーバラのくつ,,Zapatos de Lucía,Chaussures de Lauraline,Ashlynn-Schuhe,Scarponi di Ashlynn
+430B,880,18,Feet,Kiefer's shoes,キーファのブーツ,,Zapatos de Cleómenes,Bottes de Killyan,Kiefer-Schuhe,Scarponi di Kiefer
+430C,881,18,Feet,Maribel's shoes,マリベルのくつ,,Zapatos de Gorgo,Bottines de Maribel,Maribel-Schuhe,Scarponi di Maribel
+430D,882,18,Feet,Trode's treads,トロデのくつ,,Calzado de Trode,Chaussures de Trode,Trode-Treter,Scarponi di Trode
+430E,883,18,Feet,Bovver boots,ヤンガスのながぐつ,,Botas bledo,Bottes de baston,Stunkstiefel,Stivali da teppista
+430F,884,18,Feet,Posh pumps,ゼシカのくつ,,Zapatillas molonas,Bottines snobs,Piekfeine Pumps,Scarponcini sportivi
+4310,885,18,Feet,Templar boots,ククールのブーツ,,Zapatos templarios,Chaussures de Templier,Templerstiefel,Scarponi da Templare
+4311,886,18,Feet,Casanova clogs,モリーシューズ,,Zuecos de Casanova,Souliers de Casanova,Casanova-Clogs,Scarponi da casanova
+4300,887,18,Feet,Chic chaussures,セティアブーツ,,Chaussures chic,Bottes à la mode,Schicke Schühchen,Stivaletti di Fleurette
+42FE,888,18,Feet,Blahnolo Maniks,ギャルいミュール,,Blanolos,Blahnolo Maniks,Sternschühchen,Scarponcini Verzuz
+42F4,889,18,Feet,Erinn's boots,リッカのくつ,,Calzado de Sada,Bottes de Bérangère,Thekla-Stiefel,Stivaletti di Nadine
+42F5,890,18,Feet,Patty's pumps,ルイーダのくつ,,Zapatillas de Petricia,Chaussures de Tulipe,Hilda-Pumps,Scarponcini di Patty
+42F6,891,18,Feet,Aquila's boots,イザヤールのくつ,,Botas de Engel,Bottes d'Aquila,Aquila-Stiefel,Stivali di Falko
+4650,892,19,Accessories,Strength ring,ちからのゆびわ,力の指輪,Anillo de fuerza,Bague de choc,Stärkering,Anello della forza
+4651,893,19,Accessories,Tough guy tattoo,いかりのタトゥー,,Tatuaje de tipo duro,Tatouage de costaud,Taffes Tattoo,Tatuaggio da duro
+4652,894,19,Accessories,Raging ruby,ちからのルビー,,Gema fiera,Pierre brute,Rubin der Rage,Rubino della furia
+4653,895,19,Accessories,Mighty armlet,ごうけつのうでわ,,Brazalete poderoso,Brassard de choc,Mächtige Armschiene,Fascia del potere
+4657,896,19,Accessories,Gold ring,きんのゆびわ,,Anillo de oro,Anneau d'or,Goldring,Anello d'oro
+4654,897,19,Accessories,Gold bracer,きんのブレスレット,金のブレスレット,Brazalete de oro,Brassard d'or,Goldarmschiene,Bracciale d'oro
+4655,898,19,Accessories,Slime earrings,スライムピアス,,Pendientes limosos,Boucles d'oreilles,Schleimohrringe,Orecchini Slime
+4656,899,19,Accessories,Dragon scale,竜のうろこ,,Escama de dragón,Écaille de dragon,Drachenschuppe,Cresta di drago
+4658,900,19,Accessories,Ruby of protection,まもりのルビー,,Gema de protección,Rubis de protection,Schutzrubin,Rubino della difesa
+4659,901,19,Accessories,Bunny tail,うさぎのおまもり,,Cola de conejo,Queue de lapin,Häschenschwanz,Coda da coniglietta
+465C,902,19,Accessories,Utility belt,しょくにんのベルト,,Cinto de herramientas,Ceinture multifonction,Allzweckgürtel,Cintura portatutto
+465D,903,19,Accessories,Agility ring,はやてのリング,,Anillo de agilidad,Bague d'Agilité,Flinkheitsring,Anello dell'agilità
+465E,904,19,Accessories,Meteorite bracer,ほしふるうでわ,,Protector de meteoro,Brassard de météore,Meteorarmschiene,Bracciale del lampo
+465F,905,19,Accessories,Sorcerer's ring,ソーサリーリング,,Anillo de hechicero,Bague de sorcier,Hexerring,Anello dello stregone
+4660,906,19,Accessories,Gold rosary,きんのロザリオ,金のロザリオ,Rosario de oro,Chapelet d'or,Goldener Gebetskranz,Rosario prezioso
+4661,907,19,Accessories,Rosary,しんごんのじゅず,,Rosario,Chapelet,Gebetskranz,Rosario semplice
+4662,908,19,Accessories,Sorcerer's stone,ひらめきのジュエル,,Piedra mágica,Pierre de sorcier,Hexerstein,Pietra stregonesca
+4663,909,19,Accessories,Brainy bracer,インテリのうでわ,,Protector inteligente,Brassard de savant,Abrakadabra-Armschiene,Bracciale della scienza
+4666,910,19,Accessories,Monarchic mark,ロイヤルバッジ,,Marca monárquica,Écusson royal,Symbol des Souveräns,Stemma della monarchia
+4664,911,19,Accessories,Life bracer,いやしのうでわ,,Protector de vida,Brassard de santé,Lebensarmschiene,Bracciale della vita
+4665,912,19,Accessories,Spirit bracer,ようせいのうでわ,,Protector de espíritu,Brassard d'esprit,Geistarmschiene,Bracciale dello spirito
+4667,913,19,Accessories,Prayer ring,いのりのゆびわ,祈りの指輪,Anillo de oración,Bague de prière,Gebetsring,Anello della fede
+4668,914,19,Accessories,Holy talisman,まよけの聖印,,Talismán sagrado,Talisman sacré,Heiliger Talisman,Talismano sacro
+4669,915,19,Accessories,Sober ring,はげんのリング,,Anillo sobrio,Anneau solennel,Ausnüchterring,Anello della chiarezza
+466A,916,19,Accessories,Contra band,はどくのリング,,Aro contra,Anneau antivenin,Gegengiftring,Anello antiveleno
+466B,917,19,Accessories,Full moon ring,まんげつのリング,,Anillo plenilunio,Bague de lune,Vollmondring,Anello della luna
+466C,918,19,Accessories,Rousing ring,めざましリング,,Anillo despertador,Anneau d'énergie,Klingering,Allarm'anello
+466D,919,19,Accessories,Ring of clarity,りせいのリング,,Anillo de claridad,Anneau de lucidité,Ring der Klarheit,Anello della ragione
+466E,920,19,Accessories,Catholicon ring,スーパーリング,,Anillo catholicon,Anneau médicinal,Catholiconring,Anello della panacea
+4687,921,19,Accessories,Wedding ring,けっこんゆびわ,,Anillo de boda,Alliance,Ehering,Fede nuziale
+4671,922,19,Accessories,Elfin charm,エルフのおまもり,,Colgante élfico,Amulette elfique,Elfenamulett,Ciondolo degli elfi
+4672,923,19,Accessories,Life ring,命のゆびわ,,Anillo de vida,Anneau de vie,Lebensring,Anello della vita
+4673,924,19,Accessories,Goddess ring,女神のゆびわ,,Anillo de diosa,Bague de la Déesse,Göttinnenring,Anello della dea
+466F,925,19,Accessories,Terrible tattoo,あくまのタトゥー,,Tatuaje terrible,Tatouage terrifiant,Teufelstattoo,Tatuaggio terribile
+4670,926,19,Accessories,Skull ring,ドクロのゆびわ,,Anillo con cráneo,Bague d'os,Schädelring,Anello del teschio
+4676,927,19,Accessories,Reckless necklace,しにがみの首かざり,死神の首飾り,Collar imprudente,Pendentif négatif,Kollerkollier,Collana infame
+4677,928,19,Accessories,Lucky pendant,ラッキーペンダント,,Colgante afortunado,Pendentif défensif,Glücksanhänger,Ciondolo della sorte
+465A,929,19,Accessories,Pink pearl,ピンクパール,,Perla rosa,Perle rose,Rosa Perle,Perla rosa
+465B,930,19,Accessories,Bow tie,ちょうネクタイ,,Pajarita,Nœud papillon,Fliege,Cravatta a farfalla
+4678,931,19,Accessories,Venus' tear,ビーナスのなみだ,,Lágrima de Venus,Larme de Vénus,Venusträne,Lacrima di Venere
+467B,932,19,Accessories,Soldier's medal,戦士の証,,Medalla de Soldado,Médaille de soldat,Soldatenmedaille,Medaglia Parabellum
+467C,933,19,Accessories,Lifesaving medal,そうりょの証,,Medalla Salvavidas,Médaille de secouriste,Lebensrettungs-medaille,Medaglia Sanitas
+467D,934,19,Accessories,Mager achievement,まほうつかいの証,,Logro Mágico,Magimédaille,Magiermedaille,Medaglia Elementium
+467E,935,19,Accessories,Mercury prize,ぶとうかの証,,Premio de Mercurio,Médaille d'Hermès,Merkurmedaille,Medaglia Mercurio
+467F,936,19,Accessories,Honour among thieves,とうぞくの証,,Honor de Ladrones,Médaille de canaille,Ganovenehrung,Medaglia Furfant
+4680,937,19,Accessories,Wear-with-all award,旅芸人の証,,Premio Superponible,Distinction du caméléon,Kleiderorden,Medaglia Universalis
+4681,938,19,Accessories,Critical acclaim,バトルマスターの証,,Aclamación Crítica,Prix du critique,Kritikerpreis,Medaglia Meritum
+4682,939,19,Accessories,Order of chivalry,パラディンの証,,Orden de Caballería,Prix de chevalerie,Ritterorden,Medaglia Chevalier
+4683,940,19,Accessories,Combat action medal,魔法戦士の証,,Medalla al Mérito,Lésion d'honneur,Kampfmedaille,Medaglia Robur
+4684,941,19,Accessories,Medal of freedom,レンジャーの証,,Medalla de Libertad,Médaille de la liberté,Freiheitsmedaille,Medaglia Libertas
+4685,942,19,Accessories,Legion of merit,けんじゃの証,,Legión al Mérito,Médaille du mérite,Verdienstorden,Medaglia Sagax
+4686,943,19,Accessories,Noscar,スーパースターの証,,Nóscar,Prinaubel,Popularitätspreis,Oscarissimo
+55F0,944,20,Items,Medicinal herb,やくそう,薬草,Planta medicinal,Herbe médicinale,Heilkraut,Erba medicinale
+55F1,945,20,Items,Strong medicine,上やくそう,上薬草,Medicina fuerte,Remède puissant,Starke Arznei,Medicina potente
+55F2,946,20,Items,Special medicine,特やくそう,特薬草,Medicina especial,Remède spécial,Spezialarznei,Medicina speciale
+55F3,947,20,Items,Superior medicine,いやしそう,,Medicina superior,Remède supérieur,Überlegene Arznei,Medicina eccelsa
+55F4,948,20,Items,Antidotal herb,どくけしそう,毒消し草,Planta de Fierabrás,Herbe curative,Gegengiftkraut,Erba per antidoti
+55F5,949,20,Items,Strong antidote,上どくけしそう,上毒消し草,Antídoto intenso,Antidote puissant,Starkes Gegengift,Antidoto potente
+55F6,950,20,Items,Special antidote,特どくけしそう,,Antídoto especial,Antidote spécial,Spezialgegengift,Antidoto speciale
+55F7,951,20,Items,Moonwort bulb,まんげつそう,満月草,Bulbo lunar,Botryche lunaire,Mondrauten-Knolle,Bulbo di erbaluna
+55F8,952,20,Items,Softwort,きつけそう,,Hierba paliativa,Stimuline,Weichwurz,Stimulfoglia
+55F9,953,20,Items,Lunaria,つきのめぐみ,,Lunaria,Lunaria,Silberblatt,Vegestimolante
+55FA,954,20,Items,Angel bell,天使のすず,天使の鈴,Campanilla angelical,Grelot d'angelot,Engelsglocke,Campana dell'angelo
+55FB,955,20,Items,Panacea,ばんのうぐすり,万能薬,Panacea,Panacée,Wundermittel,Panacea
+55FC,956,20,Items,Perfect panacea,超ばんのうぐすり,超万能薬,Panacea perfecta,Panacée universelle,Allheilmittel,Gran panacea
+55FD,957,20,Items,Yggdrasil leaf,せかいじゅのは,世界樹の葉,Hoja de Yggdrasil,Feuille d'Yggdrasil,Yggdrasil-Blatt,Foglia di Ygdrasil
+55FE,958,20,Items,Yggdrasil dew,せかいじゅのしずく,,Rocío de Yggdrasil,Rosée d'Yggdrasil,Yggdrasil-Tau,Rugiada di Ygdrasil
+55FF,959,20,Items,Magic water,まほうのせいすい,魔法の聖水,Ampolla de agua mágica,Eau magique,Zauberwasser,Acqua magica
+5600,960,20,Items,Sage's elixir,けんじゃのせいすい,賢者の聖水,Elixir de sabio,Élixir du sage,Weisenelixier,Elisir di saggezza
+5601,961,20,Items,Elfin elixir,エルフののみぐすり,,Elixir élfico,Élixir elfique,Elfenelixier,Elisir degli elfi
+5602,962,20,Items,Holy water,せいすい,聖水,Ampolla de agua bendita,Eau sacrée,Weihwasser,Acqua santa
+5603,963,20,Items,Chimaera wing,キメラのつばさ,キメラの翼,Ala de quimera,Aile de chimère,Chimärenflügel,Ala di chimera
+56F1,964,20,Items,Evac-u-bell,おもいでのすず,思い出の鈴,Campanilla Evacuadora,Évacuo-cloche,Bammel-Bimmel,Campana dell'esodo
+5605,965,20,Items,Coagulant,どくがのこな,毒蛾の粉,Coagulante,Coagulant,Koagulans,Paralisabbia
+5606,966,20,Items,Tangleweb,まだらくもいと,,Entretela,Ralentoile,Gespinst,Telalenta
+5607,967,20,Items,Sleeping hibiscus,ゆめみの花,,Adormidera,Liseronfle,Schlummerblume,Ibisco del sonno
+5608,968,20,Items,Wakerobin,めざめの花,,Despertadera,Volubilis,Weckwurz,Svegliarosso
+5604,969,20,Items,Mystifying mixture,おかしなくすり,おかしな薬,Pócima chocante,Potion étrange,Mystische Mixtur,Intruglio strano
+5611,970,20,Items,Rockbomb shard,ばくだん石,,Fragmento de rocobomba,Éclat de bombe,Felsenbomben-Splitter,Pezzo di Esplo-sasso
+5609,971,20,Items,Party popper,ハッピークラッカー,,Petardo,Tohu-obus,Partykracher,Conetto roboante
+560A,972,20,Items,Festive feast,おせちりょうり,,Festín festivo,Repas de fête,Festmahl,Cesto di cibo
+560B,973,20,Items,Block o' choc,ふつうのチョコ,,Tableta de chocolate,Chocobloc,Schokotafel,Chocoblock
+560C,974,20,Items,Choice chocolate,ごうかなチョコ,,Chocolate chocolatado,Chococœur,Köstliches Konfekt,Cioccolato superiore
+560D,975,20,Items,Basic biscuits,ふつうのクッキー,,Galletas normales,Biscuits,Krümelige Kekse,Biscotti
+560E,976,20,Items,Posh biscuits,ごうかなクッキー,,Galletas especiales,Biscuits raffinés,Piekfeine Plätzchen,Biscotti farciti
+560F,977,20,Items,Christmas cake,クリスマスケーキ,,Pastel festivo,Gâteau de Noël,Festtagskuchen,Torta natalizia
+5610,978,20,Items,Birthday cake,バースデーケーキ,,Pastel de cumpleaños,Gâteau d'anniversaire,Geburtstagskuchen,Gran Dessert
+5612,979,20,Items,Watcher's wings,おわかれのつばさ,,Alas de guardián,Ailes d'origine,Wächterschwingen,Sentinala
+5613,980,20,Items,Sage's stone,けんじゃの石,,Piedra de sabio,Pierre philosophale,Stein des Weisen,Pietra del saggio
+5614,981,20,Items,Gleeban groat,グビアナどうか,グビアナ銅貨,Chelín de Sheba,Denier d'Ouadi,Wasaba-Groschen,Zecchino di Gubiana
+5615,982,20,Items,Gleeban guinea,グビアナぎんか,グビアナ銀貨,Guinea de Sheba,Sou d'Ouadi,Wasaba-Guinee,Tallero di Gubiana
+5616,983,20,Items,Gleeban gold piece,グビアナきんか,グビアナ金貨,Doblón de Sheba,Pièce d'or d'Ouadi,Wasaba-Goldstück,Doblone di Gubiana
+5619,984,20,Items,Pretty betsy,うつくしそう,,Bellibestia,Charmélia,Schönsporn,Belfiore
+561D,985,20,Items,Seed of life,命のきのみ,,Simiente de vida,Graine de Vie,Lebenssamen,Seme della vita
+561E,986,20,Items,Seed of magic,ふしぎなきのみ,,Simiente de magia,Graine de Magie,Magiesamen,Seme della magia
+561F,987,20,Items,Seed of strength,ちからのたね,,Simiente de fuerza,Graine de Force,Stärkesamen,Seme della potenza
+5620,988,20,Items,Seed of deftness,きようさのたね,,Simiente de pericia,Graine d'Adresse,Geschicksamen,Seme della destrezza
+5621,989,20,Items,Seed of agility,すばやさのたね,,Simiente de agilidad,Graine d'Agilité,Flinkheitssamen,Seme dell'agilità
+5622,990,20,Items,Seed of defence,まもりのたね,,Simiente de defensa,Graine de Défense,Ausdauersamen,Seme della difesa
+5623,991,20,Items,Seed of sorcery,まりょくのたね,,Simiente de conjunción,Graine de Magiqualité,Zaubermacht-samen,Seme della stregoneria
+5624,992,20,Items,Seed of therapeusis,しんこうのたね,,Simiente terapéutica,Graine de Thérapicité,Therapeutiksamen,Seme dell'ars medica
+5625,993,20,Items,Seed of skill,スキルのたね,,Simiente de destreza,Graine de Compétence,Talentsamen,Seme dell'abilità
+5617,994,20,Items,Mini medal,ちいさなメダル,,Minimedalla,Mini médaille,Minimedaille,Minimedaglia
+56F0,995,20,Items,Sterling's whistle,アギロホイッスル,,Silbato de Astracán,Sifflet d'Aster,Pfeife Noahs,Fischietto di Rocko
+563E,996,20,Items,Cowpat,うしのふん,,Boñiga de vaca,Bouse de vache,Kuhfladen,Sterco di vacca
+563F,997,20,Items,Horse manure,うまのふん,,Boñiga de caballo,Crottin de cheval,Pferdemist,Sterco di cavallo
+564D,998,20,Items,Lava lump,ようがんのカケラ,,Piedra volcánica,Morceau de lave,Lavaklumpen,Roccia lavica
+564E,999,20,Items,Fresh water,きよめの水,,Ampolla de agua fresca,Eau fraîche,Frisches Wasser,Acqua fresca
+564F,1000,20,Items,Flurry feather,かぜきりのはね,,Pluma peluda,Plume de vent,Flatterfeder,Piuma eolica
+5650,1001,20,Items,Royal soil,まりょくの土,,Tierra real,Terre sacrée,Königliche Erde,Suolo reale
+5651,1002,20,Items,Ice crystal,こおりのけっしょう,,Cristal de hielo,Cristal de glace,Eiskristall,Cristallo di ghiaccio
+5652,1003,20,Items,Thunderball,いかずちのたま,,Bolatrueno,Boule de foudre,Blitzbrocken,Sfera del tuono
+5653,1004,20,Items,Evencloth,よるのとばり,,Telujo,Tissu sombre,Dämmerstoff,Panno scuro
+5654,1005,20,Items,Brighten rock,ひかりの石,,Roca animosa,Pierre de lumière,Strahlestein,Roccia luminosa
+5636,1006,20,Items,Iron nails,てつのクギ,鉄の釘,Clavos de hierro,Clous de fer,Eisennägel,Chiodi di ferro
+5637,1007,20,Items,Iron ore,てっこうせき,鉄鉱石,Mineral de hierro,Minerai de fer,Eisenerz,Frammento di ferro
+5638,1008,20,Items,Platinum ore,プラチナこうせき,,Mineral de platino,Minerai de platine,Platinerz,Frammento di platino
+5639,1009,20,Items,Mythril ore,ミスリルこうせき,ミスリル鉱石,Mineral de mitrilo,Minerai de mithril,Mythrilerz,Frammento di mithril
+563A,1010,20,Items,Densinium,ヘビーメタル,,Fragmento de densinio,Densinium,Schwermetall,Frammento di densinium
+563B,1011,20,Items,Gold bar,きんかい,,Lingote de oro,Lingot d'or,Goldbarren,Lingotto d'oro
+563C,1012,20,Items,Orichalcum,オリハルコン,,Fragmento de oricalco,Orichalque,Orichalkum,Orichalcum
+565A,1013,20,Items,Corundum,ルビーのげんせき,,Corindón,Corindon,Korund,Corindone
+5663,1014,20,Items,Flintstone,つけもの石,,Pedernal,Silex,Feuerstein,Frammento di selce
+5660,1015,20,Items,Resurrock,命の石,,Resurrerroca,Lazarite,Stein der Auferstehung,Resurroccia
+5661,1016,20,Items,Mirrorstone,かがみ石,,Petriespejo,Minerai miroir,Spiegelstein,Specchiosasso
+5662,1017,20,Items,Sunstone,たいようの石,,Solerroca,Solarite,Sonnenstein,Pietra del sole
+5643,1018,20,Items,Wing of bat,こうもりのはね,,Ala de murciélago,Aile de chauve-souris,Fledermausflügel,Ala di pipistrello
+5645,1019,20,Items,Magic beast hide,まじゅうの皮,,Piel de animal mágico,Peau de bête magique,Magische Tierhaut,Scaglia di drago
+5646,1020,20,Items,Magic beast horn,まじゅうのツノ,,Cuerno de animal mágico,Corne de bête magique,Magisches Tierhorn,Corno di drago
+5647,1021,20,Items,Slimedrop,スライムゼリー,,Limogota,Glugoutte,Schleimtropfen,Stilla di Slime
+5655,1022,20,Items,Tortoiseshell,べっこう,,Caparración,Carapacine,Schildpatt,Guscio robusto
+5656,1023,20,Items,Toad oil,ガマのあぶら,ガマの油,Aceite de sapo,Huile de crapaud,Krötenöl,Olio di rospo
+5657,1024,20,Items,Lambswool,やわらかウール,,Lana de cordero,Laine d'agneau,Lammwolle,Batuffolo di lana
+5658,1025,20,Items,Snakeskin,へびのぬけがら,,Piel de serpiente,Peau de serpent,Schlangenhaut,Pelle di serpente
+5659,1026,20,Items,Manky mud,どくどくヘドロ,,Lodo despreciable,Boue nauséabonde,Schauderschlamm,Fango tossico
+5649,1027,20,Items,Kitty litter,ネコずな,,Arena de gato,Litière pour chat,Katzenstreu,Sabbia del micio
+564A,1028,20,Items,Glass frit,みがきずな,,Polvo de cristal,Poussière de verre,Poliersand,Pasta vetrosa
+564B,1029,20,Items,Belle cap,うるわしキノコ,,Bellaseta,Russule jolie,Hübschhut,Belfungo
+564C,1030,20,Items,Fisticup,げんこつダケ,,Puñeseta,Champi-gnon,Kloppkäppchen,Pugnofungo
+5648,1031,20,Items,Butterfly wing,ちょうのはね,,Ala de mariposa,Aile de papillon,Schmetterlings-flügel,Ala di farfalla
+5665,1032,20,Items,Slipweed,みかわしそう,,Hierbalosa,Glissine,Glitschkraut,Scivolalga
+5666,1033,20,Items,Thinkincense,さとりそう,,Incienpienso,Encenspirite,Seelensalbei,Incenso della saggezza
+5667,1034,20,Items,Narspicious,あやかしそう,,Narcisoso,Purpourra,Weiazynthe,Pianta del sospetto
+5668,1035,20,Items,Seashell,白いかいがら,,Concha,Coquillage,Muschelschale,Conchiglia
+5669,1036,20,Items,Crimson coral,赤いサンゴ,,Coral carmesí,Corail rouge,Karminkoralle,Corallo rosso
+566A,1037,20,Items,Emerald moss,緑のコケ,,Musgo esmeralda,Mousse émeraude,Smaragdmoos,Muschio verde
+567D,1038,20,Items,Nectar,花のみつ,,Néctar,Nectar,Nektar,Nettare
+567E,1039,20,Items,Birdsong nectar,さえずりのみつ,,Néctar de piar,Nectar du rossignol,Vogelsangnektar,Nettare di Belcanto
+566B,1040,20,Items,Finessence,ぶどうエキス,武道エキス,Buenaesencia,Finessence,Raffinessenz,Essenza Finis
+566C,1041,20,Items,Aggressence,とうこんエキス,闘魂エキス,Agresisencia,Agressence,Aggressenz,Essenza Aggro
+567F,1042,20,Items,Grubby bandage,よごれたほうたい,,Vendaje mugriento,Bandage crasseux,Schmuddeliger Verband,Benda sporca
+5680,1043,20,Items,Technicolour dreamcloth,にじいろの布きれ,,Tela en tecnicolor,Étoffe arc-en-ciel,Buntes Traumtuch,Panno dei sogni
+563D,1044,20,Items,Hephaestus' flame,ヘパイトスのひだね,ヘパイトスの火種,Llama de Hefesto,Flamme d'Héphaïstos,Hephaistosflamme,Fiamma di Efesto
+5640,1045,20,Items,Saint's ashes,せいじゃのはい,聖者の灰,Cenizas de santo,Cendres sacrées,Heiligenasche,Ceneri del santo
+5664,1046,20,Items,Malicite,うらみのほうじゅ,,Malicita,Malicite,Malefizit,Malapietra
+5641,1047,20,Items,Enchanted stone,せいれいせき,,Piedra encantada,Pierre enchantée,Verzauberter Stein,Sasso incantato
+5642,1048,20,Items,Ethereal stone,げんませき,,Piedra etérea,Pierre ésotérique,Ätherischer Stein,Pietra eterea
+565C,1049,20,Items,Celestial skein,あまつゆのいと,,Madeja celestial,Écheveau céleste,Himmelsgebinde,Matassa celeste
+565B,1050,20,Items,Reset stone,リサイクルストーン,,Piedra reinicio,Réinitialithe,Stein der Stornierung,Pietra dell'oblio
+5644,1051,20,Items,Astral plume,天使のはね,,Pluma astral,Plume astrale,Astralfeder,Piuma celeste
+565D,1052,20,Items,Sainted soma,天使のソーマ,,Santo y soma,Soluté sacré,Göttertrank,Succo sacro
+565E,1053,20,Items,Lucida shard,ほしのカケラ,,Fragmento de Lucida,Éclat d'étoile,Kristallscherbe,Frammento lucido
+56F2,1054,20,Items,Chronocrystal,ときのすいしょう,,Cronocristal,Chronocristal,Chronokristall,Cronocristallo
+565F,1055,20,Items,Agate of evolution,しんかのひせき,,Gemolución,Agate d'évolution,Achat der Evolution,Gemma dell'evoluzione
+56F3,1056,20,Items,Red orb,レッドオーブ,,Orbe rojo,Orbe rouge,Rote Kugel,Globo rosso
+56F4,1057,20,Items,Blue orb,ブルーオーブ,,Orbe azul,Orbe bleu,Blaue Kugel,Globo azzurro
+56F5,1058,20,Items,Yellow orb,イエローオーブ,,Orbe amarillo,Orbe jaune,Gelbe Kugel,Globo giallo
+56F6,1059,20,Items,Green orb,グリーンオーブ,,Orbe verde,Orbe vert,Grüne Kugel,Globo verde
+56F7,1060,20,Items,Purple orb,パープルオーブ,,Orbe púrpura,Orbe violet,Lila Kugel,Globo viola
+56F8,1061,20,Items,Silver orb,シルバーオーブ,,Orbe de plata,Orbe argent,Silberne Kugel,Globo d'argento
+56F9,1062,20,Items,‘Swordcraft in Summary’,剣の秘伝書,,“Maestrillo de esgrima”,L'Épée en Résumé,Schwerter-Summarium,Teoria della spada
+56FA,1063,20,Items,‘Clear Spear Theory’,ヤリの秘伝書,,“Lanza para todos”,Leçons de Lance,Mehr über den Speer,Lezioni di lancia
+56FB,1064,20,Items,‘Knifing Know-How’,短剣の秘伝書,,“Acuchillar y cantar”,Pratique du poignard,Besser mit dem Messer,Coltelli 
+56FC,1065,20,Items,‘Wands and Beyond’,杖の秘伝書,,“El señor de las varitas”,L'Art de la Baguette,Stäbe für Spezialisten,Magia della bacchetta
+56FD,1066,20,Items,‘Working with Whips’,ムチの秘伝書,,“Las crónicas del látigo”,Fouet Facile,Peitschen für Profis,Fantastiche fruste
+56FE,1067,20,Items,‘Staff Studies’,棍の秘伝書,,“El báculo del poder”,Bases du Bâton,Stock-Studien,Tutto sul bastone
+56FF,1068,20,Items,‘The Core of the Claw’,ツメの秘伝書,,“Agarralipsis now”,Techniques de Griffes,Klauen für Könner,Guida all'artiglio
+5700,1069,20,Items,‘Further Fanmanship’,おうぎの秘伝書,,“Un abanico de ideas”,L'Éventail Avancé,Fächer für Fachleute,Passione per il ventaglio
+5701,1070,20,Items,‘Advanced Axecraft’,オノの秘伝書,,“Hachechinato”,La Hache Inspirée,Texte über Äxte,Scienza dell'ascia
+5702,1071,20,Items,‘Hardcore Hammering’,ハンマーの秘伝書,,“No sin mi martillo”,Marteaux des Masses,Wo der Hammer hängt,Manuale del martello
+5703,1072,20,Items,‘The Boomerang Bible’,ブーメランの秘伝書,,“Biblia del bumerán”,Retour sur le Boomerang,Der große Wurf,Bibbia del boomerang
+5704,1073,20,Items,‘Archery for the Adept’,弓の秘伝書,,“El código del arco”,Triomphe de l'Arc,Pfeile mit Weile,Obiettivo sull'arco
+5705,1074,20,Items,‘Fearsome Fisticuffing’,素手の秘伝書,,“Puños a puñados”,Combat aux Poings,Fibel der Fäuste,A mani nude
+5706,1075,20,Items,‘Secrets of the Shield’,盾の秘伝書,,“Cómo escudarse”,"Boucliers, le b.a.-ba",Hinter dem Schilde,Scudo segreto
+5707,1076,20,Items,‘Warrior's Workbook’,戦士の秘伝書,,“El camino del guerrero”,Guide du Guerrier,Krieger-Kodex,Manuale del Guerriero
+5708,1077,20,Items,‘Priest's Primer’,そうりょの秘伝書,,“Misal de sacerdote”,Recueil du Prêtre,Priester-Psalter,Segreti del Sacerdote
+5709,1078,20,Items,‘Mage's Manual’,まほうつかいの書,,“Magia potagia”,Manuel du Mage,Zauberer-Zitatenschatz,Trattato del Mago
+570A,1079,20,Items,‘Martial Artist's Manual’,ぶとうかの秘伝書,,“Consejos marciales”,Index des Arts martiaux,Kampfkunst-Konvolut,Astuzia del Lottatore
+570B,1080,20,Items,‘Thief's Theory’,とうぞくの秘伝書,,“El arte de robar”,Vérités du Voleur,Diebes-Dossier,Pergamena del Ladro
+570C,1081,20,Items,‘Minstrel's Manual’,旅芸人の秘伝書,,“Juglar juglando”,Traité du Troubadour,Barden-Bibel,ABC del Clown
+570D,1082,20,Items,‘Gladiator's Guide’,バトルマスターの書,,“Guía del gladiador”,Bible du Gladiateur,Gladiator-Grundwerk,Guida del Gladiatore
+570E,1083,20,Items,‘Paladin's Primer’,パラディンの秘伝書,,“Breviario de paladines”,Précis du Paladin,Paladin-Pergament,Prontuario del Paladino
+570F,1084,20,Items,‘Armamentalist's Album’,魔法戦士の秘伝書,,“Lista armamentalista”,ABC de l'Armagicien,Schwertmagier-Schrift,Testo del Maestro d'armi
+5710,1085,20,Items,‘Ranger's Revelations’,レンジャーの秘伝書,,“Montaraz sagaz”,Révélations du Ranger,Waldläufer-Wegweiser,Scritti dell'Esploratore
+5711,1086,20,Items,‘Sage's Scripture’,けんじゃの秘伝書,,“Vademécum del sabio”,Ouvrage du Sage,Weisen-Wälzer,Memorie del Saggio
+5712,1087,20,Items,‘Luminary's Lore’,スーパースターの書,,“Cómo ser una estrella”,Livre de la Sommité,Koryphäen-Kompendium,Copione dell'Artista
+566D,1088,20,Items,MIMIC STONE,ミミックの石,,PIEDRA MIMÉTICA,PIERRE D'IMITATION,IMITATORSTEIN,PIETRA IMITATRICE
+566E,1089,20,Items,BLARNEY STONE,ぜんめつの石,,PIEDRA CHARLATANA,PIERRE DE BONIMENT,BLARNEYSTEIN,PIETRA ADULATRICE

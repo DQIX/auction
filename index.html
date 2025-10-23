@@ -84,7 +84,7 @@
     .btn.primary { background: linear-gradient(180deg, #2563eb, #1d4ed8); border-color: #1e3a8a; color: white; }
     .btn.primary:disabled { opacity: .5; cursor: not-allowed; }
     .icon { width: 20px; height: 20px; vertical-align: -4px; }
-    .toolbar { display: flex; gap: 8px; align-items: center; }
+    .toolbar { display: flex; gap: 8px; align-items: center;  min-width: 750px;}
     .search { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; }
     .search input { flex: 1; background: transparent; color: var(--fg); border: 0; outline: none; min-width: 140px; }
     .select { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
@@ -115,7 +115,7 @@
     .icon-sprite { width: 24px; height: 24px; display: inline-block; vertical-align: top; background-image: url('itemIcons.png'); background-repeat: no-repeat; image-rendering: pixelated; border-radius: 4px; box-shadow: inset 0 0 0 1px #0009; }
     .name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    body {
+    body, main{
       min-width: 700px;
     }
 
@@ -157,13 +157,82 @@
     :root[data-theme="light"] .icon-sprite { box-shadow: none; }
     :root[data-theme="light"] .item { border-color: transparent; }
     :root[data-theme="light"] .item:hover { border-color: transparent; }
+
+    /* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
+    :root[data-theme="orange"] {
+      --bg: #0d1116;       /* 背景をより深いダークブルー寄りに */
+      --panel: #161b21;    /* パネル部分、わずかに明るくして区別 */
+      --card: #12171d;     /* カードは中間トーンで浮かないように */
+      --border: #1f2a33;   /* 境界線を控えめに */
+      --fg: #e5e7eb;       /* 文字色（ややグレー寄り） */
+      --muted: #8b96a3;    /* 補助文字 */
+      --pri: #f97316;      /* 差し色（オレンジ）を少し深く */
+      --accent: #ea580c;   /* より強いアクセントオレンジ */
+      --warn: #f59e0b;     /* 警告色（アンバー）をそのまま維持 */
+      --err: #ef4444;      /* エラー色そのまま */
+    }
+    :root[data-theme="deepDark"]{
+      --bg:#0b0c10;
+      --panel:#0e1015;
+      --muted:#9aa3ad;
+      --fg:#e5e7eb;
+      --pri:#60a5fa; /* blue-400 */
+      --accent:#22c55e; /* green-500 */
+      --warn:#f59e0b;
+      --err:#ef4444;
+      --card:#0a0c12;
+      --border:#1a1f2a;
+    }
+    :root[data-theme="darkColorblind"]{
+      --bg:#0b0c10;
+      --panel:#0e1015;
+      --muted:#9aa3ad;
+      --fg:#e5e7eb;
+      --pri:#fb923c; /* orange-400 */
+      --accent:#f59e0b; /* amber-500 */
+      --warn:#f59e0b;
+      --err:#ef4444;
+      --card:#0a0c12;
+      --border:#1a1f2a;
+    }
+    :root[data-theme="darkTritanopia"]{
+      --bg:#0b0c10;
+      --panel:#0e1015;
+      --muted:#9aa3ad;
+      --fg:#e5e7eb;
+      --pri:#f87171; /* red-400 */
+      --accent:#ef4444; /* red-500 */
+      --warn:#f59e0b;
+      --err:#ef4444;
+      --card:#0a0c12;
+      --border:#1a1f2a;
+    }
+
+    /* Header backgrounds for new themes */
+    :root[data-theme="orange"] header {
+      background: linear-gradient(180deg, rgba(20,26,31,0.96), rgba(20,26,31,0.88));
+    }
+    :root[data-theme="deepDark"] header,
+    :root[data-theme="darkColorblind"] header,
+    :root[data-theme="darkTritanopia"] header {
+      background: linear-gradient(180deg, rgba(14,16,21,0.96), rgba(14,16,21,0.88));
+    }
+
+    /* Responsive header: at <=1200px, move search and subsequent controls to next line */
+    @media (max-width: 1150px) {
+      .toolbar { flex-wrap: wrap; }
+      .toolbar .search { order: 2; flex: 1 1 100px; margin-top: 6px; min-width: 200px }
+      .toolbar .search ~ * { order: 2; }
+    }
+
+
   </style>
   <script src="data.js"></script>
 </head>
 <body>
   <header>
     <div class="wrap header-row">
-      <h1>DQVCアイテムリスト生成</h1>
+      <h1 style="min-width: 160px">DQVCアイテムリスト生成</h1>
       <div class="grow"></div>
       <div class="toolbar">
         <label class="muted" for="lang">言語</label>
@@ -183,6 +252,10 @@
           <option value="blue">ブルー</option>
           <option value="gold">ゴールド</option>
           <option value="pink">ピンク</option>
+          <option value="orange">オレンジ（色弱向け）</option>
+          <option value="deepDark">ディープダーク</option>
+          <option value="darkColorblind">ダーク色弱（オレンジ）</option>
+          <option value="darkTritanopia">ダーク トリタノピア（赤）</option>
         </select>
         <div class="search">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -973,6 +1046,10 @@
       themeBlue: "ブルー",
       themeGold: "ゴールド",
       themePink: "ピンク",
+      themeOrange: "ダーク+",
+      themeDeepDark: "ディープダーク",
+      themeDarkColorblind: "ダーク色弱（オレンジ）",
+      themeDarkTritanopia: "ダーク トリタノピア（赤）",
       priceLabel: "価格",
       minLabel: "最小",
       maxLabel: "最大",
@@ -1001,6 +1078,10 @@
       themeBlue: "Blue",
       themeGold: "Gold",
       themePink: "Pink",
+      themeOrange: "Dark+",
+      themeDeepDark: "Deep Dark",
+      themeDarkColorblind: "Dark Colorblind (Orange)",
+      themeDarkTritanopia: "Dark Tritanopia (Red)",
       priceLabel: "Price",
       minLabel: "Min",
       maxLabel: "Max",
@@ -1029,6 +1110,10 @@
       themeBlue: "Azul",
       themeGold: "Oro",
       themePink: "Rosa",
+      themeOrange: "Oscuro+",
+      themeDeepDark: "Oscuro profundo",
+      themeDarkColorblind: "Oscuro para daltónicos (Naranja)",
+      themeDarkTritanopia: "Oscuro Tritanopía (Rojo)",
       priceLabel: "Precio",
       minLabel: "Mín",
       maxLabel: "Máx",
@@ -1057,6 +1142,10 @@
       themeBlue: "Bleu",
       themeGold: "Or",
       themePink: "Rose",
+      themeOrange: "Sombre+",
+      themeDeepDark: "Sombre profond",
+      themeDarkColorblind: "Sombre daltonien (Orange)",
+      themeDarkTritanopia: "Sombre tritanopie (Rouge)",
       priceLabel: "Prix",
       minLabel: "Min",
       maxLabel: "Max",
@@ -1177,11 +1266,19 @@
     const optBlue = document.querySelector("#theme option[value='blue']");
     const optGold = document.querySelector("#theme option[value='gold']");
     const optPink = document.querySelector("#theme option[value='pink']");
+    const optOrange = document.querySelector("#theme option[value='orange']");
+    const optDeepDark = document.querySelector("#theme option[value='deepDark']");
+    const optDarkColorblind = document.querySelector("#theme option[value='darkColorblind']");
+    const optDarkTritanopia = document.querySelector("#theme option[value='darkTritanopia']");
     if (optDark) optDark.innerText = t.themeDark;
     if (optLight) optLight.innerText = t.themeLight;
     if (optBlue) optBlue.innerText = t.themeBlue;
     if (optGold) optGold.innerText = t.themeGold;
     if (optPink) optPink.innerText = t.themePink;
+    if (optOrange) optOrange.innerText = t.themeOrange;
+    if (optDeepDark) optDeepDark.innerText = t.themeDeepDark;
+    if (optDarkColorblind) optDarkColorblind.innerText = t.themeDarkColorblind;
+    if (optDarkTritanopia) optDarkTritanopia.innerText = t.themeDarkTritanopia;
   }
 
   // 初期化：DOMContentLoaded で適用、言語セレクト変更時に再適用

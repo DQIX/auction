@@ -9,7 +9,7 @@ This web tool generates DLC files containing any items you want, in a format dis
 2. Enter the item names you want to include in the auction
 3. Click "download"
 4. Copy the generated files to /dlc/YDQJ/... on your WFC server
-5. Connect to the server form Nintendo DS
+5. Connect to the server from Nintendo DS
 6. Enjoy!
 
 A guide with detailed instructions will be available at a later date!  

@@ -517,7 +517,7 @@
   function parseFile(bin){
     // verify checksum
     const sum = lay_d_23_CheckChecksum(bin);
-    if(sum !== 0){ throw new Error('チェックサムが不正です。'); }
+    if(bin.length === 0 || sum !== 0){ throw new Error('チェックサムが不正です。\n This is not a dqvc file.'); }
     // decrypt; note last 4 bytes were replaced with checksum; we'll decrypt anyway and patch tail marker
     const dec = rc4(bin, KEY);
     let plain = dec.slice(0, dec.length - 4);

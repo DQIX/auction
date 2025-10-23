@@ -912,7 +912,7 @@
     };
     const scheduleHide = () => {
       const elapsed = Date.now() - lastShowAt;
-      const wait = Math.max(500 - elapsed, 0); // keep visible at least 500ms
+      const wait = Math.max(250 - elapsed, 0); // keep visible at least 500ms
       if (hideTimer) { clearTimeout(hideTimer); }
       hideTimer = setTimeout(() => { drop.classList.remove('visible'); hideTimer = null; }, wait);
     };
@@ -1197,6 +1197,10 @@
       themeGold: "Gold",
       themePink: "Rosa",
       priceLabel: "Preis",
+      themeOrange: "Dunkel+",
+      themeDeepDark: "Tiefdunkel",
+      themeDarkColorblind: "Dunkel Farbenblind (Orange)",
+      themeDarkTritanopia: "Dunkel Tritanopie (Rot)",
       minLabel: "Min",
       maxLabel: "Max",
       bulkTitle: "Sammelzuweisung",
@@ -1224,6 +1228,10 @@
       themeBlue: "Blu",
       themeGold: "Oro",
       themePink: "Rosa",
+      themeOrange: "Scuro+",
+      themeDeepDark: "Scuro Profondo",
+      themeDarkColorblind: "Scuro Daltonismo (Arancione)",
+      themeDarkTritanopia: "Scuro Tritanopia (Rosso)",
       priceLabel: "Prezzo",
       minLabel: "Min",
       maxLabel: "Max",

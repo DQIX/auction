@@ -493,18 +493,28 @@
     hdr.putBytes(body);
     // Tail string: "2011/03/23 17:09:05\x001102323\x00"
     hdr.putAscii('2011/03/23'); hdr.putByte(0x20); hdr.putAscii('17:09:05'); hdr.putByte(0x00);
-    hdr.putAscii('1102323'); hdr.putByte(0x00);
+    hdr.putAscii('1102323'); hdr.putByte(0x00);hdr.putByte(0xFF);
 
-    // pad to 16 with 0xFF
     let bytes = hdr.toUint8();
+
     const pad = (16 - (bytes.length % 16)) % 16;
     if(pad>0){ const ff = new Uint8Array(pad); ff.fill(0xFF); bytes = concat(bytes, ff); }
+
+
+    let url = "\r\nGenerate by DQVC DLC Custom List Generator v1.0.0 ^_^, anchor: DaisukeDaisuke <('.'<), url: https://dqix.github.io/auction/ ,(>^_^)> contact: https://x.com/Daisuke76897125";
+    let urlBytes = new TextEncoder().encode(url);
+    bytes = concat(bytes, urlBytes);
+
+    const pad1 = (16 - (bytes.length % 16)) % 16;
+    if(pad>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
+
     bytes = concat(bytes, MARKER);
 
     // encrypt
     const enc = rc4(bytes, KEY);
-    // replace last 4 bytes with checksum fix
-    let final = enc.slice(0, enc.length - 4);
+    let final = enc.slice(0, enc.length - 4 - urlBytes.length - pad1);
+    final = concat(final, urlBytes);
+    if(pad>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); final = concat(final, ff); }
     const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
     final = concat(final, fix);
 

@@ -986,8 +986,10 @@
     el('downloadBtn').onclick = onDownload;
 
     // restore language and theme from localStorage
-    const savedLang = localStorage.getItem('lang');
-    if(savedLang){ state.lang = savedLang; }
+    const SUPPORTED_LANGS = ['ja','en','es','fr','de','it'];
+    const savedLang = localStorage.getItem('lang') || ((navigator.language || navigator.userLanguage || "en").slice(0,2).toLowerCase());
+    const lang = SUPPORTED_LANGS.indexOf(savedLang) !== -1 ? savedLang : 'en';
+    if(lang){ state.lang = lang; }
     el('lang').value = state.lang;
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -1402,8 +1404,7 @@
     // Alt（自動判別）の場合、ブラウザ言語を利用
     let t;
     if (lang === "alt") {
-      const autoLangCode = (navigator.language || navigator.userLanguage || "en").slice(0,2).toLowerCase();
-      t = translations[autoLangCode] || translations.en;
+      t = translations["ja"] || translations.en;
     } else {
       t = translations[lang] || translations.ja;
     }

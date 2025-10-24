@@ -516,7 +516,7 @@
     const now = new Date();
     const timeString = now.toISOString(); // 例: "2025-10-24T09:32:10.123Z"
 
-    let url = "\r\nGenerate by DQVC DLC Custom List Generator v1.0.1, ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)> \r\ncontact: https://x.com/Daisuke76897125, date: " + timeString + ", Thank you for using! :)\r\n";
+    let url = "\r\nGenerate by DQVC DLC Custom List Generator v1.0.1, ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)> \r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
     let urlBytes = new TextEncoder().encode(url);
     bytes = concat(bytes, urlBytes);
 

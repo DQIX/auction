@@ -101,6 +101,9 @@
     .search { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; }
     .search input { flex: 1; background: transparent; color: var(--fg); border: 0; outline: none; min-width: 140px; }
     .select { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
+    /* Collapsible info box styles */
+    .info-box .title { cursor: pointer; user-select: none; }
+    .info-box.collapsed .info-content { display: none; }
 
     main { max-width: 2000px; margin: 0 auto; padding: 12px 16px 40px; display: grid; grid-template-columns: 1fr; grid-template-areas: "selected" "items"; gap: 16px; }
     #itemsPanel { grid-area: items; }
@@ -324,6 +327,12 @@
             <button id="delAll" class="btn">すべて削除</button>
           </div>
         </div>
+
+        <!-- Collapsible info box: About this tool -->
+        <div id="infoBox" class="bulk info-box">
+          <div class="title" id="infoTitle">このツールについて</div>
+          <div class="info-content" id="infoContent"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -344,6 +353,7 @@
   const MOD = 0xC2A030D4n;
   const POW32MOD = (1n << 32n) % MOD;
   const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
+  const version = "1.0.2";
 
   const el = id => document.getElementById(id);
 
@@ -516,7 +526,7 @@
     const now = new Date();
     const timeString = now.toISOString(); // 例: "2025-10-24T09:32:10.123Z"
 
-    let url = "\r\nGenerate by DQVC DLC Custom List Generator v1.0.1, ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)> \r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
+    let url = "\r\nGenerate by DQVC DLC Custom List Generator v$" + version + ", ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)> \r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
     let urlBytes = new TextEncoder().encode(url);
     bytes = concat(bytes, urlBytes);
 
@@ -664,14 +674,27 @@
 
   // translation helper for dynamic UI
   function t(key){
+    const fallback = {
+      priceLabel: '価格',
+      minLabel: '最小',
+      maxLabel: '最大',
+      filterSelected: '検索で選択済みも絞り込む',
+      confirmDelete: '下記のアイテムを削除します。よろしいですか',
+      noResults: '該当するアイテムがありません。'
+    };
+    const hasTrans = (typeof translations !== 'undefined');
     const lang = state.lang;
-    let dict = translations[lang];
-    if(lang === 'alt'){
+    let dict = hasTrans ? translations[lang] : null;
+    if(hasTrans && lang === 'alt'){
       const auto = (navigator.language || 'en').slice(0,2).toLowerCase();
       dict = translations[auto] || translations.en;
     }
-    if(!dict) dict = translations.ja;
-    return (dict && key in dict) ? dict[key] : (translations.ja[key] || key);
+    if(hasTrans && !dict) dict = translations.ja;
+    if(hasTrans){
+      return (dict && key in dict) ? dict[key] : (translations.ja[key] || fallback[key] || key);
+    } else {
+      return fallback[key] || key;
+    }
   }
 
   function render(){
@@ -751,7 +774,7 @@
     if(!body.childElementCount){
       const div = document.createElement('div');
       div.className = 'muted';
-      div.textContent = '該当するアイテムがありません。';
+      div.textContent = t('noResults');
       body.appendChild(div);
     }
   }
@@ -1043,6 +1066,18 @@
       confirmAndDelete(ids);
     }; }
 
+    // Info box collapse/expand behavior with persistence
+    const infoBox = document.getElementById('infoBox');
+    if(infoBox){
+      const saved = localStorage.getItem('infoCollapsed');
+      const collapsedInit = (saved !== null) ? (saved === '1') : (window.innerWidth <= 1000);
+      if(collapsedInit) infoBox.classList.add('collapsed');
+      infoBox.addEventListener('click', ()=>{
+        const isCollapsed = infoBox.classList.toggle('collapsed');
+        localStorage.setItem('infoCollapsed', isCollapsed ? '1' : '0');
+      });
+    }
+
     el('q').addEventListener('input', debounce(()=>{ state.q = el('q').value; renderItems(); renderSelected(); }, 120));
 
     await loadCSV();
@@ -1085,6 +1120,21 @@
       deleteUnmatched: "検索でマッチしなかったものを削除",
       deleteAll: "すべて削除",
       confirmDelete: "下記のアイテムを削除します。よろしいですか",
+      noResults: "該当するアイテムがありません。",
+      infoTitle: "このツールについて",
+      infoIntro1: "このウェブサイトは、カスタムWFCサーバーでそのまま使用できるDQVC用ショップ用のdlcデータを生成するツールです。",
+      infoIntro2: "DQVCは、1個のアイテムでも有効とみなされます。6個以上の場合、乱数によって数、品ぞろえが決定されます。",
+      infoCollapsible: "このメッセージは折りたたむことができます。",
+      usageTitle: "使用法",
+      step1: "送りたいアイテムを選択する",
+      step2: "「ダウンロード」をクリックする",
+      step3: "次にzipファイルを展開し、カスタムWFCサーバーの所定のフォルダに配置します。",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "それ以外: /dlc/YDQP",
+      step4: "WFCサーバーを起動し、dsから接続します。",
+      step5: "エンジョイ！",
+      versionPrefix: "DQVC カスタム リスト ジェネレーター by DaisukeDaisuke",
     },
     en: {
       title: "DQVC Item List Generator",
@@ -1117,6 +1167,21 @@
       deleteUnmatched: "Delete items not matching the search",
       deleteAll: "Delete all",
       confirmDelete: "The following items will be removed. Continue?",
+      noResults: "No matching items.",
+      infoTitle: "About this tool",
+      infoIntro1: "This website generates dlc data for DQVC shop that you can use as-is on a custom WFC server.",
+      infoIntro2: "DQVC is considered valid even with a single item. When there are 6 or more, the number and lineup are decided randomly.",
+      infoCollapsible: "You can collapse this message.",
+      usageTitle: "Usage",
+      step1: "Select items you want to send",
+      step2: "Click Download",
+      step3: "Unzip the downloaded zip and place the files in the designated folder of your custom WFC server.",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "other: /dlc/YDQP",
+      step4: "Start your WFC server and connect from your DS.",
+      step5: "Enjoy!",
+      versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
     },
     es: {
       title: "Generador de lista de artículos DQVC",
@@ -1149,6 +1214,21 @@
       deleteUnmatched: "Eliminar los que no coinciden con la búsqueda",
       deleteAll: "Eliminar todo",
       confirmDelete: "Se eliminarán los siguientes elementos. ¿Desea continuar?",
+      noResults: "No hay elementos coincidentes.",
+      infoTitle: "Acerca de esta herramienta",
+      infoIntro1: "Este sitio genera datos dlc para la tienda DQVC que puedes usar tal cual en un servidor WFC personalizado.",
+      infoIntro2: "DQVC se considera válido incluso con un solo artículo. Con 6 o más, la cantidad y el surtido se deciden aleatoriamente.",
+      infoCollapsible: "Este mensaje se puede contraer.",
+      usageTitle: "Uso",
+      step1: "Selecciona los artículos que quieres enviar",
+      step2: "Haz clic en Descargar",
+      step3: "Descomprime el zip y coloca los archivos en la carpeta designada del servidor WFC personalizado.",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "otros: /dlc/YDQP",
+      step4: "Inicia el servidor WFC y conéctate desde la DS.",
+      step5: "¡Disfruta!",
+      versionPrefix: "Generador de lista personalizada DQVC por DaisukeDaisuke",
     },
     fr: {
       title: "Générateur de liste d'objets DQVC",
@@ -1181,6 +1261,21 @@
       deleteUnmatched: "Supprimer les éléments ne correspondant pas à la recherche",
       deleteAll: "Tout supprimer",
       confirmDelete: "Les éléments suivants seront supprimés. Continuer ?",
+      noResults: "Aucun objet correspondant.",
+      infoTitle: "À propos de cet outil",
+      infoIntro1: "Ce site génère des données dlc pour la boutique DQVC, utilisables telles quelles sur un serveur WFC personnalisé.",
+      infoIntro2: "DQVC est valable même avec un seul objet. À partir de 6, le nombre et l'assortiment sont déterminés aléatoirement.",
+      infoCollapsible: "Ce message peut être replié.",
+      usageTitle: "Mode d'emploi",
+      step1: "Sélectionnez les objets à envoyer",
+      step2: "Cliquez sur Télécharger",
+      step3: "Décompressez le zip et placez les fichiers dans le dossier prévu de votre serveur WFC personnalisé.",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "autre: /dlc/YDQP",
+      step4: "Démarrez le serveur WFC et connectez-vous depuis la DS.",
+      step5: "Amusez-vous !",
+      versionPrefix: "Générateur de liste personnalisée DQVC par DaisukeDaisuke",
     },
     de: {
       title: "DQVC-Artikel-Listengenerator",
@@ -1213,6 +1308,21 @@
       deleteUnmatched: "Elemente löschen, die der Suche nicht entsprechen",
       deleteAll: "Alle löschen",
       confirmDelete: "Die folgenden Elemente werden gelöscht. Fortfahren?",
+      noResults: "Keine passenden Elemente.",
+      infoTitle: "Über dieses Tool",
+      infoIntro1: "Diese Website erzeugt DLC-Daten für den DQVC-Shop, die direkt auf einem eigenen WFC-Server verwendet werden können.",
+      infoIntro2: "DQVC gilt bereits mit einem einzelnen Artikel als gültig. Bei 6 oder mehr werden Anzahl und Sortiment zufällig bestimmt.",
+      infoCollapsible: "Diese Nachricht kann eingeklappt werden.",
+      usageTitle: "Verwendung",
+      step1: "Wähle die zu sendenden Artikel aus",
+      step2: "Klicke auf Herunterladen",
+      step3: "Entpacke die ZIP-Datei und lege die Dateien in den vorgesehenen Ordner deines benutzerdefinierten WFC-Servers.",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "sonstige: /dlc/YDQP",
+      step4: "Starte den WFC-Server und verbinde dich von deinem DS.",
+      step5: "Viel Spaß!",
+      versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
     },
     it: {
       title: "Generatore elenco oggetti DQVC",
@@ -1245,6 +1355,21 @@
       deleteUnmatched: "Elimina gli elementi non corrispondenti alla ricerca",
       deleteAll: "Elimina tutti",
       confirmDelete: "I seguenti elementi verranno rimossi. Continuare?",
+      noResults: "Nessun elemento corrispondente.",
+      infoTitle: "Informazioni su questo strumento",
+      infoIntro1: "Questo sito genera dati dlc per il negozio DQVC, utilizzabili così com'è su un server WFC personalizzato.",
+      infoIntro2: "DQVC è considerato valido anche con un solo oggetto. Con 6 o più, il numero e l'assortimento sono determinati casualmente.",
+      infoCollapsible: "Questo messaggio può essere compresso.",
+      usageTitle: "Uso",
+      step1: "Seleziona gli oggetti che vuoi inviare",
+      step2: "Fai clic su Scarica",
+      step3: "Estrai lo zip e posiziona i file nella cartella designata del tuo server WFC personalizzato.",
+      pathJpn: "jpn: /dlc/YDQJ",
+      pathUsa: "usa: /dlc/YDQE",
+      pathOther: "altro: /dlc/YDQP",
+      step4: "Avvia il server WFC e connettiti dal DS.",
+      step5: "Divertiti!",
+      versionPrefix: "Generatore elenco personalizzato DQVC di DaisukeDaisuke",
     }
   };
 
@@ -1312,6 +1437,29 @@
     if (optDeepDark) optDeepDark.innerText = t.themeDeepDark;
     if (optDarkColorblind) optDarkColorblind.innerText = t.themeDarkColorblind;
     if (optDarkTritanopia) optDarkTritanopia.innerText = t.themeDarkTritanopia;
+
+    // Info box content
+    setText("#infoTitle", t.infoTitle);
+    const infoContentEl = document.getElementById("infoContent");
+    if (infoContentEl) {
+      infoContentEl.innerHTML = `
+        <div class="muted" style="margin-bottom:6px">${t.infoIntro1}</div>
+        <div class="muted" style="margin-bottom:6px">${t.infoIntro2}</div>
+        <div class="muted" style="margin-bottom:6px">${t.infoCollapsible}</div>
+        <div style="font-weight:700; margin:8px 0 4px;">${t.usageTitle}</div>
+        <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
+          <li>${t.step1}</li>
+          <li>${t.step2}</li>
+          <li>${t.step3}</li>
+          <li>${t.pathJpn}</li>
+          <li>${t.pathUsa}</li>
+          <li>${t.pathOther}</li>
+          <li>${t.step4}</li>
+          <li>${t.step5}</li>
+        </ul>
+        <div class="muted" style="margin-top:8px">${t.versionPrefix}, v${version}</div>
+      `;
+    }
   }
 
   // 初期化：DOMContentLoaded で適用、言語セレクト変更時に再適用

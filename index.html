@@ -949,6 +949,29 @@
     window.addEventListener('drop', (e)=>{ e.preventDefault(); dragDepth = 0; scheduleHide(); const f = e.dataTransfer.files && e.dataTransfer.files[0]; if(f && f.name.endsWith('.bin')) loadBinFromFile(f); });
   }
 
+  // main内のテキストドラッグだけを無効化（選択とコピペは可）
+  function setupMainTextDragBlock(){
+    const mainEl = document.querySelector('main');
+    if(!mainEl) return;
+    const isFileDrag = (e)=> e && e.dataTransfer && Array.prototype.indexOf.call(e.dataTransfer.types || [], 'Files') !== -1;
+
+    // テキスト選択からのドラッグ開始を抑止（ファイルドラッグは許可）
+    mainEl.addEventListener('dragstart', (e)=>{
+      const sel = window.getSelection && window.getSelection();
+      const hasTextSel = sel && String(sel).length > 0;
+      if(hasTextSel && !isFileDrag(e)){
+        e.preventDefault();
+      }
+    });
+
+    // 非ファイルのdragイベントがwindowにバブリングしてオーバーレイを出さないよう抑止
+    const stopIfTextDrag = (e)=>{ if(!isFileDrag(e)){ e.stopPropagation(); } };
+    mainEl.addEventListener('dragenter', stopIfTextDrag);
+    mainEl.addEventListener('dragover', stopIfTextDrag);
+    mainEl.addEventListener('dragleave', stopIfTextDrag);
+    mainEl.addEventListener('drop', stopIfTextDrag);
+  }
+
   // ===================== Wire up =====================
   function applyTheme(theme){
     document.documentElement.setAttribute('data-theme', theme);
@@ -957,6 +980,7 @@
 
   (async function init(){
     setupDnD();
+    setupMainTextDragBlock();
     el('loadBtn').onclick = ()=> el('loader').click();
     el('loader').onchange = ()=>{ const f = el('loader').files[0]; if(f) loadBinFromFile(f); el('loader').value = ''; };
     el('downloadBtn').onclick = onDownload;

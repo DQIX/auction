@@ -1048,7 +1048,41 @@ function renderSelected(){
 }
 
 // ===================== File IO =====================
+let _JSZip = null; // 読み込み済みキャッシュ
+async function loadJSZip() {
+    if (_JSZip) return _JSZip;
+
+    // 1) まず ESM 版を import() で試す（jsDelivr の +esm を利用）
+    try {
+        const mod = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm');
+        _JSZip = mod.default || mod; // default エクスポート or モジュール自体
+        return _JSZip;
+    } catch (err) {
+        // import に失敗したらフォールバックへ（古いブラウザや CSP のせいで import が失敗することがある）
+        // 既にグローバルにあるならそれを使う
+        if (window.JSZip) {
+            _JSZip = window.JSZip;
+            return _JSZip;
+        }
+
+        // 2) UMD を動的に読み込む（script 要素挿入）
+        await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
+            s.onload = resolve;
+            s.onerror = () => reject(new Error('Failed to load JSZip UMD'));
+            document.head.appendChild(s);
+        });
+
+        if (!window.JSZip) throw new Error('JSZip not available after loading UMD');
+        _JSZip = window.JSZip;
+        return _JSZip;
+    }
+}
+
 async function onDownload(){
+    const JSZip = await loadJSZip();
+
     const ids = Array.from(state.selected).sort((a,b)=>a-b);
     const bin = buildFile(ids);
 

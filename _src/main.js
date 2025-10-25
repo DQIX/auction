@@ -31,6 +31,11 @@ const translations = {
     themeDeepDark: "ディープダーク",
     themeDarkColorblind: "ダーク色弱（オレンジ）",
     themeDarkTritanopia: "ダーク トリタノピア（赤）",
+    themeLightGray: "ライト＋（グレー）",
+    themeLightCool: "ライト＋（クールブルー）",
+    themeLightSepia: "セピア（紙風）",
+    themeLightGreen: "ライト＋（グリーン）",
+    themeLightHighContrast: "ライト（高コントラスト）",
     priceLabel: "価格",
     minLabel: "最小",
     maxLabel: "最大",
@@ -95,6 +100,11 @@ const translations = {
     themeDeepDark: "Deep Dark",
     themeDarkColorblind: "Dark Colorblind (Orange)",
     themeDarkTritanopia: "Dark Tritanopia (Red)",
+    themeLightGray: "Light+ (Gray)",
+    themeLightCool: "Light+ (Cool Blue)",
+    themeLightSepia: "Sepia (Paper-like)",
+    themeLightGreen: "Light+ (Green)",
+    themeLightHighContrast: "Light (High Contrast)",
     priceLabel: "Price",
     minLabel: "Min",
     maxLabel: "Max",
@@ -159,6 +169,11 @@ const translations = {
     themeDeepDark: "Oscuro profundo",
     themeDarkColorblind: "Oscuro para daltónicos (Naranja)",
     themeDarkTritanopia: "Oscuro Tritanopía (Rojo)",
+    themeLightGray: "Claro+ (Gris)",
+    themeLightCool: "Claro+ (Azul frío)",
+    themeLightSepia: "Sepia (tipo papel)",
+    themeLightGreen: "Claro+ (Verde)",
+    themeLightHighContrast: "Claro (Alto contraste)",
     priceLabel: "Precio",
     minLabel: "Mín",
     maxLabel: "Máx",
@@ -223,6 +238,11 @@ const translations = {
     themeDeepDark: "Sombre profond",
     themeDarkColorblind: "Sombre daltonien (Orange)",
     themeDarkTritanopia: "Sombre tritanopie (Rouge)",
+    themeLightGray: "Clair+ (Gris)",
+    themeLightCool: "Clair+ (Bleu froid)",
+    themeLightSepia: "Sépia (aspect papier)",
+    themeLightGreen: "Clair+ (Vert)",
+    themeLightHighContrast: "Clair (Contraste élevé)",
     priceLabel: "Prix",
     minLabel: "Min",
     maxLabel: "Max",
@@ -288,6 +308,11 @@ const translations = {
     themeDeepDark: "Tiefdunkel",
     themeDarkColorblind: "Dunkel Farbenblind (Orange)",
     themeDarkTritanopia: "Dunkel Tritanopie (Rot)",
+    themeLightGray: "Hell+ (Grau)",
+    themeLightCool: "Hell+ (Kühles Blau)",
+    themeLightSepia: "Sepia (papierähnlich)",
+    themeLightGreen: "Hell+ (Grün)",
+    themeLightHighContrast: "Hell (Hoher Kontrast)",
     minLabel: "Min",
     maxLabel: "Max",
     bulkTitle: "Sammelzuweisung",
@@ -351,6 +376,11 @@ const translations = {
     themeDeepDark: "Scuro Profondo",
     themeDarkColorblind: "Scuro Daltonismo (Arancione)",
     themeDarkTritanopia: "Scuro Tritanopia (Rosso)",
+    themeLightGray: "Chiaro+ (Grigio)",
+    themeLightCool: "Chiaro+ (Blu freddo)",
+    themeLightSepia: "Seppia (simile carta)",
+    themeLightGreen: "Chiaro+ (Verde)",
+    themeLightHighContrast: "Chiaro (Alto contrasto)",
     priceLabel: "Prezzo",
     minLabel: "Min",
     maxLabel: "Max",
@@ -448,24 +478,28 @@ const translations = {
     if (q) q.placeholder = t.searchPlaceholder;
 
     // テーマ select の option を更新（value 属性を基準に）
-    const optDark = document.querySelector("#theme option[value='dark']");
-    const optLight = document.querySelector("#theme option[value='light']");
-    const optBlue = document.querySelector("#theme option[value='blue']");
-    const optGold = document.querySelector("#theme option[value='gold']");
-    const optPink = document.querySelector("#theme option[value='pink']");
-    const optOrange = document.querySelector("#theme option[value='orange']");
-    const optDeepDark = document.querySelector("#theme option[value='deepDark']");
-    const optDarkColorblind = document.querySelector("#theme option[value='darkColorblind']");
-    const optDarkTritanopia = document.querySelector("#theme option[value='darkTritanopia']");
-    if (optDark) optDark.innerText = t.themeDark;
-    if (optLight) optLight.innerText = t.themeLight;
-    if (optBlue) optBlue.innerText = t.themeBlue;
-    if (optGold) optGold.innerText = t.themeGold;
-    if (optPink) optPink.innerText = t.themePink;
-    if (optOrange) optOrange.innerText = t.themeOrange;
-    if (optDeepDark) optDeepDark.innerText = t.themeDeepDark;
-    if (optDarkColorblind) optDarkColorblind.innerText = t.themeDarkColorblind;
-    if (optDarkTritanopia) optDarkTritanopia.innerText = t.themeDarkTritanopia;
+        const themeMap = {
+            dark: 'themeDark',
+            light: 'themeLight',
+            lightGray: 'themeLightGray',
+            lightCool: 'themeLightCool',
+            lightSepia: 'themeLightSepia',
+            lightGreen: 'themeLightGreen',
+            lightHighContrast: 'themeLightHighContrast',
+            blue: 'themeBlue',
+            gold: 'themeGold',
+            pink: 'themePink',
+            orange: 'themeOrange',
+            deepDark: 'themeDeepDark',
+            darkColorblind: 'themeDarkColorblind',
+            darkTritanopia: 'themeDarkTritanopia'
+        };
+
+        for (const [value, key] of Object.entries(themeMap)) {
+            const opt = document.querySelector(`#theme option[value='${value}']`);
+            if (opt && t && t[key]) opt.innerText = t[key];
+        }
+
 
     // Info box content
     setText("#infoTitle", t.infoTitle);

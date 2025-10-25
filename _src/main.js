@@ -5,7 +5,6 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const version = "1.0.2";
 
 
 // lang.js

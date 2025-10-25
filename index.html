@@ -6,14 +6,14 @@
   <title>DQVCアイテムリスト生成</title>
   <meta property="og:type" content="website">
   <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
-  <meta property="og:description" content="DQVCで使える、dlcファイルを生成します。送信にはカスタムWFCサーバーが必要です。">
+  <meta property="og:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成リストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
   <meta property="og:url" content="https://dqix.github.io/auction/">
   <meta property="og:site_name" content="DQVCアイテムリスト生成">
   <meta property="og:locale" content="ja_JP">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="dq9 DQVCアイテムリスト生成">
-  <meta name="twitter:description" content="DQVCで使える、dlcファイルを生成します。送信にはカスタムWFCサーバーが必要です。">
+  <meta name="twitter:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成リストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
   <meta name="twitter:url" content="https://dqix.github.io/auction/">
   <meta name="twitter:site" content="@Daisuke76897125">
   <meta name="twitter:creator" content="@Daisuke76897125">
@@ -251,6 +251,10 @@
 </head>
 <body>
   <script>
+
+    /** バージョン */
+    const version = "1.0.3";
+
     /** ライトテーマのときにポリゴンショックしちゃうのでこれだけhtmlに埋め込む */
     function applyTheme(theme){
       document.documentElement.setAttribute('data-theme', theme);
@@ -261,8 +265,6 @@
   </script>
 
   <script src="all.min.js" defer></script>
-  <!--script src="_src/data.js" defer></script>
-  <script src="_src/main.js" defer></script-->
   <header>
     <div class="wrap header-row">
       <h1 style="min-width: 160px">DQVCアイテムリスト生成</h1>

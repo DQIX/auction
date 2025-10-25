@@ -182,7 +182,7 @@
     :root[data-theme="light"] .item:hover { border-color: transparent; }
 
     /* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
-    :root[data-theme="orange"] {
+    :root[data-theme="DarkPlus"] {
       --bg: #0d1116;       /* 背景をより深いダークブルー寄りに */
       --panel: #161b21;    /* パネル部分、わずかに明るくして区別 */
       --card: #12171d;     /* カードは中間トーンで浮かないように */
@@ -232,7 +232,7 @@
     }
 
     /* Header backgrounds for new themes */
-    :root[data-theme="orange"] header {
+    :root[data-theme="DarkPlus"] header {
       background: linear-gradient(180deg, rgba(20,26,31,0.96), rgba(20,26,31,0.88));
     }
     :root[data-theme="deepDark"] header,
@@ -405,7 +405,7 @@
       document.documentElement.setAttribute('data-theme', theme);
     }
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'DarkPlus';
     applyTheme(savedTheme);
   </script>
 
@@ -438,7 +438,7 @@
           <option value="blue">ブルー</option>
           <option value="gold">ゴールド</option>
           <option value="pink">ピンク</option>
-          <option value="orange">オレンジ（色弱向け）</option>
+          <option value="DarkPlus">ダーク+</option>
           <option value="deepDark">ディープダーク</option>
           <option value="darkColorblind">ダーク色弱（オレンジ）</option>
           <option value="darkTritanopia">ダーク トリタノピア（赤）</option>

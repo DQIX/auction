@@ -37,6 +37,10 @@ const translations = {
     maxLabel: "最大",
     bulkTitle: "一括個数指定",
     bulkApply: "一括適用",
+    presetTitle: "固定リストを適用",
+    presetLabel: "リスト",
+    presetApply: "適用",
+    presetPlaceholder: "リストを選択",
     filterSelected: "検索で選択済みも絞り込む",
     deleteMatched: "検索でマッチしたものを削除",
     deleteUnmatched: "検索でマッチしなかったものを削除",
@@ -95,6 +99,10 @@ const translations = {
     maxLabel: "Max",
     bulkTitle: "Bulk set",
     bulkApply: "Apply to all",
+    presetTitle: "Apply fixed list",
+    presetLabel: "List",
+    presetApply: "Apply",
+    presetPlaceholder: "Select a list",
     filterSelected: "Filter selected by search",
     deleteMatched: "Delete items matching the search",
     deleteUnmatched: "Delete items not matching the search",
@@ -153,6 +161,10 @@ const translations = {
     maxLabel: "Máx",
     bulkTitle: "Asignación en lote",
     bulkApply: "Aplicar a todos",
+    presetTitle: "Aplicar lista fija",
+    presetLabel: "Lista",
+    presetApply: "Aplicar",
+    presetPlaceholder: "Selecciona una lista",
     filterSelected: "Filtrar seleccionados por búsqueda",
     deleteMatched: "Eliminar los que coinciden con la búsqueda",
     deleteUnmatched: "Eliminar los que no coinciden con la búsqueda",
@@ -211,6 +223,10 @@ const translations = {
     maxLabel: "Max",
     bulkTitle: "Affectation en lot",
     bulkApply: "Appliquer à tous",
+    presetTitle: "Appliquer une liste fixe",
+    presetLabel: "Liste",
+    presetApply: "Appliquer",
+    presetPlaceholder: "Sélectionner une liste",
     filterSelected: "Filtrer les sélectionnés par la recherche",
     deleteMatched: "Supprimer les éléments correspondant à la recherche",
     deleteUnmatched: "Supprimer les éléments ne correspondant pas à la recherche",
@@ -269,6 +285,10 @@ const translations = {
     maxLabel: "Max",
     bulkTitle: "Sammelzuweisung",
     bulkApply: "Auf alle anwenden",
+    presetTitle: "Feste Liste anwenden",
+    presetLabel: "Liste",
+    presetApply: "Anwenden",
+    presetPlaceholder: "Liste auswählen",
     filterSelected: "Ausgewählte mit Suche filtern",
     deleteMatched: "Elemente löschen, die der Suche entsprechen",
     deleteUnmatched: "Elemente löschen, die der Suche nicht entsprechen",
@@ -327,6 +347,10 @@ const translations = {
     maxLabel: "Max",
     bulkTitle: "Impostazione massiva",
     bulkApply: "Applica a tutti",
+    presetTitle: "Applica elenco fisso",
+    presetLabel: "Elenco",
+    presetApply: "Applica",
+    presetPlaceholder: "Seleziona un elenco",
     filterSelected: "Filtra selezionati con ricerca",
     deleteMatched: "Elimina gli elementi corrispondenti alla ricerca",
     deleteUnmatched: "Elimina gli elementi non corrispondenti alla ricerca",
@@ -400,6 +424,13 @@ const translations = {
     setText("#delMatched", t.deleteMatched);
     setText("#delUnmatched", t.deleteUnmatched);
     setText("#delAll", t.deleteAll);
+
+    // Preset fixed-list UI texts
+    setText("#presetTitle", t.presetTitle);
+    setText("#presetSelectLabel", t.presetLabel);
+    setText("#presetApply", t.presetApply);
+    const phOpt = document.querySelector("#presetSelect option[value='']");
+    if (phOpt) phOpt.innerText = t.presetPlaceholder || phOpt.innerText;
 
     // プレースホルダ更新
     const q = document.getElementById("q");
@@ -1230,6 +1261,54 @@ function applyTheme(theme){
             localStorage.setItem('infoCollapsed', isCollapsed ? '1' : '0');
         });
     }
+
+    // Preset fixed-list: populate dropdown and apply handler
+    (function setupPresets(){
+        const sel = document.getElementById('presetSelect');
+        if(!sel) return;
+
+        // Populate once
+        if(typeof dqvcListings !== 'undefined' && Array.isArray(dqvcListings)){
+            // Clear existing options except placeholder
+            for(let i = sel.options.length - 1; i >= 1; i--) sel.remove(i);
+            dqvcListings.forEach((list, idx)=>{
+                // Ignore link property per spec
+                const opt = document.createElement('option');
+                const num = idx + 1;
+                const name = list && list.name ? String(list.name) : `List ${num}`;
+                opt.value = String(idx);
+                opt.textContent = `${num} - ${name}`;
+                sel.appendChild(opt);
+            });
+        }
+
+        const applyFromSelect = ()=>{
+            const v = sel.value;
+            if(v === '' || isNaN(parseInt(v,10))) return;
+            const idx = parseInt(v,10);
+            if(typeof dqvcListings === 'undefined' || !Array.isArray(dqvcListings)) return;
+            const list = dqvcListings[idx];
+            if(!list || !Array.isArray(list.items)) return;
+
+            const newSel = new Set();
+            const newMeta = new Map();
+            list.items.forEach((it)=>{
+                if(!it || typeof it.itemId !== 'number') return;
+                const id = it.itemId >>> 0;
+                newSel.add(id);
+                const price = (typeof it.price === 'number') ? it.price : 10;
+                const min = (typeof it.min === 'number') ? it.min : 1;
+                const max = (typeof it.max === 'number') ? it.max : 1;
+                newMeta.set(id, { price, min, max }); // default to 1 if undefined
+            });
+            state.selected = newSel;
+            state.meta = newMeta;
+            render();
+        };
+
+        // 変更した瞬間に適用
+        sel.addEventListener('change', applyFromSelect);
+    })();
 
     el('q').addEventListener('input', debounce(()=>{ state.q = el('q').value; renderItems(); renderSelected(); }, 120));
 

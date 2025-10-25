@@ -69,7 +69,9 @@ const translations = {
     note2: "商業利用は許可の上で行われるものとします。",
     note3: "任意のDQVCショップデータを書き込んだロムを売買、転売、売却するのはやめましょう。",
     note4: "商業利用が確認された場合、ツールの公開を停止する場合があります。",
-    note5: "このツールのソースコードをダウンロード、保存することを禁じます。",
+    note5: "この著作物は、複数の著作権者のコンテンツ（許可あり）を含みます。  ",
+    note6: "このツールのソースコードのダウンロードや保存は禁じますが、正規ページ経由での実行目的は許可します。",
+    note7: "Wayback Machine などのウェブアーカイブに保存する行為は、不特定多数がアクセス可能となるため、著作権法上の私的複製の範囲を超えるためご遠慮ください。",
     contactLabel: "連絡先:",
     versionPrefix: "DQVC カスタム リスト ジェネレーター by DaisukeDaisuke",
 },
@@ -131,7 +133,9 @@ const translations = {
     note2: "Commercial use requires permission.",
     note3: "Do not sell, resell, or trade ROMs that contain arbitrary DQVC shop data.",
     note4: "If commercial use is confirmed, publication of the tool may be suspended.",
-    note5: "Downloading or storing the tool's source code is prohibited.",
+    note5: "This work contains content from multiple copyright holders (with permission).",
+    note6: "Downloading or saving this tool's source code is prohibited, except for execution via the official page.",
+    note7: 'Please refrain from saving this site to web archives like Wayback Machine, as it exceeds the scope of private copying under copyright law.',
     contactLabel: "Contact:",
     versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
 },
@@ -193,7 +197,9 @@ const translations = {
     note2: "El uso comercial requiere permiso.",
     note3: "No vendas, revendas ni comercialices ROMs que contengan datos de tienda DQVC arbitrarios.",
     note4: "Si se confirma un uso comercial, la publicación de la herramienta puede ser suspendida.",
-    note5: "Está prohibido descargar o almacenar el código fuente de la herramienta.",
+    note5: "Esta obra contiene contenido de varios titulares de derechos (con permiso).",
+    note6: "Está prohibido descargar o guardar el código fuente de esta herramienta, salvo para ejecución desde la página oficial.",
+    note7: "Por favor, evite guardar este sitio en archivos web como Wayback Machine, ya que excede el ámbito de la copia privada según la ley de derechos de autor.",
     contactLabel: "Contacto:",
     versionPrefix: "Generador de lista personalizada DQVC por DaisukeDaisuke",
 },
@@ -255,7 +261,9 @@ const translations = {
     note2: "L'utilisation commerciale nécessite une autorisation.",
     note3: "N'en vendez ni ne revendez des ROMs contenant des données de boutique DQVC arbitraires.",
     note4: "Si une utilisation commerciale est constatée, la publication de l'outil peut être suspendue.",
-    note5: "Il est interdit de télécharger ou de stocker le code source de l'outil.",
+    note5: "Cette œuvre contient du contenu de plusieurs détenteurs de droits (avec autorisation).",
+    note6: "Le téléchargement ou la sauvegarde du code source de cet outil est interdit, sauf pour exécution depuis la page officielle.",
+    note7: "Veuillez ne pas sauvegarder ce site sur des archives web comme Wayback Machine, car cela dépasse le cadre de la copie privée selon la loi sur le droit d’auteur.",
     contactLabel: "Contact :",
     versionPrefix: "Générateur de liste personnalisée DQVC par DaisukeDaisuke",
 },
@@ -317,7 +325,9 @@ const translations = {
     note2: "Kommerzielle Nutzung erfordert eine Genehmigung.",
     note3: "Verkaufen/Weiterverkaufen von ROMs mit beliebigen DQVC-Shopdaten ist untersagt.",
     note4: "Bei festgestellter kommerzieller Nutzung kann die Veröffentlichung des Tools ausgesetzt werden.",
-    note5: "Das Herunterladen oder Speichern des Quellcodes des Tools ist verboten.",
+    note5: "Dieses Werk enthält Inhalte mehrerer Urheber (mit Erlaubnis).",
+    note6: "Das Herunterladen oder Speichern des Quellcodes dieses Tools ist verboten, außer für die Ausführung über die offizielle Seite.",
+    note7: "Bitte speichern Sie diese Website nicht in Webarchiven wie Wayback Machine, da dies den Rahmen der privaten Vervielfältigung nach dem Urheberrecht überschreitet.",
     contactLabel: "Kontakt:",
     versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
 },
@@ -379,7 +389,9 @@ const translations = {
     note2: "L'uso commerciale richiede autorizzazione.",
     note3: "Non vendere o rivendere ROM che contengono dati di negozio DQVC arbitrari.",
     note4: "Se viene confermato un uso commerciale, la pubblicazione dello strumento può essere sospesa.",
-    note5: "È vietato scaricare o archiviare il codice sorgente dello strumento.",
+    note5: "Quest'opera contiene contenuti di più detentori di copyright (con permesso).",
+    note6: "È vietato scaricare o salvare il codice sorgente di questo strumento, salvo per esecuzione tramite la pagina ufficiale.",
+    note7: "Si prega di non salvare questo sito in archivi web come Wayback Machine, poiché supera i limiti della copia privata secondo la legge sul diritto d’autore.",
     contactLabel: "Contatto:",
     versionPrefix: "Generatore elenco personalizzato DQVC di DaisukeDaisuke",
 }
@@ -486,6 +498,8 @@ const translations = {
           <li>${t.note3}</li>
           <li>${t.note4}</li>
           <li>${t.note5}</li>
+          <li>${t.note6}</li>
+          <li>${t.note7}</li>
           <li>${t.contactLabel} <a href="https://x.com/Daisuke76897125" target="_blank" rel="noopener">https://x.com/Daisuke76897125</a></li>
         </ul>
         <div class="muted" style="margin-top:8px">${t.versionPrefix}, v${version}</div>

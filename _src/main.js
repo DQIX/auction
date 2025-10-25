@@ -1164,9 +1164,6 @@ function setupMainTextDragBlock(){
 }
 
 // ===================== Wire up =====================
-function applyTheme(theme){
-    document.documentElement.setAttribute('data-theme', theme);
-}
 
 
 (async function init(){
@@ -1183,10 +1180,6 @@ function applyTheme(theme){
     const lang = SUPPORTED_LANGS.indexOf(savedLang) !== -1 ? savedLang : 'en';
     if(lang){ state.lang = lang; }
     el('lang').value = state.lang;
-
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    el('theme').value = savedTheme;
-    applyTheme(savedTheme);
 
     // restore filter-selected flag
     const savedFilter = localStorage.getItem('filterSel');

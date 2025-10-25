@@ -912,15 +912,9 @@ function renderItems(){
             name.className = 'name';
             name.textContent = getItemName(it, lang) || `(0x${it.id.toString(16).toUpperCase()})`;
 
-            // const code = document.createElement('div');
-            // code.className = 'muted';
-            // code.style.fontSize = '14px';
-            // code.textContent = `0x${it.id.toString(16).toUpperCase()}`;
-
             row.appendChild(chk);
             row.appendChild(icon);
             row.appendChild(name);
-            //row.appendChild(code);
             grid.appendChild(row);
         }
 
@@ -968,10 +962,6 @@ function renderSelected(){
         const name = document.createElement('div');
         name.className = 'name';
         name.textContent = nameStr;
-
-        const code = document.createElement('div');
-        code.className='muted'; code.style.fontSize='11px';
-        code.textContent = `0x${id.toString(16).toUpperCase()}`;
 
         const fields = document.createElement('div');
         fields.className = 'fields';
@@ -1040,7 +1030,6 @@ function renderSelected(){
 
         row.appendChild(icon);
         row.appendChild(name);
-        row.appendChild(code);
         row.appendChild(fields);
         row.appendChild(rm);
         holder.appendChild(row);
@@ -1180,6 +1169,7 @@ function setupMainTextDragBlock(){
     const lang = SUPPORTED_LANGS.indexOf(savedLang) !== -1 ? savedLang : 'en';
     if(lang){ state.lang = lang; }
     el('lang').value = state.lang;
+    el('theme').value = savedTheme;
 
     // restore filter-selected flag
     const savedFilter = localStorage.getItem('filterSel');

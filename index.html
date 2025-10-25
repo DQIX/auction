@@ -250,16 +250,6 @@
   </style>
 </head>
 <body>
-<script>
-  /** ライトテーマのときにポリゴンショックしちゃうのでこれだけhtmlに埋め込む */
-  function applyTheme(theme){
-    document.documentElement.setAttribute('data-theme', theme);
-  }
-
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.getElementById('theme').value = savedTheme;
-  applyTheme(savedTheme);
-</script>
 
   <script src="all.min.js" defer></script>
   <!--script src="_src/data.js" defer></script>
@@ -375,5 +365,16 @@
       <div class="muted">Drop a .bin file here to load</div>
     </div>
   </div>
+
+  <script>
+    /** ライトテーマのときにポリゴンショックしちゃうのでこれだけhtmlに埋め込む */
+    function applyTheme(theme){
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.getElementById('theme').value = savedTheme;
+    applyTheme(savedTheme);
+  </script>
 </body>
 </html>

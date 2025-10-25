@@ -270,6 +270,36 @@
     :root[data-theme="lightGray"] .item { border-color: transparent; }
     :root[data-theme="lightGray"] .item:hover { border-color: transparent; }
 
+
+    :root[data-theme="lightGrayPlus"] {
+      --bg:#e5e7eb; /* gray-200 */
+      --panel:#f3f4f6; /* gray-100 */
+      --muted:#4b5563; /* gray-600 */
+      --fg:#1f2937; /* gray-800 */
+      --pri:#2563eb; /* blue-600 */
+      --accent:#15803d; /* green-700 */
+      --warn:#b45309; /* amber-700 */
+      --err:#b91c1c; /* red-700 */
+      --card:#f9fafb; /* gray-50 */
+      --border:#d1d5db; /* gray-300 */
+    }
+
+    /* Light+ theme header: subtle gradient, softer than light */
+    :root[data-theme="lightGrayPlus"] header {
+      background: linear-gradient(180deg, rgba(229,231,235,0.95), rgba(243,244,246,0.85));
+    }
+
+    /* Light+ theme: icons/items slightly outlined */
+    :root[data-theme="lightGrayPlus"] .icon-sprite {
+      box-shadow: 0 0 1px rgba(0,0,0,0.1);
+    }
+    :root[data-theme="lightGrayPlus"] .item {
+      border-color: var(--border);
+    }
+    :root[data-theme="lightGrayPlus"] .item:hover {
+      border-color: var(--pri);
+    }
+
     /* ---------------------------
        Light+ (Cool Blue)
        --------------------------- */
@@ -400,6 +430,7 @@
           <option value="dark">ダーク</option>
           <option value="light">ライト</option>
           <option value="lightGray">ライト＋（グレー）</option>
+          <option value="lightGrayPlus">ライト＋＋（グレー）</option>
           <option value="lightCool">ライト＋（クールブルー）</option>
           <option value="lightSepia">セピア（紙風）</option>
           <option value="lightGreen">ライト＋（グリーン）</option>

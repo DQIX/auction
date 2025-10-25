@@ -502,6 +502,11 @@ const translations = {
           <li>${t.note7}</li>
           <li>${t.contactLabel} <a href="https://x.com/Daisuke76897125" target="_blank" rel="noopener">https://x.com/Daisuke76897125</a></li>
         </ul>
+        <div style="font-weight:700; margin:8px 0 4px;">copyright</div>
+        <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
+          <li>このページで利用している株式会社スクウェア・エニックスを代表とする共同著作者が権利を所有する画像の転載・配布は禁止いたします。</li>
+          <li>© 2009 ARMOR PROJECT/BIRD STUDIO/LEVEL-5/SQUARE ENIX All Rights Reserved.</li>
+        </ul>
         <div class="muted" style="margin-top:8px">${t.versionPrefix}, v${version}</div>
       `;
 }

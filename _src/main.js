@@ -912,15 +912,15 @@ function renderItems(){
             name.className = 'name';
             name.textContent = getItemName(it, lang) || `(0x${it.id.toString(16).toUpperCase()})`;
 
-            const code = document.createElement('div');
-            code.className = 'muted';
-            code.style.fontSize = '11px';
-            code.textContent = `0x${it.id.toString(16).toUpperCase()}`;
+            // const code = document.createElement('div');
+            // code.className = 'muted';
+            // code.style.fontSize = '14px';
+            // code.textContent = `0x${it.id.toString(16).toUpperCase()}`;
 
             row.appendChild(chk);
             row.appendChild(icon);
             row.appendChild(name);
-            row.appendChild(code);
+            //row.appendChild(code);
             grid.appendChild(row);
         }
 

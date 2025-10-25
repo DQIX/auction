@@ -130,14 +130,14 @@ body, main{
 .dropzone.visible { display: grid; }
 .dropzone .inner { border: 2px dashed #60a5fa; padding: 24px; border-radius: 16px; background: var(--card); }
 
-.muted { color: var(--muted); }
+.muted { color: var(--muted); font-size:18px; }
 .error { color: #fecaca; background: #7f1d1d; border: 1px solid #b91c1c; padding: 8px 10px; border-radius: 10px; }
 .fields { display:flex; align-items:center; gap:6px; margin-left:auto; flex-wrap: wrap; }
 .num { width:72px; background: var(--card); color: var(--fg); border:1px solid var(--border); border-radius:8px; padding:4px 6px; }
-.suffix { color: var(--muted); font-size:12px; margin-left:-4px; margin-right:8px; }
+.suffix { color: var(--muted); font-size:20px; margin-left:-4px; margin-right:8px; }
 
 .bulk { margin-top: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); padding: 8px; }
-.bulk .title { font-weight:700; font-size:13px; color: var(--muted); margin-bottom:6px; }
+.bulk .title { font-weight:700; font-size:18px; color: var(--muted); margin-bottom:6px; }
 .bulk .fields { margin-left: 0; }
 
 /* >=1000px: show 4 columns for items grid */

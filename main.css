@@ -1,0 +1,227 @@
+:root {
+    --bg:#0f172a; /* slate-900 */
+    --panel:#111827; /* gray-900 */
+    --muted:#94a3b8; /* slate-400 */
+    --fg:#e5e7eb; /* gray-200 */
+    --pri:#60a5fa; /* blue-400 */
+    --accent:#22c55e; /* green-500 */
+    --warn:#f59e0b; /* amber-500 */
+    --err:#ef4444; /* red-500 */
+    --card:#0b1220;
+    --border:#1f2937; /* gray-800 */
+}
+:root[data-theme="light"]{
+    --bg:#f3f4f6; /* gray-100 */
+    --panel:#ffffff; /* white */
+    --muted:#6b7280; /* gray-500 */
+    --fg:#111827; /* gray-900 */
+    --pri:#3b82f6; /* blue-500 */
+    --accent:#16a34a; /* green-600 */
+    --warn:#d97706; /* amber-600 */
+    --err:#dc2626; /* red-600 */
+    --card:#f9fafb; /* gray-50 */
+    --border:#e5e7eb; /* gray-200 */
+}
+:root[data-theme="blue"]{
+    --bg:#0a1930; /* deep blue */
+    --panel:#0d223f;
+    --muted:#93c5fd; /* blue-300 */
+    --fg:#e0f2fe; /* sky-100 */
+    --pri:#60a5fa; /* blue-400 */
+    --accent:#38bdf8; /* sky-400 */
+    --warn:#f59e0b;
+    --err:#ef4444;
+    --card:#0b1f3a;
+    --border:#1e3a8a; /* indigo-800 */
+}
+:root[data-theme="gold"]{
+    --bg:#15100a; /* dark brown */
+    --panel:#1c150b;
+    --muted:#f5d38c; /* soft gold */
+    --fg:#fff7e6; /* warm light */
+    --pri:#f59e0b; /* amber-500 */
+    --accent:#fbbf24; /* amber-400 */
+    --warn:#d97706;
+    --err:#ef4444;
+    --card:#1a1309;
+    --border:#3f2d0f; /* brown-800 */
+}
+:root[data-theme="pink"]{
+    --bg:#170f1c; /* deep plum */
+    --panel:#1f1326;
+    --muted:#f9a8d4; /* pink-300 */
+    --fg:#fde7f3; /* pink-50ish */
+    --pri:#ec4899; /* pink-500 */
+    --accent:#f472b6; /* pink-400 */
+    --warn:#f59e0b;
+    --err:#ef4444;
+    --card:#1b1122;
+    --border:#4c1d95; /* violet-900 */
+}
+html, body { min-height: 100%; }
+body {
+    margin: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+/* Infoボックス内のリンク色をテーマのテキスト色に統一 */
+#infoBox a,
+#infoBox a:visited {
+    color: var(--fg);
+}
+header {
+    position: sticky; top: 0; z-index: 5;
+    background: linear-gradient(180deg, rgba(17,24,39,0.96), rgba(17,24,39,0.88));
+    backdrop-filter: saturate(140%) blur(4px);
+    border-bottom: 1px solid var(--border);
+}
+.wrap { max-width: 2000px; margin: 0 auto; padding: 12px 16px; }
+.header-row { display: flex; align-items: center; gap: 8px; }
+h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: .02em; }
+.grow { flex: 1; }
+.btn { appearance: none; border: 1px solid var(--border); background: var(--card); color: var(--fg); padding: 8px 12px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.btn:hover { border-color: #2a384d; }
+.btn.primary { background: linear-gradient(180deg, #2563eb, #1d4ed8); border-color: #1e3a8a; color: white; }
+.btn.primary:disabled { opacity: .5; cursor: not-allowed; }
+.icon { width: 20px; height: 20px; vertical-align: -4px; }
+.toolbar { display: flex; gap: 8px; align-items: center;}
+.search { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; }
+.search input { flex: 1; background: transparent; color: var(--fg); border: 0; outline: none; min-width: 140px; }
+.select { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
+/* Collapsible info box styles */
+.info-box .title { cursor: pointer; user-select: none; }
+.info-box.collapsed .info-content { display: none; }
+
+main { max-width: 2000px; margin: 0 auto; padding: 12px 16px 40px; display: grid; grid-template-columns: 1fr; grid-template-areas: "selected" "items"; gap: 16px; }
+#itemsPanel { grid-area: items; }
+#selectedPanel { grid-area: selected; }
+@media (min-width: 1900px) {
+    main { grid-template-columns: 1fr minmax(380px, 600px); grid-template-areas: "items selected"; align-items: start; }
+}
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: clip; }
+.panel h2 { margin: 0; font-size: 14px; font-weight: 700; padding: 10px 12px; border-bottom: 1px solid var(--border); background: var(--panel); }
+.panel .body { padding: 10px; }
+
+.type { margin-bottom: 8px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--card); }
+.type summary { list-style: none; cursor: pointer; padding: 8px 10px; background: var(--panel); font-weight: 700; color: var(--muted); }
+.type summary::-webkit-details-marker { display: none; }
+.type-items { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; padding: 10px; }
+@media (min-width: 1000px) { .type-items { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+.item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.item:hover { border-color: #2a384d; }
+.check { appearance: none; width: 18px; height: 18px; border: 2px solid #334155; border-radius: 6px; display: grid; place-items: center; background: var(--card); cursor: pointer; }
+.check:checked { background: var(--accent); border-color: var(--accent); }
+.check:checked::after { content: ""; width: 10px; height: 10px; background: white; border-radius: 2px; }
+
+.icon-sprite { width: 24px; height: 24px; display: inline-block; vertical-align: top; background-image: url('itemIcons.png'); background-repeat: no-repeat; image-rendering: pixelated; border-radius: 4px; box-shadow: inset 0 0 0 1px #0009; }
+.name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+body, main{
+    min-width: 700px;
+}
+
+.selected-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 520px) { .selected-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1700px) { .selected-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.sel { align-items: center; gap: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.sel .remove { margin-left: auto; color: #fca5a5; cursor: pointer; }
+
+.dropzone { position: fixed; inset: 0; display: none; place-items: center; background: rgba(30,41,59,0.75); z-index: 50; }
+.dropzone.visible { display: grid; }
+.dropzone .inner { border: 2px dashed #60a5fa; padding: 24px; border-radius: 16px; background: var(--card); }
+
+.muted { color: var(--muted); }
+.error { color: #fecaca; background: #7f1d1d; border: 1px solid #b91c1c; padding: 8px 10px; border-radius: 10px; }
+.fields { display:flex; align-items:center; gap:6px; margin-left:auto; flex-wrap: wrap; }
+.num { width:72px; background: var(--card); color: var(--fg); border:1px solid var(--border); border-radius:8px; padding:4px 6px; }
+.suffix { color: var(--muted); font-size:12px; margin-left:-4px; margin-right:8px; }
+
+.bulk { margin-top: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); padding: 8px; }
+.bulk .title { font-weight:700; font-size:13px; color: var(--muted); margin-bottom:6px; }
+.bulk .fields { margin-left: 0; }
+
+/* >=1000px: show 4 columns for items grid */
+@media (min-width: 1400px) { .type-items { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+/* Light theme header should be gray, not black */
+:root[data-theme="light"] header {
+    background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
+}
+/* Gold & Pink themes: match header to theme panel (was stuck dark) */
+:root[data-theme="gold"] header {
+    background: linear-gradient(180deg, rgba(28,21,11,0.96), rgba(28,21,11,0.88));
+}
+:root[data-theme="pink"] header {
+    background: linear-gradient(180deg, rgba(31,19,38,0.96), rgba(31,19,38,0.88));
+}
+/* Light theme: hide outer square on icons/items */
+:root[data-theme="light"] .icon-sprite { box-shadow: none; }
+:root[data-theme="light"] .item { border-color: transparent; }
+:root[data-theme="light"] .item:hover { border-color: transparent; }
+
+/* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
+:root[data-theme="orange"] {
+    --bg: #0d1116;       /* 背景をより深いダークブルー寄りに */
+    --panel: #161b21;    /* パネル部分、わずかに明るくして区別 */
+    --card: #12171d;     /* カードは中間トーンで浮かないように */
+    --border: #1f2a33;   /* 境界線を控えめに */
+    --fg: #e5e7eb;       /* 文字色（ややグレー寄り） */
+    --muted: #8b96a3;    /* 補助文字 */
+    --pri: #f97316;      /* 差し色（オレンジ）を少し深く */
+    --accent: #ea580c;   /* より強いアクセントオレンジ */
+    --warn: #f59e0b;     /* 警告色（アンバー）をそのまま維持 */
+    --err: #ef4444;      /* エラー色そのまま */
+}
+:root[data-theme="deepDark"]{
+    --bg:#0b0c10;
+    --panel:#0e1015;
+    --muted:#9aa3ad;
+    --fg:#e5e7eb;
+    --pri:#60a5fa; /* blue-400 */
+    --accent:#22c55e; /* green-500 */
+    --warn:#f59e0b;
+    --err:#ef4444;
+    --card:#0a0c12;
+    --border:#1a1f2a;
+}
+:root[data-theme="darkColorblind"]{
+    --bg:#0b0c10;
+    --panel:#0e1015;
+    --muted:#9aa3ad;
+    --fg:#e5e7eb;
+    --pri:#fb923c; /* orange-400 */
+    --accent:#f59e0b; /* amber-500 */
+    --warn:#f59e0b;
+    --err:#ef4444;
+    --card:#0a0c12;
+    --border:#1a1f2a;
+}
+:root[data-theme="darkTritanopia"]{
+    --bg:#0b0c10;
+    --panel:#0e1015;
+    --muted:#9aa3ad;
+    --fg:#e5e7eb;
+    --pri:#f87171; /* red-400 */
+    --accent:#ef4444; /* red-500 */
+    --warn:#f59e0b;
+    --err:#ef4444;
+    --card:#0a0c12;
+    --border:#1a1f2a;
+}
+
+/* Header backgrounds for new themes */
+:root[data-theme="orange"] header {
+    background: linear-gradient(180deg, rgba(20,26,31,0.96), rgba(20,26,31,0.88));
+}
+:root[data-theme="deepDark"] header,
+:root[data-theme="darkColorblind"] header,
+:root[data-theme="darkTritanopia"] header {
+    background: linear-gradient(180deg, rgba(14,16,21,0.96), rgba(14,16,21,0.88));
+}
+
+/* Responsive header: at <=1200px, move search and subsequent controls to next line */
+@media (max-width: 1150px) {
+    .toolbar { flex-wrap: wrap; }
+    .toolbar .search { order: 2; flex: 1 1 100px; margin-top: 6px; min-width: 200px }
+    .toolbar .search ~ * { order: 2; }
+}

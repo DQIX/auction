@@ -6,19 +6,19 @@
   <title>DQVCアイテムリスト生成</title>
   <meta property="og:type" content="website">
   <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
-  <meta property="og:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成リストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
+  <meta property="og:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
   <meta property="og:url" content="https://dqix.github.io/auction/">
   <meta property="og:site_name" content="DQVCアイテムリスト生成">
   <meta property="og:locale" content="ja_JP">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="dq9 DQVCアイテムリスト生成">
-  <meta name="twitter:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成リストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
+  <meta name="twitter:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
   <meta name="twitter:url" content="https://dqix.github.io/auction/">
   <meta name="twitter:site" content="@Daisuke76897125">
   <meta name="twitter:creator" content="@Daisuke76897125">
 
-  <meta name="description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成リストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。">
+  <meta name="description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
   <style>
     :root {
       --bg:#0f172a; /* slate-900 */
@@ -44,6 +44,52 @@
       --card:#f9fafb; /* gray-50 */
       --border:#e5e7eb; /* gray-200 */
     }
+
+    /* Light theme header should be gray, not black */
+    :root[data-theme="light"] header {
+      background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
+    }
+    /* Light theme: hide outer square on icons/items */
+    :root[data-theme="light"] .icon-sprite { box-shadow: none; }
+    :root[data-theme="light"] .item { border-color: transparent; }
+    :root[data-theme="light"] .item:hover { border-color: transparent; }
+
+
+    :root[data-theme="light2"]{
+      --bg:#f3f4f6; /* gray-100 */
+      --panel:#ffffff; /* white */
+      --muted:#6b7280; /* gray-500 */
+      --fg:#111827; /* gray-900 */
+      --pri:#3b82f6; /* blue-500 */
+      --accent:#16a34a; /* green-600 */
+      --warn:#d97706; /* amber-600 */
+      --err:#dc2626; /* red-600 */
+      --card:#f9fafb; /* gray-50 */
+      --border:#d1d5db; /* gray-300 */
+    }
+
+    /* Light theme header should be gray, not black */
+    :root[data-theme="light2"] header {
+      background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
+    }
+    /* Light theme: hide outer square on icons/items */
+    :root[data-theme="light2"] .icon-sprite { box-shadow: none; }
+    :root[data-theme="light2"] .item { border-color: transparent; }
+    :root[data-theme="light2"] .item:hover { border-color: transparent; }
+
+    /* Light+ theme: icons/items slightly outlined */
+    :root[data-theme="light2"] .icon-sprite {
+      box-shadow: 0 0 1px rgba(0,0,0,0.1);
+    }
+    :root[data-theme="light2"] .item {
+      border-color: var(--border);
+    }
+    :root[data-theme="light2"] .item:hover {
+      border-color: var(--pri);
+    }
+
+
+
     :root[data-theme="blue"]{
       --bg:#0a1930; /* deep blue */
       --panel:#0d223f;
@@ -165,10 +211,6 @@
     /* >=1000px: show 4 columns for items grid */
     @media (min-width: 1400px) { .type-items { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 
-    /* Light theme header should be gray, not black */
-    :root[data-theme="light"] header {
-      background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
-    }
     /* Gold & Pink themes: match header to theme panel (was stuck dark) */
     :root[data-theme="gold"] header {
       background: linear-gradient(180deg, rgba(28,21,11,0.96), rgba(28,21,11,0.88));
@@ -176,10 +218,7 @@
     :root[data-theme="pink"] header {
       background: linear-gradient(180deg, rgba(31,19,38,0.96), rgba(31,19,38,0.88));
     }
-    /* Light theme: hide outer square on icons/items */
-    :root[data-theme="light"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="light"] .item { border-color: transparent; }
-    :root[data-theme="light"] .item:hover { border-color: transparent; }
+
 
     /* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
     :root[data-theme="DarkPlus"] {
@@ -395,19 +434,27 @@
   </style>
 </head>
 <body>
-  <script>
+<script>
+  /** バージョン */
+  const version = "1.0.3";
 
-    /** バージョン */
-    const version = "1.0.3";
+  /** HTMLのdata-theme属性を設定 */
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
 
-    /** ライトテーマのときにポリゴンショックしちゃうのでこれだけhtmlに埋め込む */
-    function applyTheme(theme){
-      document.documentElement.setAttribute('data-theme', theme);
-    }
+  // ローカルストレージに保存されたテーマがあれば優先
+  let savedTheme = localStorage.getItem('theme');
 
-    const savedTheme = localStorage.getItem('theme') || 'DarkPlus';
-    applyTheme(savedTheme);
-  </script>
+  if (!savedTheme) {
+    // ブラウザ(OS)設定を検出
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    savedTheme = prefersDark ? 'DarkPlus' : 'light';
+  }
+
+  // テーマを適用
+  applyTheme(savedTheme);
+</script>
 
   <script src="all.min.js" defer></script>
   <header>
@@ -429,6 +476,7 @@
         <select id="theme" class="select">
           <option value="dark">ダーク</option>
           <option value="light">ライト</option>
+          <option value="light2">ライト＋</option>
           <option value="lightGray">ライト＋（グレー）</option>
           <option value="lightGrayPlus">ライト＋＋（グレー）</option>
           <option value="lightCool">ライト＋（クールブルー）</option>

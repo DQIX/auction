@@ -24,6 +24,7 @@ const translations = {
     searchPlaceholder: "検索 / Search",
     themeDark: "ダーク",
     themeLight: "ライト",
+    themeLight2: "ライト＋",
     themeBlue: "ブルー",
     themeGold: "ゴールド",
     themePink: "ピンク",
@@ -94,6 +95,7 @@ const translations = {
     searchPlaceholder: "Search",
     themeDark: "Dark",
     themeLight: "Light",
+    themeLight2: "Light+",
     themeBlue: "Blue",
     themeGold: "Gold",
     themePink: "Pink",
@@ -164,6 +166,7 @@ const translations = {
     searchPlaceholder: "Buscar",
     themeDark: "Oscuro",
     themeLight: "Claro",
+    themeLight2: "Claro+",
     themeBlue: "Azul",
     themeGold: "Oro",
     themePink: "Rosa",
@@ -234,6 +237,7 @@ const translations = {
     searchPlaceholder: "Recherche",
     themeDark: "Sombre",
     themeLight: "Clair",
+    themeLight2: "Clair+",
     themeBlue: "Bleu",
     themeGold: "Or",
     themePink: "Rose",
@@ -304,6 +308,7 @@ const translations = {
     searchPlaceholder: "Suchen",
     themeDark: "Dunkel",
     themeLight: "Hell",
+    themeLight2: "Hell+",
     themeBlue: "Blau",
     themeGold: "Gold",
     themePink: "Rosa",
@@ -374,6 +379,7 @@ const translations = {
     searchPlaceholder: "Cerca",
     themeDark: "Scuro",
     themeLight: "Chiaro",
+    themeLight2: "Chiaro+",
     themeBlue: "Blu",
     themeGold: "Oro",
     themePink: "Rosa",
@@ -487,6 +493,7 @@ const translations = {
         const themeMap = {
             dark: 'themeDark',
             light: 'themeLight',
+            light2: 'themeLight2',
             lightGray: 'themeLightGray',
             lightGrayPlus: 'themelightGrayPlus',
             lightCool: 'themeLightCool',
@@ -1229,6 +1236,12 @@ function setupMainTextDragBlock(){
     if(lang){ state.lang = lang; }
     el('lang').value = state.lang;
     el('theme').value = savedTheme;
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const newTheme = e.matches ? 'DarkPlus' : 'lightGrayPlus';
+        el('theme').value = newTheme;
+        applyTheme(newTheme);
+    });
 
     // restore filter-selected flag
     const savedFilter = localStorage.getItem('filterSel');

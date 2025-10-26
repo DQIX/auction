@@ -1372,10 +1372,14 @@ function setupMainTextDragBlock(){
     if(filterChk){ filterChk.onchange = ()=>{ state.filterSelected = filterChk.checked; localStorage.setItem('filterSel', state.filterSelected ? '1':'0'); renderSelected(); }; }
 
     // order controls
-    const sortChk = el('sortOrder');
+    const saved1 = localStorage.getItem("sortorder");
+    let sortChk = el('sortOrder');
+    if(saved1){
+        sortChk.checked = saved1 === '1';
+    }
     if(sortChk){
         state.sortSelected = !!sortChk.checked;
-        sortChk.onchange = ()=>{ state.sortSelected = sortChk.checked; renderSelected(); };
+        sortChk.onchange = ()=>{ state.sortSelected = sortChk.checked; renderSelected(); localStorage.setItem("sortorder", state.sortSelected ? "1":"0"); };
     }
     const shuffleBtn = el('shuffleBtn');
     if(shuffleBtn){ shuffleBtn.onclick = ()=>{ shuffleOrder(); renderSelected(); }; }

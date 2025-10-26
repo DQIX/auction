@@ -1491,7 +1491,7 @@ function setupMainTextDragBlock(){
         // 1) index を取得
         let index;
         try {
-            const res = await fetch('/chunks/index.json'); // 必要ならキャッシュ制御
+            const res = await fetch('chunks/index.json'); // 必要ならキャッシュ制御
             if (!res.ok) throw new Error('index fetch failed');
             index = await res.json(); // array of {name, file, localIndex}
         } catch (e) {
@@ -1526,7 +1526,7 @@ function setupMainTextDragBlock(){
             let chunkArray = chunksCache.get(file);
             if (!chunkArray) {
                 try {
-                    const res = await fetch(`/chunks/${file}`);
+                    const res = await fetch(`chunks/${file}`);
                     if (!res.ok) throw new Error('chunk fetch failed');
                     chunkArray = await res.json(); // array of presets inside that chunk
                     chunksCache.set(file, chunkArray);

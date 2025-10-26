@@ -436,8 +436,10 @@
 </head>
 <body>
 <script>
+  /** ライトテーマの時に、これがないと読み込み時にポリゴンショックするので必須。*/
+
   /** バージョン */
-  const version = "1.0.3";
+  const version = "1.0.4";
 
   /** HTMLのdata-theme属性を設定 */
   function applyTheme(theme) {
@@ -450,7 +452,7 @@
   if (!savedTheme) {
     // ブラウザ(OS)設定を検出
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    savedTheme = prefersDark ? 'DarkPlus' : 'light';
+    savedTheme = prefersDark ? 'DarkPlus' : 'light2';
   }
 
   // テーマを適用

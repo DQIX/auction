@@ -51,6 +51,9 @@ const translations = {
     deleteMatched: "検索でマッチしたものを削除",
     deleteUnmatched: "検索でマッチしなかったものを削除",
     deleteAll: "すべて削除",
+    sortWithOutput: "順番をid順にする(出力も含む)",
+    shuffle: "シャッフル",
+    duplicate: "複製",
     confirmDelete: "下記のアイテムを削除します。よろしいですか",
     noResults: "該当するアイテムがありません。",
     infoTitle: "このツールについて",
@@ -122,6 +125,9 @@ const translations = {
     deleteMatched: "Delete items matching the search",
     deleteUnmatched: "Delete items not matching the search",
     deleteAll: "Delete all",
+    sortWithOutput: "Sort order (including output)",
+    shuffle: "Shuffle",
+    duplicate: "Duplicate",
     confirmDelete: "The following items will be removed. Continue?",
     noResults: "No matching items.",
     infoTitle: "About this tool",
@@ -193,6 +199,9 @@ const translations = {
     deleteMatched: "Eliminar los que coinciden con la búsqueda",
     deleteUnmatched: "Eliminar los que no coinciden con la búsqueda",
     deleteAll: "Eliminar todo",
+    sortWithOutput: "Ordenar (incluyendo salida)",
+    shuffle: "Mezclar",
+    duplicate: "Duplicar",
     confirmDelete: "Se eliminarán los siguientes elementos. ¿Desea continuar?",
     noResults: "No hay elementos coincidentes.",
     infoTitle: "Acerca de esta herramienta",
@@ -264,6 +273,9 @@ const translations = {
     deleteMatched: "Supprimer les éléments correspondant à la recherche",
     deleteUnmatched: "Supprimer les éléments ne correspondant pas à la recherche",
     deleteAll: "Tout supprimer",
+    sortWithOutput: "Trier (y compris la sortie)",
+    shuffle: "Mélanger",
+    duplicate: "Dupliquer",
     confirmDelete: "Les éléments suivants seront supprimés. Continuer ?",
     noResults: "Aucun objet correspondant.",
     infoTitle: "À propos de cet outil",
@@ -335,6 +347,9 @@ const translations = {
     deleteMatched: "Elemente löschen, die der Suche entsprechen",
     deleteUnmatched: "Elemente löschen, die der Suche nicht entsprechen",
     deleteAll: "Alle löschen",
+    sortWithOutput: "Sortieren (einschließlich Ausgabe)",
+    shuffle: "Mischen",
+    duplicate: "Duplizieren",
     confirmDelete: "Die folgenden Elemente werden gelöscht. Fortfahren?",
     noResults: "Keine passenden Elemente.",
     infoTitle: "Über dieses Tool",
@@ -406,6 +421,9 @@ const translations = {
     deleteMatched: "Elimina gli elementi corrispondenti alla ricerca",
     deleteUnmatched: "Elimina gli elementi non corrispondenti alla ricerca",
     deleteAll: "Elimina tutti",
+    sortWithOutput: "Ordina (incluso output)",
+    shuffle: "Mescola",
+    duplicate: "Duplica",
     confirmDelete: "I seguenti elementi verranno rimossi. Continuare?",
     noResults: "Nessun elemento corrispondente.",
     infoTitle: "Informazioni su questo strumento",
@@ -485,8 +503,12 @@ const translations = {
     const phOpt = document.querySelector("#presetSelect option[value='']");
     if (phOpt) phOpt.innerText = t.presetPlaceholder || phOpt.innerText;
 
+    // Order controls texts
+    setText("#sortOrderLabel", t.sortWithOutput);
+    setText("#shuffleBtn", t.shuffle);
+
     // プレースホルダ更新
-    const q = document.getElementById("q");
+    const q = el("q");
     if (q) q.placeholder = t.searchPlaceholder;
 
     // テーマ select の option を更新（value 属性を基準に）
@@ -517,7 +539,7 @@ const translations = {
 
     // Info box content
     setText("#infoTitle", t.infoTitle);
-    const infoContentEl = document.getElementById("infoContent");
+    const infoContentEl = el("infoContent");
     if (infoContentEl) {
     infoContentEl.innerHTML = `
         <div class="muted" style="margin-bottom:6px">${t.infoIntro1}</div>
@@ -561,7 +583,7 @@ const translations = {
 
 // 初期化：DOMContentLoaded で適用、言語セレクト変更時に再適用
 document.addEventListener("DOMContentLoaded", () => {
-    const select = document.getElementById("lang");
+    const select = el("lang");
     if (!select) {
         // 言語セレクトが無ければデフォルト日本語で適用
         applyLang("ja");
@@ -727,51 +749,6 @@ function makeItemPackets(ids, metaMap){
     return { body: w.toUint8(), count };
 }
 
-function buildFile(ids){
-    const { body, count } = makeItemPackets(ids, state.meta);
-
-    const hdr = new BinWriter();
-    hdr.putLInt(count);
-    hdr.putLInt(body.length);
-    hdr.putLInt(0x1b);
-    hdr.putLInt(0x2);
-    hdr.putBytes(body);
-    // Tail string: "2011/03/23 17:09:05\x001102323\x00"
-    hdr.putAscii('2011/03/23'); hdr.putByte(0x20); hdr.putAscii('17:09:05'); hdr.putByte(0x00);
-    hdr.putAscii('1102323'); hdr.putByte(0x00);hdr.putByte(0xFF);
-
-    let bytes = hdr.toUint8();
-
-    const pad = (16 - (bytes.length % 16)) % 16;
-    if(pad>0){ const ff = new Uint8Array(pad); ff.fill(0xFF); bytes = concat(bytes, ff); }
-
-
-    const now = new Date();
-    const timeString = now.toISOString(); // 例: "2025-10-24T09:32:10.123Z"
-
-    let url = "\r\nGenerate by DQVC DLC Custom List Generator v" + version + ", ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)> \r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
-    let urlBytes = new TextEncoder().encode(url);
-    bytes = concat(bytes, urlBytes);
-
-    const pad1 = (16 - (bytes.length % 16)) % 16;
-    if(pad>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
-
-    bytes = concat(bytes, MARKER);
-
-    // encrypt
-    const enc = rc4(bytes, KEY);
-    let final = enc.slice(0, enc.length - 4 - urlBytes.length - pad1);
-    final = concat(final, urlBytes);
-    if(pad>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); final = concat(final, ff); }
-    const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
-    final = concat(final, fix);
-
-    // sanity: verify zero
-    const chk = lay_d_23_CheckChecksum(final);
-    if(chk !== 0){ console.warn('Checksum not zero:', chk); }
-
-    return final; // Uint8Array
-}
 function parseFile(bin){
     // verify checksum
     const sum = lay_d_23_CheckChecksum(bin);
@@ -814,10 +791,80 @@ const state = {
     groups: new Map(), // type -> items[]
     lang: 'ja',
     q: '',
-    selected: new Set(), // of id
-    meta: new Map(), // id -> {price, min, max}
+    // Legacy (kept for minimal compatibility with some UI pieces that read sizes, etc.)
+    selected: new Set(), // of itemId (derived from instances)
+    // New runtime-instance model
+    instances: [], // [{ rid, id, meta:{price,min,max} }]
+    order: [], // [rid] insertion order
+    byItem: new Map(), // itemId -> Set<rid>
+    nextRid: 1, // incremental runtime id
     filterSelected: false, // whether to filter Selected list by master search
+    sortSelected: true, // default ON per spec
 };
+
+// ===== Runtime instance helpers =====
+function recomputeSelected(){
+    const s = new Set();
+    for(const rid of state.order){
+        const inst = state.instances.find(x=>x.rid===rid);
+        if(inst) s.add(inst.id);
+    }
+    state.selected = s;
+}
+function addInstance(itemId, meta){
+    const rid = state.nextRid++;
+    const m = { price: meta?.price ?? 10, min: meta?.min ?? 1, max: meta?.max ?? 1 };
+    state.instances.push({ rid, id: itemId, meta: m });
+    state.order.push(rid);
+    if(!state.byItem.has(itemId)) state.byItem.set(itemId, new Set());
+    state.byItem.get(itemId).add(rid);
+    recomputeSelected();
+    return rid;
+}
+function duplicateInstance(rid){
+    const inst = state.instances.find(x=>x.rid===rid);
+    if(!inst) return null;
+    return addInstance(inst.id, { ...inst.meta });
+}
+function removeInstance(rid){
+    const idx = state.instances.findIndex(x=>x.rid===rid);
+    if(idx>=0){
+        const itemId = state.instances[idx].id;
+        state.instances.splice(idx,1);
+        const oidx = state.order.indexOf(rid);
+        if(oidx>=0) state.order.splice(oidx,1);
+        const set = state.byItem.get(itemId);
+        if(set){ set.delete(rid); if(set.size===0) state.byItem.delete(itemId); }
+        recomputeSelected();
+    }
+}
+function removeAllByItem(itemId){
+    const set = state.byItem.get(itemId);
+    if(!set) return;
+    for(const rid of Array.from(set)) removeInstance(rid);
+}
+function getEffectiveRuntimeOrder(){
+    if(state.sortSelected){
+        const arr = state.instances.map(x=>x.rid);
+        arr.sort((a,b)=>{
+            const ia = state.instances.find(x=>x.rid===a);
+            const ib = state.instances.find(x=>x.rid===b);
+            return (ia?.id||0) - (ib?.id||0);
+        });
+        return arr;
+    }
+    return state.order.slice();
+}
+function shuffleOrder(){
+    for(let i=state.order.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        const t = state.order[i]; state.order[i]=state.order[j]; state.order[j]=t;
+    }
+}
+function getInstancesForOutput(){
+    const rids = getEffectiveRuntimeOrder();
+    return rids.map(rid=> state.instances.find(x=>x.rid===rid)).filter(Boolean);
+}
 
 function iconIndexFromId(id){
     // Reverse lookup using prepared map (filled during CSV load)
@@ -903,7 +950,10 @@ function t(key){
         maxLabel: '最大',
         filterSelected: '検索で選択済みも絞り込む',
         confirmDelete: '下記のアイテムを削除します。よろしいですか',
-        noResults: '該当するアイテムがありません。'
+        noResults: '該当するアイテムがありません。',
+        duplicate: '複製',
+        sortWithOutput: '順番をソートする(出力も含む)',
+        shuffle: 'シャッフル'
     };
     const hasTrans = (typeof translations !== 'undefined');
     const lang = state.lang;
@@ -923,7 +973,7 @@ function t(key){
 function render(){
     renderItems();
     renderSelected();
-    el('downloadBtn').disabled = state.selected.size === 0;
+    el('downloadBtn').disabled = state.instances.length === 0;
 }
 
 function renderItems(){
@@ -958,16 +1008,15 @@ function renderItems(){
             const chk = document.createElement('input');
             chk.type = 'checkbox';
             chk.className = 'check';
-            chk.checked = state.selected.has(it.id);
+            chk.checked = !!state.byItem.get(it.id);
             chk.addEventListener('change', ()=>{
                 if(chk.checked){
-                    state.selected.add(it.id);
-                    if(!state.meta.has(it.id)) state.meta.set(it.id, { price: 10, min: 1, max: 1 });
+                    addInstance(it.id, { price: 10, min: 1, max: 1 });
                 } else {
-                    state.selected.delete(it.id);
+                    removeAllByItem(it.id);
                 }
                 renderSelected();
-                el('downloadBtn').disabled = state.selected.size === 0;
+                el('downloadBtn').disabled = state.instances.length === 0;
             });
 
             const icon = document.createElement('i');
@@ -1001,22 +1050,23 @@ function renderSelected(){
     holder.innerHTML = '';
     const lang = state.lang;
     const selEmpty = el('selEmpty');
-    const ids = Array.from(state.selected).sort((a,b)=>a-b);
     // Show empty message only when nothing is selected (not based on filter)
-    selEmpty.style.display = ids.length? 'none':'block';
+    selEmpty.style.display = state.instances.length ? 'none':'block';
 
     const onlyDigits = (s)=> s.replace(/\D+/g, '');
 
     const q = state.q.trim().toLowerCase();
     const doFilter = !!(state.filterSelected && q.length);
 
-    for(const id of ids){
+    const order = getEffectiveRuntimeOrder();
+    for(const rid of order){
+        const inst = state.instances.find(x=>x.rid===rid);
+        if(!inst) continue;
+        const id = inst.id;
+        const meta = inst.meta || { price:10, min:1, max:100 };
         const it = state.items.find(x=>x.id===id);
         const nameStr = it ? (getItemName(it, lang)||'') : `Unknown 0x${id.toString(16).toUpperCase()}`;
         if(doFilter && !nameStr.toLowerCase().includes(q)) continue; // hide by filter
-
-        const meta = state.meta.get(id) || { price: 10, min: 1, max: 100 };
-        state.meta.set(id, meta);
 
         const row = document.createElement('div');
         row.className = 'sel';
@@ -1039,9 +1089,12 @@ function renderSelected(){
         price.addEventListener('input', ()=>{
             const v = onlyDigits(price.value);
             price.value = v;
-            meta.price = (v === '' ? 0 : parseInt(v,10));
-            state.meta.set(id, meta);
+            inst.meta.price = (v === '' ? 0 : parseInt(v,10));
         });
+        const dup = document.createElement('button');
+        dup.className = 'btn'; dup.style.marginLeft = '60px'; dup.textContent = t('duplicate') || '複製';
+        dup.title = t('duplicate') || '複製';
+        dup.addEventListener('click', ()=>{ duplicateInstance(rid); renderSelected(); });
         const g = document.createElement('span'); g.className='suffix'; g.textContent = 'G';
 
         const minLabel = document.createElement('span');
@@ -1056,12 +1109,11 @@ function renderSelected(){
             const v = onlyDigits(min.value);
             min.value = v;
             let vi = (v === '' ? 0 : parseInt(v,10));
-            if(vi > (meta.max ?? 0)){
-                meta.max = vi;
-                max.value = String(meta.max);
+            if(vi > (inst.meta.max ?? 0)){
+                inst.meta.max = vi;
+                max.value = String(inst.meta.max);
             }
-            meta.min = vi;
-            state.meta.set(id, meta);
+            inst.meta.min = vi;
         });
         const pcs1 = document.createElement('span'); pcs1.className='suffix'; pcs1.textContent = '個';
 
@@ -1077,33 +1129,92 @@ function renderSelected(){
             const v = onlyDigits(max.value);
             max.value = v;
             let vi = (v === '' ? 0 : parseInt(v,10));
-            if(vi < (meta.min ?? 0)){
-                meta.min = vi;
-                min.value = String(meta.min);
+            if(vi < (inst.meta.min ?? 0)){
+                inst.meta.min = vi;
+                min.value = String(inst.meta.min);
             }
-            meta.max = vi;
-            state.meta.set(id, meta);
+            inst.meta.max = vi;
         });
         const pcs2 = document.createElement('span'); pcs2.className='suffix'; pcs2.textContent = '個';
 
-        fields.appendChild(price); fields.appendChild(g);
+        fields.appendChild(price);  fields.appendChild(g);
         fields.appendChild(minLabel); fields.appendChild(min); fields.appendChild(pcs1);
         fields.appendChild(maxLabel); fields.appendChild(max); fields.appendChild(pcs2);
 
         const rm = document.createElement('button');
         rm.className='btn remove'; rm.textContent='×'; rm.title='削除';
-        rm.onclick=()=>{ state.selected.delete(id); render(); };
+        rm.onclick=()=>{ removeInstance(rid); render(); };
 
         row.appendChild(icon);
         row.appendChild(name);
         row.appendChild(fields);
         row.appendChild(rm);
+        row.appendChild(dup);
         holder.appendChild(row);
     }
 }
 
 // ===================== File IO =====================
 let _JSZip = null; // 読み込み済みキャッシュ
+function buildFileFromInstances(){
+    // Build packets directly from instances preserving order or sorted by item id based on flag
+    const insts = getInstancesForOutput();
+
+    // Recreate makeItemPackets logic with per-instance meta
+    const w = new BinWriter();
+    let count = 0;
+    // header commands
+    w.putLShort(0x65); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    w.putLShort(0x64); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    // expiry
+    w.putLShort(0x67); w.putByte(3); w.putByte(0x15); w.putLInt(2099>>>0); w.putLInt(12>>>0); w.putLInt(31>>>0); count++;
+
+    for(const inst of insts){
+        const id = inst.id>>>0;
+        const price = (inst.meta?.price ?? 10)>>>0;
+        const min = (inst.meta?.min ?? 1)>>>0;
+        const max = (inst.meta?.max ?? 100)>>>0;
+        w.putLShort(0x68);
+        w.putByte(4);
+        w.putByte(0x55);
+        w.putLInt(id);
+        w.putLInt(price);
+        w.putLInt(min);
+        w.putLInt(max);
+        count++;
+    }
+
+    const body = w.toUint8();
+
+    const hdr = new BinWriter();
+    hdr.putLInt(count);
+    hdr.putLInt(body.length);
+    hdr.putLInt(0x1b);
+    hdr.putLInt(0x2);
+    hdr.putBytes(body);
+    // Tail string and marker logic preserved from buildFile
+    const now = new Date();
+    const timeString = now.toISOString();
+    const versionStr = typeof version !== 'undefined' ? version : '1.0.0';
+    let url = "\r\nGenerate by DQVC DLC Custom List Generator v" + versionStr + ", ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)>\r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
+    let bytes = concat(hdr.toUint8(), new TextEncoder().encode(url));
+    const pad1 = (16 - (bytes.length % 16)) % 16;
+    if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
+    bytes = concat(bytes, MARKER);
+
+    const enc = rc4(bytes, KEY);
+    // Replace tail marker with checksum, keeping appended text and padding consistent
+    // For simplicity, reuse existing buildFile tail process
+    let final = enc.slice(0, enc.length - 4 - 0 - pad1);
+    final = concat(final, new TextEncoder().encode(url));
+    if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); final = concat(final, ff); }
+    const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
+    final = concat(final, fix);
+    const chk = lay_d_23_CheckChecksum(final);
+    if(chk !== 0){ console.warn('Checksum not zero:', chk); }
+    return final;
+}
+
 async function loadJSZip() {
     if (_JSZip) return _JSZip;
 
@@ -1138,8 +1249,7 @@ async function loadJSZip() {
 async function onDownload(){
     const JSZip = await loadJSZip();
 
-    const ids = Array.from(state.selected).sort((a,b)=>a-b);
-    const bin = buildFile(ids);
+    const bin = buildFileFromInstances();
 
     const size = bin.length;
     const listTxt = `output.bin\t\tauction\t\t\t${size}\r\r`;
@@ -1164,9 +1274,14 @@ async function loadBinFromFile(file){
         alert('読み込み失敗: ' + (e && e.message ? e.message : e));
         return;
     }
-    const ids = entries.map(e=>e.id);
-    state.selected = new Set(ids);
-    state.meta = new Map(entries.map(e=>[e.id, { price: e.price, min: e.min, max: e.max }]));
+    // Reset instances
+    state.instances = [];
+    state.order = [];
+    state.byItem = new Map();
+    state.nextRid = 1;
+    for(const e of entries){
+        addInstance(e.id>>>0, { price: e.price>>>0, min: e.min>>>0, max: e.max>>>0 });
+    }
     render();
 }
 
@@ -1246,7 +1361,7 @@ function setupMainTextDragBlock(){
     // restore filter-selected flag
     const savedFilter = localStorage.getItem('filterSel');
     state.filterSelected = savedFilter === '1';
-    const filterChk = document.getElementById('filterSel');
+    const filterChk = el('filterSel');
     if(filterChk){ filterChk.checked = state.filterSelected; }
 
     // layout handled by CSS media queries
@@ -1256,14 +1371,23 @@ function setupMainTextDragBlock(){
 
     if(filterChk){ filterChk.onchange = ()=>{ state.filterSelected = filterChk.checked; localStorage.setItem('filterSel', state.filterSelected ? '1':'0'); renderSelected(); }; }
 
+    // order controls
+    const sortChk = el('sortOrder');
+    if(sortChk){
+        state.sortSelected = !!sortChk.checked;
+        sortChk.onchange = ()=>{ state.sortSelected = sortChk.checked; renderSelected(); };
+    }
+    const shuffleBtn = el('shuffleBtn');
+    if(shuffleBtn){ shuffleBtn.onclick = ()=>{ shuffleOrder(); renderSelected(); }; }
+
     // bulk apply handler
-    const bulkApplyBtn = document.getElementById('bulkApply');
+    const bulkApplyBtn = el('bulkApply');
     if(bulkApplyBtn){
         bulkApplyBtn.onclick = ()=>{
             const ids = Array.from(state.selected);
             if(ids.length===0) return;
             const getNum = (id)=>{
-                const v = document.getElementById(id);
+                const v = el(id);
                 if(!v) return null;
                 const s = (v.value||'').replace(/\D+/g,'');
                 return s === '' ? null : parseInt(s,10);
@@ -1273,19 +1397,19 @@ function setupMainTextDragBlock(){
             const maxValRaw = getNum('bulkMax');
             let minVal = minValRaw, maxVal = maxValRaw;
             if(minVal != null && maxVal != null && minVal > maxVal){ const t = minVal; minVal = maxVal; maxVal = t; }
-            for(const id of ids){
-                const meta = state.meta.get(id) || { price:10, min:1, max:100 };
-                if(pVal != null) meta.price = pVal;
+            // apply to all instances whose item id is in ids
+            for(const inst of state.instances){
+                if(!ids.includes(inst.id)) continue;
+                if(pVal != null) inst.meta.price = pVal;
                 if(minVal != null){
-                    meta.min = minVal;
-                    if(maxVal == null && meta.max < minVal){ meta.max = minVal; }
+                    inst.meta.min = minVal;
+                    if(maxVal == null && inst.meta.max < minVal){ inst.meta.max = minVal; }
                 }
                 if(maxVal != null){
-                    meta.max = maxVal;
-                    if(minVal == null && meta.min > maxVal){ meta.min = maxVal; }
+                    inst.meta.max = maxVal;
+                    if(minVal == null && inst.meta.min > maxVal){ inst.meta.min = maxVal; }
                 }
-                if(meta.min > meta.max) meta.max = meta.min;
-                state.meta.set(id, meta);
+                if(inst.meta.min > inst.meta.max) inst.meta.max = inst.meta.min;
             }
             renderSelected();
         };
@@ -1305,15 +1429,14 @@ function setupMainTextDragBlock(){
         const msg = t('confirmDelete') + '\n\n' + namesForIds(ids).join('\n');
         if(confirm(msg)){
             for(const id of ids){
-                state.selected.delete(id);
-                state.meta.delete(id);
+                removeAllByItem(id);
             }
             render();
         }
     }
-    const btnMatched = document.getElementById('delMatched');
-    const btnUnmatched = document.getElementById('delUnmatched');
-    const btnAll = document.getElementById('delAll');
+    const btnMatched = el('delMatched');
+    const btnUnmatched = el('delUnmatched');
+    const btnAll = el('delAll');
     const computeMatches = ()=>{
         const q = (state.q||'').trim().toLowerCase();
         if(!q) return [];
@@ -1340,7 +1463,7 @@ function setupMainTextDragBlock(){
     }; }
 
     // Info box collapse/expand behavior with persistence
-    const infoBox = document.getElementById('infoBox');
+    const infoBox = el('infoBox');
     if(infoBox){
         const saved = localStorage.getItem('infoCollapsed');
         const collapsedInit = (saved !== null) ? (saved === '1') : (window.innerWidth <= 1000);
@@ -1353,7 +1476,7 @@ function setupMainTextDragBlock(){
 
     // Preset fixed-list: populate dropdown and apply handler
     (function setupPresets(){
-        const sel = document.getElementById('presetSelect');
+        const sel = el('presetSelect');
         if(!sel) return;
 
         // Populate once
@@ -1379,19 +1502,19 @@ function setupMainTextDragBlock(){
             const list = dqvcListings[idx];
             if(!list || !Array.isArray(list.items)) return;
 
-            const newSel = new Set();
-            const newMeta = new Map();
+            // reset all instances
+            state.instances = [];
+            state.order = [];
+            state.byItem = new Map();
+            state.nextRid = 1;
             list.items.forEach((it)=>{
                 if(!it || typeof it.itemId !== 'number') return;
                 const id = it.itemId >>> 0;
-                newSel.add(id);
                 const price = (typeof it.price === 'number') ? it.price : 10;
                 const min = (typeof it.min === 'number') ? it.min : 1;
                 const max = (typeof it.max === 'number') ? it.max : 1;
-                newMeta.set(id, { price, min, max }); // default to 1 if undefined
+                addInstance(id, { price, min, max }); // default to 1 if undefined
             });
-            state.selected = newSel;
-            state.meta = newMeta;
             render();
         };
 

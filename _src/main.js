@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-
+const versionJS = "1.0.5";
 
 // lang.js
 // 多言語辞書（テーマの各オプションも含む）
@@ -576,7 +576,7 @@ const translations = {
           <li>このページで利用している株式会社スクウェア・エニックスを代表とする共同著作者が権利を所有する画像の転載・配布は禁止いたします。</li>
           <li>© 2009 ARMOR PROJECT/BIRD STUDIO/LEVEL-5/SQUARE ENIX All Rights Reserved.</li>
         </ul>
-        <div class="muted" style="margin-top:8px">${t.versionPrefix}, v${version}</div>
+        <div class="muted" style="margin-top:8px">${t.versionPrefix}, v${version}, js: v${versionJS}</div>
       `;
 }
 }

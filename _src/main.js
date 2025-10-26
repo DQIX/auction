@@ -1478,56 +1478,85 @@ function setupMainTextDragBlock(){
         });
     }
 
-    // Preset fixed-list: populate dropdown and apply handler
-    (function setupPresets(){
-        const sel = el('presetSelect');
-        if(!sel) return;
-
-        // Populate once
-        if(typeof dqvcListings !== 'undefined' && Array.isArray(dqvcListings)){
-            // Clear existing options except placeholder
-            for(let i = sel.options.length - 1; i >= 1; i--) sel.remove(i);
-            dqvcListings.forEach((list, idx)=>{
-                // Ignore link property per spec
-                const opt = document.createElement('option');
-                const num = idx + 1;
-                const name = list && list.name ? String(list.name) : `List ${num}`;
-                opt.value = String(idx);
-                opt.textContent = `${num} - ${name}`;
-                sel.appendChild(opt);
-            });
-        }
-
-        const applyFromSelect = ()=>{
-            const v = sel.value;
-            if(v === '' || isNaN(parseInt(v,10))) return;
-            const idx = parseInt(v,10);
-            if(typeof dqvcListings === 'undefined' || !Array.isArray(dqvcListings)) return;
-            const list = dqvcListings[idx];
-            if(!list || !Array.isArray(list.items)) return;
-
-            // reset all instances
-            state.instances = [];
-            state.order = [];
-            state.byItem = new Map();
-            state.nextRid = 1;
-            list.items.forEach((it)=>{
-                if(!it || typeof it.itemId !== 'number') return;
-                const id = it.itemId >>> 0;
-                const price = (typeof it.price === 'number') ? it.price : 10;
-                const min = (typeof it.min === 'number') ? it.min : 1;
-                const max = (typeof it.max === 'number') ? it.max : 1;
-                addInstance(id, { price, min, max }); // default to 1 if undefined
-            });
-            render();
-        };
-
-        // 変更した瞬間に適用
-        sel.addEventListener('change', applyFromSelect);
-    })();
-
     el('q').addEventListener('input', debounce(()=>{ state.q = el('q').value; renderItems(); renderSelected(); }, 120));
 
     await loadCSV();
     render();
+
+    //D:\php\untitled\dq9\csv2.php
+    await (async function setupPresets() {
+        const sel = el('presetSelect');
+        if (!sel) return;
+
+        // 1) index を取得
+        let index;
+        try {
+            const res = await fetch('/chunks/index.json'); // 必要ならキャッシュ制御
+            if (!res.ok) throw new Error('index fetch failed');
+            index = await res.json(); // array of {name, file, localIndex}
+        } catch (e) {
+            console.error('failed to load index', e);
+            return;
+        }
+
+        // Clear existing options except placeholder
+        for (let i = sel.options.length - 1; i >= 1; i--) sel.remove(i);
+
+        // Populate options from index
+        index.forEach((meta, idx) => {
+            const opt = document.createElement('option');
+            opt.value = String(idx); // グローバルインデックス
+            opt.textContent = `${idx + 1} - ${meta.name}`;
+            sel.appendChild(opt);
+        });
+
+        // キャッシュ用オブジェクト（ファイル -> parsed chunk array）
+        const chunksCache = new Map();
+
+        const applyFromSelect = async () => {
+            const v = sel.value;
+            if (v === '' || isNaN(parseInt(v, 10))) return;
+            const gidx = parseInt(v, 10);
+            const meta = index[gidx];
+            if (!meta) return;
+            const file = meta.file;
+            const localIndex = meta.localIndex;
+
+            // fetch chunk if not cached
+            let chunkArray = chunksCache.get(file);
+            if (!chunkArray) {
+                try {
+                    const res = await fetch(`/chunks/${file}`);
+                    if (!res.ok) throw new Error('chunk fetch failed');
+                    chunkArray = await res.json(); // array of presets inside that chunk
+                    chunksCache.set(file, chunkArray);
+                } catch (e) {
+                    console.error('failed to fetch chunk', e);
+                    return;
+                }
+            }
+
+            const preset = chunkArray[localIndex];
+            if (!preset || !Array.isArray(preset.items)) return;
+
+            // reset state
+            state.instances = [];
+            state.order = [];
+            state.byItem = new Map();
+            state.nextRid = 1;
+
+            // addInstance 部分は既存の関数を使う
+            preset.items.forEach((it) => {
+                if (!it || typeof it.itemId !== 'number') return;
+                const id = it.itemId >>> 0;
+                const price = (typeof it.price === 'number') ? it.price : 10;
+                const min = (typeof it.min === 'number') ? it.min : 1;
+                const max = (typeof it.max === 'number') ? it.max : 1;
+                addInstance(id, {price, min, max});
+            });
+            render();
+        };
+
+        sel.addEventListener('change', applyFromSelect);
+    })();
 })();

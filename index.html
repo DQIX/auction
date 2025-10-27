@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <base href="/auction/">
   <title>DQVCアイテムリスト生成</title>
+
+  <link rel=preload as=fetch crossorigin href="dq9items.csv">
+  <link rel=preload as=fetch crossorigin href="chunks/index_v2.json">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
   <meta property="og:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">

@@ -456,6 +456,8 @@
     savedTheme = prefersDark ? 'DarkPlus' : 'light2';
   }
 
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+
   // テーマを適用
   applyTheme(savedTheme);
 </script>
@@ -512,7 +514,7 @@
   <main>
     <section class="panel" id="itemsPanel">
       <h2>アイテム</h2>
-      <div class="body" id="itemsBody">
+      <div class="body" id="itemsBody" style="min-height: 1000px; display: block; box-sizing: border-box;">
         <div class="muted">読み込み中…</div>
       </div>
     </section>
@@ -526,7 +528,7 @@
           <div class="title" id="presetTitle">固定リストを適用</div>
           <div class="fields" style="gap:8px; flex-wrap:wrap; align-items:center;">
             <label class="muted" id="presetSelectLabel" for="presetSelect">リスト</label>
-            <select id="presetSelect" class="select">
+            <select id="presetSelect" class="select" style="width:356px; height:40px; line-height:40px;">
               <option value="">リストを選択</option>
             </select>
           </div>

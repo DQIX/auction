@@ -1485,7 +1485,7 @@ function setupMainTextDragBlock(){
     render();
 
     //D:\php\untitled\dq9\csv2.php
-    await (async function setupPresets() {
+    requestIdleCallback(async () => {
         const sel = el('presetSelect');
         if (!sel) return;
 
@@ -1584,5 +1584,5 @@ function setupMainTextDragBlock(){
         };
 
         sel.addEventListener('change', applyFromSelect);
-    })();
+    });
 })();

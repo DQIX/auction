@@ -445,7 +445,7 @@
   /** ライトテーマの時に、これがないと読み込み時にポリゴンショックするので必須。*/
 
   /** バージョン */
-  const version = "1.0.6";
+  const version = "1.0.8";
 
   /** HTMLのdata-theme属性を設定 */
   function applyTheme(theme) {
@@ -581,9 +581,45 @@
         </div>
 
         <!-- Collapsible info box: About this tool -->
-        <div id="infoBox" class="bulk info-box">
+        <div id="infoBox" class="bulk info-box collapsed">
           <div class="title" id="infoTitle">このツールについて</div>
-          <div class="info-content" id="infoContent"></div>
+          <div class="info-content" id="infoContent">
+            <div class="muted" style="margin-bottom:6px">...</div>
+            <div class="muted" style="margin-bottom:6px">...</div>
+            <div class="muted" style="margin-bottom:6px">...</div>
+            <div style="font-weight:700; margin:8px 0 4px;">...</div>
+            <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+            </ul>
+            <div style="font-weight:700; margin:8px 0 4px;">${t.notesTitle}</div>
+            <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+              <li>...</li>
+            </ul>
+            <div style="font-weight:700; margin:8px 0 4px;">copyright</div>
+            <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
+              <li>このページで利用している株式会社スクウェア・エニックスを代表とする共同著作者が権利を所有する画像の転載・配布は禁止いたします。</li>
+              <li>© 2009 ARMOR PROJECT/BIRD STUDIO/LEVEL-5/SQUARE ENIX All Rights Reserved.</li>
+            </ul>
+            <div class="muted" style="margin-top:8px">, v, js: v</div>
+          </div>
         </div>
       </div>
     </section>

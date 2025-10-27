@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.0.6";
+const versionJS = "1.0.8";
 const index_file_var = "2";
 
 // lang.js
@@ -1468,15 +1468,13 @@ function setupMainTextDragBlock(){
         confirmAndDelete(ids);
     }; }
 
-    // Info box collapse/expand behavior with persistence
+    //Info box collapse/expand behavior with persistence
     const infoBox = el('infoBox');
     if(infoBox){
-        const saved = localStorage.getItem('infoCollapsed');
-        const collapsedInit = (saved !== null) ? (saved === '1') : (window.innerWidth <= 1000);
+        const collapsedInit = false;
         if(collapsedInit) infoBox.classList.add('collapsed');
         infoBox.addEventListener('click', ()=>{
-            const isCollapsed = infoBox.classList.toggle('collapsed');
-            localStorage.setItem('infoCollapsed', isCollapsed ? '1' : '0');
+            infoBox.classList.toggle('collapsed');
         });
     }
 

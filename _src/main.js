@@ -879,6 +879,7 @@ function iconStyleFromIndex(idx){
 }
 
 async function loadCSV(){
+    //https://cartman0.hatenablog.com/entry/2017/12/03/ink%E8%A6%81%E7%B4%A0%E3%81%A7preload%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80
     const res = await fetch('dq9items.csv');
     const text = await res.text();
     const rows = parseCSV(text);

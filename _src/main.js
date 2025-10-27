@@ -5,7 +5,8 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.0.5";
+const versionJS = "1.0.6";
+const index_file_var = "2";
 
 // lang.js
 // 多言語辞書（テーマの各オプションも含む）
@@ -1491,7 +1492,7 @@ function setupMainTextDragBlock(){
         // 1) index を取得
         let index;
         try {
-            const res = await fetch('chunks/index.json'); // 必要ならキャッシュ制御
+            const res = await fetch('chunks/index_v' + index_file_var + '.json'); // 必要ならキャッシュ制御
             if (!res.ok) throw new Error('index fetch failed');
             index = await res.json(); // array of {name, file, localIndex}
         } catch (e) {
@@ -1523,20 +1524,45 @@ function setupMainTextDragBlock(){
             const localIndex = meta.localIndex;
 
             // fetch chunk if not cached
-            let chunkArray = chunksCache.get(file);
-            if (!chunkArray) {
+            let itemsData = chunksCache.get(file);
+            let items = [];
+            if (!itemsData) {
                 try {
                     const res = await fetch(`chunks/${file}`);
                     if (!res.ok) throw new Error('chunk fetch failed');
-                    chunkArray = await res.json(); // array of presets inside that chunk
-                    chunksCache.set(file, chunkArray);
+                    let chunkArray = await res.json(); // array of presets inside that chunk
+
+                    for (let data of chunkArray){
+                        const item2 = {};
+                        item2["name"] = data["name"];
+                        item2["link"] = data["link"];
+                        let entity = [];
+                        for (let data2 of data["items"]){
+                            let mini = data2[2];
+                            let max = data2[3];
+                            let entry = {itemId: (data2[0] + 0x2f00), price: data2[1]};
+                            if(mini && max){
+                                entry["min"] = mini;
+                                entry["max"] = max;
+                            }
+                            entity.push(entry);
+                        }
+                        item2["items"] = entity;
+                        items.push(item2);
+                    }
+
+
+                    chunksCache.set(file, items);
                 } catch (e) {
                     console.error('failed to fetch chunk', e);
                     return;
                 }
+            }else{
+                items = itemsData;
             }
 
-            const preset = chunkArray[localIndex];
+            console.log(items)
+            const preset = items[localIndex];
             if (!preset || !Array.isArray(preset.items)) return;
 
             // reset state

@@ -1,594 +1,1031 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <base href="/auction/">
-  <title>DQVCアイテムリスト生成</title>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
-  <meta property="og:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
-  <meta property="og:url" content="https://dqix.github.io/auction/">
-  <meta property="og:site_name" content="DQVCアイテムリスト生成">
-  <meta property="og:locale" content="ja_JP">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <base href="/auction/">
+    <title>DQVCアイテムリスト生成</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
+    <meta property="og:description"
+          content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
+    <meta property="og:url" content="https://dqix.github.io/auction/">
+    <meta property="og:site_name" content="DQVCアイテムリスト生成">
+    <meta property="og:locale" content="ja_JP">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="dq9 DQVCアイテムリスト生成">
-  <meta name="twitter:description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
-  <meta name="twitter:url" content="https://dqix.github.io/auction/">
-  <meta name="twitter:site" content="@Daisuke76897125">
-  <meta name="twitter:creator" content="@Daisuke76897125">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="dq9 DQVCアイテムリスト生成">
+    <meta name="twitter:description"
+          content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
+    <meta name="twitter:url" content="https://dqix.github.io/auction/">
+    <meta name="twitter:site" content="@Daisuke76897125">
+    <meta name="twitter:creator" content="@Daisuke76897125">
 
-  <meta name="description" content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
-  <style>
-    :root {
-      --bg:#0f172a; /* slate-900 */
-      --panel:#111827; /* gray-900 */
-      --muted:#94a3b8; /* slate-400 */
-      --fg:#e5e7eb; /* gray-200 */
-      --pri:#60a5fa; /* blue-400 */
-      --accent:#22c55e; /* green-500 */
-      --warn:#f59e0b; /* amber-500 */
-      --err:#ef4444; /* red-500 */
-      --card:#0b1220;
-      --border:#1f2937; /* gray-800 */
-    }
-    :root[data-theme="light"]{
-      --bg:#f3f4f6; /* gray-100 */
-      --panel:#ffffff; /* white */
-      --muted:#6b7280; /* gray-500 */
-      --fg:#111827; /* gray-900 */
-      --pri:#3b82f6; /* blue-500 */
-      --accent:#16a34a; /* green-600 */
-      --warn:#d97706; /* amber-600 */
-      --err:#dc2626; /* red-600 */
-      --card:#f9fafb; /* gray-50 */
-      --border:#e5e7eb; /* gray-200 */
-    }
+    <meta name="description"
+          content="DQ9・DQIX対応のDQVCショップリストジェネレーター。任意のアイテムリストを生成可能で、すべてのアイテムを選択可能。バルクセットやテンプレート機能付きで、生成したリストはZIPファイルでダウンロードできます。任天堂DSへの配布コードは含まれていません。送信にはカスタムWFCサーバーが必要です。">
+    <style>
+        :root {
+            --bg: #0f172a; /* slate-900 */
+            --panel: #111827; /* gray-900 */
+            --muted: #94a3b8; /* slate-400 */
+            --fg: #e5e7eb; /* gray-200 */
+            --pri: #60a5fa; /* blue-400 */
+            --accent: #22c55e; /* green-500 */
+            --warn: #f59e0b; /* amber-500 */
+            --err: #ef4444; /* red-500 */
+            --card: #0b1220;
+            --border: #1f2937; /* gray-800 */
+        }
 
-    /* Light theme header should be gray, not black */
-    :root[data-theme="light"] header {
-      background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
-    }
-    /* Light theme: hide outer square on icons/items */
-    :root[data-theme="light"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="light"] .item { border-color: transparent; }
-    :root[data-theme="light"] .item:hover { border-color: transparent; }
+        :root[data-theme="light"] {
+            --bg: #f3f4f6; /* gray-100 */
+            --panel: #ffffff; /* white */
+            --muted: #6b7280; /* gray-500 */
+            --fg: #111827; /* gray-900 */
+            --pri: #3b82f6; /* blue-500 */
+            --accent: #16a34a; /* green-600 */
+            --warn: #d97706; /* amber-600 */
+            --err: #dc2626; /* red-600 */
+            --card: #f9fafb; /* gray-50 */
+            --border: #e5e7eb; /* gray-200 */
+        }
 
+        /* Light theme header should be gray, not black */
+        :root[data-theme="light"] header {
+            background: linear-gradient(180deg, rgba(243, 244, 246, 0.96), rgba(243, 244, 246, 0.88));
+        }
 
-    :root[data-theme="light2"]{
-      --bg:#f3f4f6; /* gray-100 */
-      --panel:#ffffff; /* white */
-      --muted:#6b7280; /* gray-500 */
-      --fg:#111827; /* gray-900 */
-      --pri:#3b82f6; /* blue-500 */
-      --accent:#16a34a; /* green-600 */
-      --warn:#d97706; /* amber-600 */
-      --err:#dc2626; /* red-600 */
-      --card:#f9fafb; /* gray-50 */
-      --border:#d1d5db; /* gray-300 */
-    }
+        /* Light theme: hide outer square on icons/items */
+        :root[data-theme="light"] .icon-sprite {
+            box-shadow: none;
+        }
 
-    /* Light theme header should be gray, not black */
-    :root[data-theme="light2"] header {
-      background: linear-gradient(180deg, rgba(243,244,246,0.96), rgba(243,244,246,0.88));
-    }
-    /* Light theme: hide outer square on icons/items */
-    :root[data-theme="light2"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="light2"] .item { border-color: transparent; }
-    :root[data-theme="light2"] .item:hover { border-color: transparent; }
+        :root[data-theme="light"] .item {
+            border-color: transparent;
+        }
 
-    /* Light+ theme: icons/items slightly outlined */
-    :root[data-theme="light2"] .icon-sprite {
-      box-shadow: 0 0 1px rgba(0,0,0,0.1);
-    }
-    :root[data-theme="light2"] .item {
-      border-color: var(--border);
-    }
-    :root[data-theme="light2"] .item:hover {
-      border-color: var(--pri);
-    }
+        :root[data-theme="light"] .item:hover {
+            border-color: transparent;
+        }
 
 
+        :root[data-theme="light2"] {
+            --bg: #f3f4f6; /* gray-100 */
+            --panel: #ffffff; /* white */
+            --muted: #6b7280; /* gray-500 */
+            --fg: #111827; /* gray-900 */
+            --pri: #3b82f6; /* blue-500 */
+            --accent: #16a34a; /* green-600 */
+            --warn: #d97706; /* amber-600 */
+            --err: #dc2626; /* red-600 */
+            --card: #f9fafb; /* gray-50 */
+            --border: #d1d5db; /* gray-300 */
+        }
 
-    :root[data-theme="blue"]{
-      --bg:#0a1930; /* deep blue */
-      --panel:#0d223f;
-      --muted:#93c5fd; /* blue-300 */
-      --fg:#e0f2fe; /* sky-100 */
-      --pri:#60a5fa; /* blue-400 */
-      --accent:#38bdf8; /* sky-400 */
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#0b1f3a;
-      --border:#1e3a8a; /* indigo-800 */
-    }
-    :root[data-theme="gold"]{
-      --bg:#15100a; /* dark brown */
-      --panel:#1c150b;
-      --muted:#f5d38c; /* soft gold */
-      --fg:#fff7e6; /* warm light */
-      --pri:#f59e0b; /* amber-500 */
-      --accent:#fbbf24; /* amber-400 */
-      --warn:#d97706;
-      --err:#ef4444;
-      --card:#1a1309;
-      --border:#3f2d0f; /* brown-800 */
-    }
-    :root[data-theme="pink"]{
-      --bg:#170f1c; /* deep plum */
-      --panel:#1f1326;
-      --muted:#f9a8d4; /* pink-300 */
-      --fg:#fde7f3; /* pink-50ish */
-      --pri:#ec4899; /* pink-500 */
-      --accent:#f472b6; /* pink-400 */
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#1b1122;
-      --border:#4c1d95; /* violet-900 */
-    }
-    html, body { min-height: 100%; }
-    body {
-      margin: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    }
-    /* Infoボックス内のリンク色をテーマのテキスト色に統一 */
-    #infoBox a,
-    #infoBox a:visited {
-      color: var(--fg);
-    }
-    header {
-      position: sticky; top: 0; z-index: 5;
-      background: linear-gradient(180deg, rgba(17,24,39,0.96), rgba(17,24,39,0.88));
-      backdrop-filter: saturate(140%) blur(4px);
-      border-bottom: 1px solid var(--border);
-    }
-    .wrap { max-width: 2000px; margin: 0 auto; padding: 12px 16px; }
-    .header-row { display: flex; align-items: center; gap: 8px; }
-    h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: .02em; }
-    .grow { flex: 1; }
-    .btn { appearance: none; border: 1px solid var(--border); background: var(--card); color: var(--fg); padding: 8px 12px; border-radius: 10px; cursor: pointer; font-weight: 600; }
-    .btn:hover { border-color: #2a384d; }
-    .btn.primary { background: linear-gradient(180deg, #2563eb, #1d4ed8); border-color: #1e3a8a; color: white; }
-    .btn.primary:disabled { opacity: .5; cursor: not-allowed; }
-    .icon { width: 20px; height: 20px; vertical-align: -4px; }
-    .toolbar { display: flex; gap: 8px; align-items: center;}
-    .search { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; }
-    .search input { flex: 1; background: transparent; color: var(--fg); border: 0; outline: none; min-width: 140px; }
-    .select { background: var(--card); color: var(--fg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
-    /* Collapsible info box styles */
-    .info-box .title { cursor: pointer; user-select: none; }
-    .info-box.collapsed .info-content { display: none; }
+        /* Light theme header should be gray, not black */
+        :root[data-theme="light2"] header {
+            background: linear-gradient(180deg, rgba(243, 244, 246, 0.96), rgba(243, 244, 246, 0.88));
+        }
 
-    main { max-width: 3500px; margin: 0 auto; padding: 12px 16px 40px; display: grid; grid-template-columns: 1fr; grid-template-areas: "selected" "items"; gap: 16px; }
-    #itemsPanel { grid-area: items; max-width: 3500px }
-    #selectedPanel { grid-area: selected; }
+        /* Light theme: hide outer square on icons/items */
+        :root[data-theme="light2"] .icon-sprite {
+            box-shadow: none;
+        }
+
+        :root[data-theme="light2"] .item {
+            border-color: transparent;
+        }
+
+        :root[data-theme="light2"] .item:hover {
+            border-color: transparent;
+        }
+
+        /* Light+ theme: icons/items slightly outlined */
+        :root[data-theme="light2"] .icon-sprite {
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        :root[data-theme="light2"] .item {
+            border-color: var(--border);
+        }
+
+        :root[data-theme="light2"] .item:hover {
+            border-color: var(--pri);
+        }
 
 
-    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: clip; }
-    .panel h2 { margin: 0; font-size: 14px; font-weight: 700; padding: 10px 12px; border-bottom: 1px solid var(--border); background: var(--panel); }
-    .panel .body { padding: 10px; }
+        :root[data-theme="blue"] {
+            --bg: #0a1930; /* deep blue */
+            --panel: #0d223f;
+            --muted: #93c5fd; /* blue-300 */
+            --fg: #e0f2fe; /* sky-100 */
+            --pri: #60a5fa; /* blue-400 */
+            --accent: #38bdf8; /* sky-400 */
+            --warn: #f59e0b;
+            --err: #ef4444;
+            --card: #0b1f3a;
+            --border: #1e3a8a; /* indigo-800 */
+        }
 
-    .type { margin-bottom: 8px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--card); }
-    .type summary { list-style: none; cursor: pointer; padding: 8px 10px; background: var(--panel); font-weight: 700; color: var(--muted); }
-    .type summary::-webkit-details-marker { display: none; }
-    .type-items { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; padding: 10px; }
+        :root[data-theme="gold"] {
+            --bg: #15100a; /* dark brown */
+            --panel: #1c150b;
+            --muted: #f5d38c; /* soft gold */
+            --fg: #fff7e6; /* warm light */
+            --pri: #f59e0b; /* amber-500 */
+            --accent: #fbbf24; /* amber-400 */
+            --warn: #d97706;
+            --err: #ef4444;
+            --card: #1a1309;
+            --border: #3f2d0f; /* brown-800 */
+        }
+
+        :root[data-theme="pink"] {
+            --bg: #170f1c; /* deep plum */
+            --panel: #1f1326;
+            --muted: #f9a8d4; /* pink-300 */
+            --fg: #fde7f3; /* pink-50ish */
+            --pri: #ec4899; /* pink-500 */
+            --accent: #f472b6; /* pink-400 */
+            --warn: #f59e0b;
+            --err: #ef4444;
+            --card: #1b1122;
+            --border: #4c1d95; /* violet-900 */
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        /* Infoボックス内のリンク色をテーマのテキスト色に統一 */
+        #infoBox a,
+        #infoBox a:visited {
+            color: var(--fg);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(17, 24, 39, 0.88));
+            backdrop-filter: saturate(140%) blur(4px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .wrap {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 12px 16px;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        .grow {
+            flex: 1;
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--fg);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            border-color: #2a384d;
+        }
+
+        .btn.primary {
+            background: linear-gradient(180deg, #2563eb, #1d4ed8);
+            border-color: #1e3a8a;
+            color: white;
+        }
+
+        .btn.primary:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: -4px;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px 12px;
+        }
+
+        .search input {
+            flex: 1;
+            background: transparent;
+            color: var(--fg);
+            border: 0;
+            outline: none;
+            min-width: 140px;
+        }
+
+        .select {
+            background: var(--card);
+            color: var(--fg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 8px 10px;
+        }
+
+        /* Collapsible info box styles */
+        .info-box .title {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .info-box.collapsed .info-content {
+            display: none;
+        }
+
+        main {
+            max-width: 3500px;
+            margin: 0 auto;
+            padding: 12px 16px 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "selected" "items";
+            gap: 16px;
+        }
+
+        #itemsPanel {
+            grid-area: items;
+            max-width: 3500px
+        }
+
+        #selectedPanel {
+            grid-area: selected;
+        }
 
 
-    .item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
-    .item:hover { border-color: #2a384d; }
-    .check { appearance: none; width: 18px; height: 18px; border: 2px solid #334155; border-radius: 6px; display: grid; place-items: center; background: var(--card); cursor: pointer; }
-    .check:checked { background: var(--accent); border-color: var(--accent); }
-    .check:checked::after { content: ""; width: 10px; height: 10px; background: white; border-radius: 2px; }
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: clip;
+        }
 
-    .icon-sprite { width: 24px; height: 24px; display: inline-block; vertical-align: top; background-image: url('itemIcons.png'); background-repeat: no-repeat; image-rendering: pixelated; border-radius: 4px; box-shadow: inset 0 0 0 1px #0009; }
-    .name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .panel h2 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            background: var(--panel);
+        }
 
-    body, main{
-      min-width: 700px;
-    }
+        .panel .body {
+            padding: 10px;
+        }
 
-    .selected-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
-    .sel { align-items: center; gap: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
-    .sel .remove { margin-left: auto; color: #fca5a5; cursor: pointer; }
+        .type {
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--card);
+        }
 
-    .dropzone { position: fixed; inset: 0; display: none; place-items: center; background: rgba(30,41,59,0.75); z-index: 50; }
-    .dropzone.visible { display: grid; }
-    .dropzone .inner { border: 2px dashed #60a5fa; padding: 24px; border-radius: 16px; background: var(--card); }
+        .type summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 8px 10px;
+            background: var(--panel);
+            font-weight: 700;
+            color: var(--muted);
+        }
 
-    .muted { color: var(--muted); font-size:18px; }
-    .error { color: #fecaca; background: #7f1d1d; border: 1px solid #b91c1c; padding: 8px 10px; border-radius: 10px; }
-    .fields { display:flex; align-items:center; gap:6px; margin-left:auto; flex-wrap: wrap; }
-    .num { width:72px; background: var(--card); color: var(--fg); border:1px solid var(--border); border-radius:8px; padding:4px 6px; }
-    .suffix { color: var(--muted); font-size:20px; margin-left:-4px; margin-right:8px; }
+        .type summary::-webkit-details-marker {
+            display: none;
+        }
 
-    .bulk { margin-top: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); padding: 8px; }
-    .bulk .title { font-weight:700; font-size:18px; color: var(--muted); margin-bottom:6px; }
-    .bulk .fields { margin-left: 0; }
-
-    /* >=1000px: show 4 columns for items grid */
-    @media (min-width: 1000px) { .type-items { grid-template-columns: repeat(3, minmax(0,1fr)); }  .selected-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
-    @media (min-width: 1400px) { .type-items { grid-template-columns: repeat(4, minmax(0,1fr));  } }
-    @media (min-width: 1900px) {  main { grid-template-columns: 1fr minmax(380px, 600px); grid-template-areas: "items selected"; align-items: start; max-width: 2000px }  .selected-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }  }
-    @media (min-width: 2600px) { .type-items { grid-template-columns: repeat(5, minmax(0,1fr)); } main{ max-width: 2700px; } }
-    @media (min-width: 3000px) {.type-items { grid-template-columns: repeat(7, minmax(0,1fr)); } main { grid-template-columns: 1fr minmax(380px, 900px); max-width: 3100px } .selected-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
-    @media (min-width: 3800px) {.type-items { grid-template-columns: repeat(8, minmax(0,1fr)); } main { grid-template-columns: 1fr minmax(380px, 900px); max-width: 3900px } .selected-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
-
-    /* Gold & Pink themes: match header to theme panel (was stuck dark) */
-    :root[data-theme="gold"] header {
-      background: linear-gradient(180deg, rgba(28,21,11,0.96), rgba(28,21,11,0.88));
-    }
-    :root[data-theme="pink"] header {
-      background: linear-gradient(180deg, rgba(31,19,38,0.96), rgba(31,19,38,0.88));
-    }
-
-
-    /* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
-    :root[data-theme="DarkPlus"] {
-      --bg: #0d1116;       /* 背景をより深いダークブルー寄りに */
-      --panel: #161b21;    /* パネル部分、わずかに明るくして区別 */
-      --card: #12171d;     /* カードは中間トーンで浮かないように */
-      --border: #1f2a33;   /* 境界線を控えめに */
-      --fg: #e5e7eb;       /* 文字色（ややグレー寄り） */
-      --muted: #8b96a3;    /* 補助文字 */
-      --pri: #f97316;      /* 差し色（オレンジ）を少し深く */
-      --accent: #ea580c;   /* より強いアクセントオレンジ */
-      --warn: #f59e0b;     /* 警告色（アンバー）をそのまま維持 */
-      --err: #ef4444;      /* エラー色そのまま */
-    }
-    :root[data-theme="deepDark"]{
-      --bg:#0b0c10;
-      --panel:#0e1015;
-      --muted:#9aa3ad;
-      --fg:#e5e7eb;
-      --pri:#60a5fa; /* blue-400 */
-      --accent:#22c55e; /* green-500 */
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#0a0c12;
-      --border:#1a1f2a;
-    }
-    :root[data-theme="darkColorblind"]{
-      --bg:#0b0c10;
-      --panel:#0e1015;
-      --muted:#9aa3ad;
-      --fg:#e5e7eb;
-      --pri:#fb923c; /* orange-400 */
-      --accent:#f59e0b; /* amber-500 */
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#0a0c12;
-      --border:#1a1f2a;
-    }
-    :root[data-theme="darkTritanopia"]{
-      --bg:#0b0c10;
-      --panel:#0e1015;
-      --muted:#9aa3ad;
-      --fg:#e5e7eb;
-      --pri:#f87171; /* red-400 */
-      --accent:#ef4444; /* red-500 */
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#0a0c12;
-      --border:#1a1f2a;
-    }
-
-    /* Header backgrounds for new themes */
-    :root[data-theme="DarkPlus"] header {
-      background: linear-gradient(180deg, rgba(20,26,31,0.96), rgba(20,26,31,0.88));
-    }
-    :root[data-theme="deepDark"] header,
-    :root[data-theme="darkColorblind"] header,
-    :root[data-theme="darkTritanopia"] header {
-      background: linear-gradient(180deg, rgba(14,16,21,0.96), rgba(14,16,21,0.88));
-    }
-
-    /* Responsive header: at <=1200px, move search and subsequent controls to next line */
-    @media (max-width: 1150px) {
-      .toolbar { flex-wrap: wrap; }
-      .toolbar .search { order: 2; flex: 1 1 100px; margin-top: 6px; min-width: 200px }
-      .toolbar .search ~ * { order: 2; }
-    }
-
-    /* ---------------------------
-   Light+ (Gray)
-   --------------------------- */
-    :root[data-theme="lightGray"] {
-      --bg:#e5e7eb; /* gray-200 */
-      --panel:#f3f4f6; /* gray-100 */
-      --muted:#4b5563; /* gray-600 */
-      --fg:#1f2937; /* gray-800 */
-      --pri:#2563eb; /* blue-600 */
-      --accent:#15803d; /* green-700 */
-      --warn:#b45309; /* amber-700 */
-      --err:#b91c1c; /* red-700 */
-      --card:#f9fafb; /* gray-50 */
-      --border:#d1d5db; /* gray-300 */
-    }
-    :root[data-theme="lightGray"] header {
-      background: linear-gradient(180deg, rgba(229,231,235,0.95), rgba(243,244,246,0.85));
-    }
-    :root[data-theme="lightGray"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="lightGray"] .item { border-color: transparent; }
-    :root[data-theme="lightGray"] .item:hover { border-color: transparent; }
+        .type-items {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            padding: 10px;
+        }
 
 
-    :root[data-theme="lightGrayPlus"] {
-      --bg:#e5e7eb; /* gray-200 */
-      --panel:#f3f4f6; /* gray-100 */
-      --muted:#4b5563; /* gray-600 */
-      --fg:#1f2937; /* gray-800 */
-      --pri:#2563eb; /* blue-600 */
-      --accent:#15803d; /* green-700 */
-      --warn:#b45309; /* amber-700 */
-      --err:#b91c1c; /* red-700 */
-      --card:#f9fafb; /* gray-50 */
-      --border:#d1d5db; /* gray-300 */
-    }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card);
+        }
 
-    /* Light+ theme header: subtle gradient, softer than light */
-    :root[data-theme="lightGrayPlus"] header {
-      background: linear-gradient(180deg, rgba(229,231,235,0.95), rgba(243,244,246,0.85));
-    }
+        .item:hover {
+            border-color: #2a384d;
+        }
 
-    /* Light+ theme: icons/items slightly outlined */
-    :root[data-theme="lightGrayPlus"] .icon-sprite {
-      box-shadow: 0 0 1px rgba(0,0,0,0.1);
-    }
-    :root[data-theme="lightGrayPlus"] .item {
-      border-color: var(--border);
-    }
-    :root[data-theme="lightGrayPlus"] .item:hover {
-      border-color: var(--pri);
-    }
+        .check {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #334155;
+            border-radius: 6px;
+            display: grid;
+            place-items: center;
+            background: var(--card);
+            cursor: pointer;
+        }
 
-    /* ---------------------------
-       Light+ (Cool Blue)
+        .check:checked {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .check:checked::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .icon-sprite {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: top;
+            background-image: url('itemIcons.png');
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+            border-radius: 4px;
+            box-shadow: inset 0 0 0 1px #0009;
+        }
+
+        .name {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        body, main {
+            min-width: 700px;
+        }
+
+        .selected-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .sel {
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card);
+        }
+
+        .sel .remove {
+            margin-left: auto;
+            color: #fca5a5;
+            cursor: pointer;
+        }
+
+        .dropzone {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            background: rgba(30, 41, 59, 0.75);
+            z-index: 50;
+        }
+
+        .dropzone.visible {
+            display: grid;
+        }
+
+        .dropzone .inner {
+            border: 2px dashed #60a5fa;
+            padding: 24px;
+            border-radius: 16px;
+            background: var(--card);
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .error {
+            color: #fecaca;
+            background: #7f1d1d;
+            border: 1px solid #b91c1c;
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .fields {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+            flex-wrap: wrap;
+        }
+
+        .num {
+            width: 72px;
+            background: var(--card);
+            color: var(--fg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 6px;
+        }
+
+        .suffix {
+            color: var(--muted);
+            font-size: 20px;
+            margin-left: -4px;
+            margin-right: 8px;
+        }
+
+        .bulk {
+            margin-top: 8px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card);
+            padding: 8px;
+        }
+
+        .bulk .title {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .bulk .fields {
+            margin-left: 0;
+        }
+
+        /* >=1000px: show 4 columns for items grid */
+        @media (min-width: 1000px) {
+            .type-items {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .selected-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .type-items {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1900px) {
+            main {
+                grid-template-columns: 1fr minmax(380px, 600px);
+                grid-template-areas: "items selected";
+                align-items: start;
+                max-width: 2000px
+            }
+
+            .selected-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 2600px) {
+            .type-items {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            main {
+                max-width: 2700px;
+            }
+        }
+
+        @media (min-width: 3000px) {
+            .type-items {
+                grid-template-columns: repeat(7, minmax(0, 1fr));
+            }
+
+            main {
+                grid-template-columns: 1fr minmax(380px, 900px);
+                max-width: 3100px
+            }
+
+            .selected-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 3800px) {
+            .type-items {
+                grid-template-columns: repeat(8, minmax(0, 1fr));
+            }
+
+            main {
+                grid-template-columns: 1fr minmax(380px, 900px);
+                max-width: 3900px
+            }
+
+            .selected-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        /* Gold & Pink themes: match header to theme panel (was stuck dark) */
+        :root[data-theme="gold"] header {
+            background: linear-gradient(180deg, rgba(28, 21, 11, 0.96), rgba(28, 21, 11, 0.88));
+        }
+
+        :root[data-theme="pink"] header {
+            background: linear-gradient(180deg, rgba(31, 19, 38, 0.96), rgba(31, 19, 38, 0.88));
+        }
+
+
+        /* New themes: colorblind-friendly Orange, Deep Dark, Dark Colorblind (orange), Dark Tritanopia (red) */
+        :root[data-theme="DarkPlus"] {
+            --bg: #0d1116; /* 背景をより深いダークブルー寄りに */
+            --panel: #161b21; /* パネル部分、わずかに明るくして区別 */
+            --card: #12171d; /* カードは中間トーンで浮かないように */
+            --border: #1f2a33; /* 境界線を控えめに */
+            --fg: #e5e7eb; /* 文字色（ややグレー寄り） */
+            --muted: #8b96a3; /* 補助文字 */
+            --pri: #f97316; /* 差し色（オレンジ）を少し深く */
+            --accent: #ea580c; /* より強いアクセントオレンジ */
+            --warn: #f59e0b; /* 警告色（アンバー）をそのまま維持 */
+            --err: #ef4444; /* エラー色そのまま */
+        }
+
+        :root[data-theme="deepDark"] {
+            --bg: #0b0c10;
+            --panel: #0e1015;
+            --muted: #9aa3ad;
+            --fg: #e5e7eb;
+            --pri: #60a5fa; /* blue-400 */
+            --accent: #22c55e; /* green-500 */
+            --warn: #f59e0b;
+            --err: #ef4444;
+            --card: #0a0c12;
+            --border: #1a1f2a;
+        }
+
+        :root[data-theme="darkColorblind"] {
+            --bg: #0b0c10;
+            --panel: #0e1015;
+            --muted: #9aa3ad;
+            --fg: #e5e7eb;
+            --pri: #fb923c; /* orange-400 */
+            --accent: #f59e0b; /* amber-500 */
+            --warn: #f59e0b;
+            --err: #ef4444;
+            --card: #0a0c12;
+            --border: #1a1f2a;
+        }
+
+        :root[data-theme="darkTritanopia"] {
+            --bg: #0b0c10;
+            --panel: #0e1015;
+            --muted: #9aa3ad;
+            --fg: #e5e7eb;
+            --pri: #f87171; /* red-400 */
+            --accent: #ef4444; /* red-500 */
+            --warn: #f59e0b;
+            --err: #ef4444;
+            --card: #0a0c12;
+            --border: #1a1f2a;
+        }
+
+        /* Header backgrounds for new themes */
+        :root[data-theme="DarkPlus"] header {
+            background: linear-gradient(180deg, rgba(20, 26, 31, 0.96), rgba(20, 26, 31, 0.88));
+        }
+
+        :root[data-theme="deepDark"] header,
+        :root[data-theme="darkColorblind"] header,
+        :root[data-theme="darkTritanopia"] header {
+            background: linear-gradient(180deg, rgba(14, 16, 21, 0.96), rgba(14, 16, 21, 0.88));
+        }
+
+        /* Responsive header: at <=1200px, move search and subsequent controls to next line */
+        @media (max-width: 1150px) {
+            .toolbar {
+                flex-wrap: wrap;
+            }
+
+            .toolbar .search {
+                order: 2;
+                flex: 1 1 100px;
+                margin-top: 6px;
+                min-width: 200px
+            }
+
+            .toolbar .search ~ * {
+                order: 2;
+            }
+        }
+
+        /* ---------------------------
+       Light+ (Gray)
        --------------------------- */
-    :root[data-theme="lightCool"] {
-      --bg:#eef2ff; /* very light blue */
-      --panel:#f5f8ff;
-      --muted:#475569; /* slate-ish */
-      --fg:#0f172a; /* dark text */
-      --pri:#2563eb; /* blue-600 */
-      --accent:#0ea5e9; /* sky-500 */
-      --warn:#d97706;
-      --err:#b91c1c;
-      --card:#ffffff;
-      --border:#dbeafe;
-    }
-    :root[data-theme="lightCool"] header {
-      background: linear-gradient(180deg, rgba(238,242,255,0.95), rgba(245,248,255,0.88));
-    }
-    /* クール系なので薄いアウトラインを残す（非表示にしない）*/
-    :root[data-theme="lightCool"] .icon-sprite { box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04); }
-    :root[data-theme="lightCool"] .item { border-color: var(--border); }
-    :root[data-theme="lightCool"] .item:hover { border-color: var(--pri); }
+        :root[data-theme="lightGray"] {
+            --bg: #e5e7eb; /* gray-200 */
+            --panel: #f3f4f6; /* gray-100 */
+            --muted: #4b5563; /* gray-600 */
+            --fg: #1f2937; /* gray-800 */
+            --pri: #2563eb; /* blue-600 */
+            --accent: #15803d; /* green-700 */
+            --warn: #b45309; /* amber-700 */
+            --err: #b91c1c; /* red-700 */
+            --card: #f9fafb; /* gray-50 */
+            --border: #d1d5db; /* gray-300 */
+        }
 
-    /* ---------------------------
-       Sepia (Paper-like)
-       --------------------------- */
-    :root[data-theme="lightSepia"] {
-      --bg:#f6efe6; /* sepia paper */
-      --panel:#fbf6ef;
-      --muted:#746a5f;
-      --fg:#2b241f;
-      --pri:#8b5e34;
-      --accent:#b0855b;
-      --warn:#b45309;
-      --err:#7a1f1f;
-      --card:#fff9f3;
-      --border:#e9dfd3;
-    }
-    :root[data-theme="lightSepia"] header {
-      background: linear-gradient(180deg, rgba(246,239,230,0.95), rgba(251,246,239,0.88));
-    }
-    :root[data-theme="lightSepia"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="lightSepia"] .item { border-color: transparent; }
-    :root[data-theme="lightSepia"] .item:hover { border-color: transparent; }
+        :root[data-theme="lightGray"] header {
+            background: linear-gradient(180deg, rgba(229, 231, 235, 0.95), rgba(243, 244, 246, 0.85));
+        }
 
-    /* ---------------------------
-       Light+ (Green / Calm)
-       --------------------------- */
-    :root[data-theme="lightGreen"] {
-      --bg:#eefaf3; /* very pale green */
-      --panel:#f6fbf8;
-      --muted:#476257;
-      --fg:#0f2a24;
-      --pri:#15803d; /* green-700 */
-      --accent:#34d399;
-      --warn:#b45309;
-      --err:#9b1f1f;
-      --card:#ffffff;
-      --border:#dbeee6;
-    }
-    :root[data-theme="lightGreen"] header {
-      background: linear-gradient(180deg, rgba(238,250,243,0.95), rgba(246,251,248,0.88));
-    }
-    /* 軽めにアウトラインを残す */
-    :root[data-theme="lightGreen"] .icon-sprite { box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03); }
-    :root[data-theme="lightGreen"] .item { border-color: var(--border); }
-    :root[data-theme="lightGreen"] .item:hover { border-color: var(--pri); }
+        :root[data-theme="lightGray"] .icon-sprite {
+            box-shadow: none;
+        }
 
-    /* ---------------------------
-       Light (High Contrast)
-       - 背景はほぼ白、文字は濃く、視認性重視
-       --------------------------- */
-    :root[data-theme="lightHighContrast"] {
-      --bg:#ffffff;
-      --panel:#ffffff;
-      --muted:#4b5563;
-      --fg:#0b0b0b;
-      --pri:#0b5cff;
-      --accent:#0b8a4a;
-      --warn:#b45309;
-      --err:#a41616;
-      --card:#ffffff;
-      --border:#d1d5db;
-    }
-    :root[data-theme="lightHighContrast"] header {
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.9));
-    }
-    :root[data-theme="lightHighContrast"] .icon-sprite { box-shadow: none; }
-    :root[data-theme="lightHighContrast"] .item { border-color: transparent; }
-    :root[data-theme="lightHighContrast"] .item:hover { border-color: transparent; }
+        :root[data-theme="lightGray"] .item {
+            border-color: transparent;
+        }
+
+        :root[data-theme="lightGray"] .item:hover {
+            border-color: transparent;
+        }
 
 
-  </style>
+        :root[data-theme="lightGrayPlus"] {
+            --bg: #e5e7eb; /* gray-200 */
+            --panel: #f3f4f6; /* gray-100 */
+            --muted: #4b5563; /* gray-600 */
+            --fg: #1f2937; /* gray-800 */
+            --pri: #2563eb; /* blue-600 */
+            --accent: #15803d; /* green-700 */
+            --warn: #b45309; /* amber-700 */
+            --err: #b91c1c; /* red-700 */
+            --card: #f9fafb; /* gray-50 */
+            --border: #d1d5db; /* gray-300 */
+        }
+
+        /* Light+ theme header: subtle gradient, softer than light */
+        :root[data-theme="lightGrayPlus"] header {
+            background: linear-gradient(180deg, rgba(229, 231, 235, 0.95), rgba(243, 244, 246, 0.85));
+        }
+
+        /* Light+ theme: icons/items slightly outlined */
+        :root[data-theme="lightGrayPlus"] .icon-sprite {
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        :root[data-theme="lightGrayPlus"] .item {
+            border-color: var(--border);
+        }
+
+        :root[data-theme="lightGrayPlus"] .item:hover {
+            border-color: var(--pri);
+        }
+
+        /* ---------------------------
+           Light+ (Cool Blue)
+           --------------------------- */
+        :root[data-theme="lightCool"] {
+            --bg: #eef2ff; /* very light blue */
+            --panel: #f5f8ff;
+            --muted: #475569; /* slate-ish */
+            --fg: #0f172a; /* dark text */
+            --pri: #2563eb; /* blue-600 */
+            --accent: #0ea5e9; /* sky-500 */
+            --warn: #d97706;
+            --err: #b91c1c;
+            --card: #ffffff;
+            --border: #dbeafe;
+        }
+
+        :root[data-theme="lightCool"] header {
+            background: linear-gradient(180deg, rgba(238, 242, 255, 0.95), rgba(245, 248, 255, 0.88));
+        }
+
+        /* クール系なので薄いアウトラインを残す（非表示にしない）*/
+        :root[data-theme="lightCool"] .icon-sprite {
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+        }
+
+        :root[data-theme="lightCool"] .item {
+            border-color: var(--border);
+        }
+
+        :root[data-theme="lightCool"] .item:hover {
+            border-color: var(--pri);
+        }
+
+        /* ---------------------------
+           Sepia (Paper-like)
+           --------------------------- */
+        :root[data-theme="lightSepia"] {
+            --bg: #f6efe6; /* sepia paper */
+            --panel: #fbf6ef;
+            --muted: #746a5f;
+            --fg: #2b241f;
+            --pri: #8b5e34;
+            --accent: #b0855b;
+            --warn: #b45309;
+            --err: #7a1f1f;
+            --card: #fff9f3;
+            --border: #e9dfd3;
+        }
+
+        :root[data-theme="lightSepia"] header {
+            background: linear-gradient(180deg, rgba(246, 239, 230, 0.95), rgba(251, 246, 239, 0.88));
+        }
+
+        :root[data-theme="lightSepia"] .icon-sprite {
+            box-shadow: none;
+        }
+
+        :root[data-theme="lightSepia"] .item {
+            border-color: transparent;
+        }
+
+        :root[data-theme="lightSepia"] .item:hover {
+            border-color: transparent;
+        }
+
+        /* ---------------------------
+           Light+ (Green / Calm)
+           --------------------------- */
+        :root[data-theme="lightGreen"] {
+            --bg: #eefaf3; /* very pale green */
+            --panel: #f6fbf8;
+            --muted: #476257;
+            --fg: #0f2a24;
+            --pri: #15803d; /* green-700 */
+            --accent: #34d399;
+            --warn: #b45309;
+            --err: #9b1f1f;
+            --card: #ffffff;
+            --border: #dbeee6;
+        }
+
+        :root[data-theme="lightGreen"] header {
+            background: linear-gradient(180deg, rgba(238, 250, 243, 0.95), rgba(246, 251, 248, 0.88));
+        }
+
+        /* 軽めにアウトラインを残す */
+        :root[data-theme="lightGreen"] .icon-sprite {
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+        }
+
+        :root[data-theme="lightGreen"] .item {
+            border-color: var(--border);
+        }
+
+        :root[data-theme="lightGreen"] .item:hover {
+            border-color: var(--pri);
+        }
+
+        /* ---------------------------
+           Light (High Contrast)
+           - 背景はほぼ白、文字は濃く、視認性重視
+           --------------------------- */
+        :root[data-theme="lightHighContrast"] {
+            --bg: #ffffff;
+            --panel: #ffffff;
+            --muted: #4b5563;
+            --fg: #0b0b0b;
+            --pri: #0b5cff;
+            --accent: #0b8a4a;
+            --warn: #b45309;
+            --err: #a41616;
+            --card: #ffffff;
+            --border: #d1d5db;
+        }
+
+        :root[data-theme="lightHighContrast"] header {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 250, 0.9));
+        }
+
+        :root[data-theme="lightHighContrast"] .icon-sprite {
+            box-shadow: none;
+        }
+
+        :root[data-theme="lightHighContrast"] .item {
+            border-color: transparent;
+        }
+
+        :root[data-theme="lightHighContrast"] .item:hover {
+            border-color: transparent;
+        }
+
+
+    </style>
 </head>
 <body>
 <script>
-  /** ライトテーマの時に、これがないと読み込み時にポリゴンショックするので必須。*/
+    /** ライトテーマの時に、これがないと読み込み時にポリゴンショックするので必須。*/
 
-  /** バージョン */
-  const version = "1.0.6";
+    /** バージョン */
+    const version = "1.0.7";
 
-  /** HTMLのdata-theme属性を設定 */
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-  }
+    /** HTMLのdata-theme属性を設定 */
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+    }
 
-  // ローカルストレージに保存されたテーマがあれば優先
-  let savedTheme = localStorage.getItem('theme');
+    // ローカルストレージに保存されたテーマがあれば優先
+    let savedTheme = localStorage.getItem('theme');
 
-  if (!savedTheme) {
-    // ブラウザ(OS)設定を検出
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    savedTheme = prefersDark ? 'DarkPlus' : 'light2';
-  }
+    if (!savedTheme) {
+        // ブラウザ(OS)設定を検出
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        savedTheme = prefersDark ? 'DarkPlus' : 'light2';
+    }
 
-  if('scrollRestoration' in history) history.scrollRestoration='manual';
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-  // テーマを適用
-  applyTheme(savedTheme);
+    // テーマを適用
+    applyTheme(savedTheme);
+
+    const textPromise = (async () => { const res = await fetch('dq9items.csv'); return await res.text(); })();
+
 </script>
-  <script src="all.min.js" defer></script>
-  <header>
+<script src="all.min.js" defer></script>
+<header>
     <div class="wrap header-row">
-      <h1 style="min-width: 140px">DQVCアイテムリスト生成</h1>
-      <div class="grow"></div>
-      <div class="toolbar">
-        <label class="muted" for="lang">言語</label>
-        <select id="lang" class="select">
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="it">Italiano</option>
-          <option value="alt">Alt</option>
-        </select>
-        <label class="muted" for="theme">テーマ</label>
-        <select id="theme" class="select">
-          <option value="dark">ダーク</option>
-          <option value="light">ライト</option>
-          <option value="light2">ライト＋</option>
-          <option value="lightGray">ライト＋（グレー）</option>
-          <option value="lightGrayPlus">ライト＋＋（グレー）</option>
-          <option value="lightCool">ライト＋（クールブルー）</option>
-          <option value="lightSepia">セピア（紙風）</option>
-          <option value="lightGreen">ライト＋（グリーン）</option>
-          <option value="lightHighContrast">ライト（高コントラスト）</option>
-          <option value="blue">ブルー</option>
-          <option value="gold">ゴールド</option>
-          <option value="pink">ピンク</option>
-          <option value="DarkPlus">ダーク+</option>
-          <option value="deepDark">ディープダーク</option>
-          <option value="darkColorblind">ダーク色弱（オレンジ）</option>
-          <option value="darkTritanopia">ダーク トリタノピア（赤）</option>
-        </select>
-        <div class="search">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input id="q" type="search" placeholder="検索 / Search" autocomplete="off" />
+        <h1 style="min-width: 140px">DQVCアイテムリスト生成</h1>
+        <div class="grow"></div>
+        <div class="toolbar">
+            <label class="muted" for="lang">言語</label>
+            <select id="lang" class="select">
+                <option value="ja">日本語</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="alt">Alt</option>
+            </select>
+            <label class="muted" for="theme">テーマ</label>
+            <select id="theme" class="select">
+                <option value="dark">ダーク</option>
+                <option value="light">ライト</option>
+                <option value="light2">ライト＋</option>
+                <option value="lightGray">ライト＋（グレー）</option>
+                <option value="lightGrayPlus">ライト＋＋（グレー）</option>
+                <option value="lightCool">ライト＋（クールブルー）</option>
+                <option value="lightSepia">セピア（紙風）</option>
+                <option value="lightGreen">ライト＋（グリーン）</option>
+                <option value="lightHighContrast">ライト（高コントラスト）</option>
+                <option value="blue">ブルー</option>
+                <option value="gold">ゴールド</option>
+                <option value="pink">ピンク</option>
+                <option value="DarkPlus">ダーク+</option>
+                <option value="deepDark">ディープダーク</option>
+                <option value="darkColorblind">ダーク色弱（オレンジ）</option>
+                <option value="darkTritanopia">ダーク トリタノピア（赤）</option>
+            </select>
+            <div class="search">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input id="q" type="search" placeholder="検索 / Search" autocomplete="off"/>
+            </div>
+            <label class="muted" style="display:flex; align-items:center; gap:6px;">
+                <input id="filterSel" type="checkbox"/>
+                <span id="filterSelLabel">選択済みも検索で絞り込む</span>
+            </label>
+            <input id="loader" type="file" accept=".bin" style="display:none"/>
+            <button id="loadBtn" class="btn" title=".bin を読み込む">読み込み</button>
+            <button id="downloadBtn" class="btn primary" disabled>ダウンロード</button>
         </div>
-        <label class="muted" style="display:flex; align-items:center; gap:6px;">
-          <input id="filterSel" type="checkbox" />
-          <span id="filterSelLabel">選択済みも検索で絞り込む</span>
-        </label>
-        <input id="loader" type="file" accept=".bin" style="display:none" />
-        <button id="loadBtn" class="btn" title=".bin を読み込む">読み込み</button>
-        <button id="downloadBtn" class="btn primary" disabled>ダウンロード</button>
-      </div>
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     <section class="panel" id="itemsPanel">
-      <h2>アイテム</h2>
-      <div class="body" id="itemsBody" style="min-height: 1000px; display: block; box-sizing: border-box;">
-        <div class="muted">読み込み中…</div>
-      </div>
+        <h2>アイテム</h2>
+        <div class="body" id="itemsBody" style="min-height: 1000px; display: block; box-sizing: border-box;">
+            <div class="muted">読み込み中…</div>
+        </div>
     </section>
 
     <section class="panel" id="selectedPanel">
-      <h2>選択済み</h2>
+        <h2>選択済み</h2>
 
-      <div class="body">
-        <!-- Preset fixed-list bulk set (from dqvcListings) -->
-        <div id="presetBox" class="bulk" style="margin-top: 0; margin-bottom: 8px">
-          <div class="title" id="presetTitle">固定リストを適用</div>
-          <div class="fields" style="gap:8px; flex-wrap:wrap; align-items:center;">
-            <label class="muted" id="presetSelectLabel" for="presetSelect">リスト</label>
-            <select id="presetSelect" class="select" style="width:356px; height:40px; line-height:40px;">
-              <option value="">リストを選択</option>
-            </select>
-          </div>
+        <div class="body">
+            <!-- Preset fixed-list bulk set (from dqvcListings) -->
+            <div id="presetBox" class="bulk" style="margin-top: 0; margin-bottom: 8px">
+                <div class="title" id="presetTitle">固定リストを適用</div>
+                <div class="fields" style="gap:8px; flex-wrap:wrap; align-items:center;">
+                    <label class="muted" id="presetSelectLabel" for="presetSelect">リスト</label>
+                    <select id="presetSelect" class="select" style="width:356px; height:40px; line-height:40px;">
+                        <option value="">リストを選択</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="selected-grid" id="selected"></div>
+            <div id="selEmpty" class="muted" style="padding:8px 4px">まだアイテムが選択されていません。</div>
+
+            <div id="bulkBox" class="bulk">
+                <div class="title" id="bulkTitle">一括個数指定</div>
+                <div class="fields">
+                    <label class="muted" id="bulkPriceLabel" for="bulkPrice">価格</label>
+                    <input id="bulkPrice" type="text" inputmode="numeric" pattern="\\d*" class="num"/>
+                    <span class="suffix">G</span>
+
+                    <label class="muted" id="bulkMinLabel" for="bulkMin">最小</label>
+                    <input id="bulkMin" type="text" inputmode="numeric" pattern="\\d*" class="num"/>
+                    <span class="suffix">個</span>
+
+                    <label class="muted" id="bulkMaxLabel" for="bulkMax">最大</label>
+                    <input id="bulkMax" type="text" inputmode="numeric" pattern="\\d*" class="num"/>
+                    <span class="suffix">個</span>
+
+                    <button id="bulkApply" class="btn">一括適用</button>
+                </div>
+            </div>
+
+            <div id="bulkDeleteBox" class="bulk">
+                <div class="fields" style="gap:8px; flex-wrap:wrap;">
+                    <button id="delMatched" class="btn">検索でマッチしたものを削除</button>
+                    <button id="delUnmatched" class="btn">検索でマッチしなかったものを削除</button>
+                    <button id="delAll" class="btn">すべて削除</button>
+                </div>
+            </div>
+
+            <!-- Order controls -->
+            <div id="orderBox" class="bulk">
+                <div class="fields" style="gap:12px; align-items:center; flex-wrap:wrap;">
+                    <label class="muted" for="sortOrder"
+                           style="display:flex; align-items:center; gap:8px; font-size:18px;">
+                        <input id="sortOrder" type="checkbox" checked/>
+                        <span id="sortOrderLabel">順番をソートする(出力も含む)</span>
+                    </label>
+                    <button id="shuffleBtn" class="btn" style="font-size:18px; padding:8px">シャッフル</button>
+                </div>
+            </div>
+
+            <!-- Collapsible info box: About this tool -->
+            <div id="infoBox" class="bulk info-box">
+                <div class="title" id="infoTitle">このツールについて</div>
+                <div class="info-content" id="infoContent"></div>
+            </div>
         </div>
-
-        <div class="selected-grid" id="selected"></div>
-        <div id="selEmpty" class="muted" style="padding:8px 4px">まだアイテムが選択されていません。</div>
-
-        <div id="bulkBox" class="bulk">
-          <div class="title" id="bulkTitle">一括個数指定</div>
-          <div class="fields">
-            <label class="muted" id="bulkPriceLabel" for="bulkPrice">価格</label>
-            <input id="bulkPrice" type="text" inputmode="numeric" pattern="\\d*" class="num" />
-            <span class="suffix">G</span>
-
-            <label class="muted" id="bulkMinLabel" for="bulkMin">最小</label>
-            <input id="bulkMin" type="text" inputmode="numeric" pattern="\\d*" class="num" />
-            <span class="suffix">個</span>
-
-            <label class="muted" id="bulkMaxLabel" for="bulkMax">最大</label>
-            <input id="bulkMax" type="text" inputmode="numeric" pattern="\\d*" class="num" />
-            <span class="suffix">個</span>
-
-            <button id="bulkApply" class="btn">一括適用</button>
-          </div>
-        </div>
-
-        <div id="bulkDeleteBox" class="bulk">
-          <div class="fields" style="gap:8px; flex-wrap:wrap;">
-            <button id="delMatched" class="btn">検索でマッチしたものを削除</button>
-            <button id="delUnmatched" class="btn">検索でマッチしなかったものを削除</button>
-            <button id="delAll" class="btn">すべて削除</button>
-          </div>
-        </div>
-
-        <!-- Order controls -->
-        <div id="orderBox" class="bulk">
-          <div class="fields" style="gap:12px; align-items:center; flex-wrap:wrap;">
-            <label class="muted" for="sortOrder" style="display:flex; align-items:center; gap:8px; font-size:18px;">
-              <input id="sortOrder" type="checkbox" checked />
-              <span id="sortOrderLabel">順番をソートする(出力も含む)</span>
-            </label>
-            <button id="shuffleBtn" class="btn" style="font-size:18px; padding:8px">シャッフル</button>
-          </div>
-        </div>
-
-        <!-- Collapsible info box: About this tool -->
-        <div id="infoBox" class="bulk info-box">
-          <div class="title" id="infoTitle">このツールについて</div>
-          <div class="info-content" id="infoContent"></div>
-        </div>
-      </div>
     </section>
-  </main>
+</main>
 
-  <div class="dropzone" id="drop">
+<div class="dropzone" id="drop">
     <div class="inner">
-      <div style="font-weight:700; font-size:18px; margin-bottom:6px">ここに .bin ファイルをドロップ</div>
-      <div class="muted">Drop a .bin file here to load</div>
+        <div style="font-weight:700; font-size:18px; margin-bottom:6px">ここに .bin ファイルをドロップ</div>
+        <div class="muted">Drop a .bin file here to load</div>
     </div>
-  </div>
+</div>
 </body>
 </html>

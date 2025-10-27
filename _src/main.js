@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.0.6";
+const versionJS = "1.0.7";
 const index_file_var = "2";
 
 // lang.js
@@ -879,8 +879,7 @@ function iconStyleFromIndex(idx){
 }
 
 async function loadCSV(){
-    const res = await fetch('dq9items.csv');
-    const text = await res.text();
+    const text = await textPromise;
     const rows = parseCSV(text);
     // header indexes
     const header = rows[0];

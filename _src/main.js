@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.0.8";
+const versionJS = "1.0.9";
 const index_file_var = "2";
 
 // lang.js
@@ -1337,6 +1337,7 @@ function setupMainTextDragBlock(){
 
 // ===================== Wire up =====================
 
+// ===================== Initialization =====================
 
 (async function init(){
     setupDnD();
@@ -1355,7 +1356,7 @@ function setupMainTextDragBlock(){
     el('theme').value = savedTheme;
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        const newTheme = e.matches ? 'DarkPlus' : 'lightGrayPlus';
+        const newTheme = e.matches ? 'DarkPlus' : 'light2';
         el('theme').value = newTheme;
         applyTheme(newTheme);
     });
@@ -1585,3 +1586,5 @@ function setupMainTextDragBlock(){
         sel.addEventListener('change', applyFromSelect);
     });
 })();
+
+// ===================== Initialization =====================

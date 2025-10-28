@@ -6,9 +6,8 @@
   <base href="/auction/">
   <title>DQVCアイテムリスト生成</title>
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel=preload as=fetch crossorigin href="https://cdn.jsdelivr.net/gh/DQIX/auction@1.1.1/dq9items.csv">
-  <link rel=preload fetchpriority="low" as="image" href="https://cdn.jsdelivr.net/gh/DQIX/auction@1.1.1/itemIcons.webp" type="image/webp">
+  <link rel=preload fetchpriority="low" as="image" href="itemIcons.webp" type="image/webp">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="dq9 DQVCアイテムリスト生成">
@@ -188,11 +187,11 @@
     .icon-sprite { width: 24px; height: 24px; display: inline-block; vertical-align: top;
       background-image: url("itemIcons.png");
       background-image: -webkit-image-set(
-              url("https://cdn.jsdelivr.net/gh/DQIX/auction@1.1.1/itemIcons.webp"),
+              url("itemIcons.webp"),
               url("itemIcons.png")
       );
       background-image: image-set(
-              url("https://cdn.jsdelivr.net/gh/DQIX/auction@1.1.1/itemIcons.webp") type("image/webp"),
+              url("itemIcons.webp") type("image/webp"),
               url("itemIcons.png") type("image/png")
       );
       background-repeat: no-repeat; image-rendering: pixelated; border-radius: 4px; box-shadow: inset 0 0 0 1px #0009; }

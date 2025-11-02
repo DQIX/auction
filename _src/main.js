@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.1.1";
+const versionJS = "1.1.3";
 const index_file_var = "2";
 
 const items = {};
@@ -27,7 +27,7 @@ const items = {};
 // lang.js
 // 多言語辞書（テーマの各オプションも含む）
 const translations = {
-    ja: {
+ja: {
     title: "DQVCアイテムリスト生成",
     items: "アイテム",
     selected: "選択済み",
@@ -100,8 +100,9 @@ const translations = {
     note7: "Wayback Machine などのウェブアーカイブに保存する行為は、不特定多数がアクセス可能となるため、著作権法上の私的複製の範囲を超えるためご遠慮ください。",
     contactLabel: "連絡先:",
     versionPrefix: "DQVC カスタム リスト ジェネレーター by DaisukeDaisuke",
+    sourceLabel: "出典:",
 },
-    en: {
+en: {
     title: "DQVC Item List Generator",
     items: "Items",
     selected: "Selected",
@@ -174,8 +175,9 @@ const translations = {
     note7: 'Please refrain from saving this site to web archives like Wayback Machine, as it exceeds the scope of private copying under copyright law.',
     contactLabel: "Contact:",
     versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
+    sourceLabel: "Source:",
 },
-    es: {
+es: {
     title: "Generador de lista de artículos DQVC",
     items: "Artículos",
     selected: "Seleccionados",
@@ -248,8 +250,9 @@ const translations = {
     note7: "Por favor, evite guardar este sitio en archivos web como Wayback Machine, ya que excede el ámbito de la copia privada según la ley de derechos de autor.",
     contactLabel: "Contacto:",
     versionPrefix: "Generador de lista personalizada DQVC por DaisukeDaisuke",
+    sourceLabel: "Fuente:",
 },
-    fr: {
+fr: {
     title: "Générateur de liste d'objets DQVC",
     items: "Objets",
     selected: "Sélectionnés",
@@ -322,8 +325,9 @@ const translations = {
     note7: "Veuillez ne pas sauvegarder ce site sur des archives web comme Wayback Machine, car cela dépasse le cadre de la copie privée selon la loi sur le droit d’auteur.",
     contactLabel: "Contact :",
     versionPrefix: "Générateur de liste personnalisée DQVC par DaisukeDaisuke",
+    sourceLabel: "Source:",
 },
-    de: {
+de: {
     title: "DQVC-Artikel-Listengenerator",
     items: "Artikel",
     selected: "Ausgewählt",
@@ -396,6 +400,7 @@ const translations = {
     note7: "Bitte speichern Sie diese Website nicht in Webarchiven wie Wayback Machine, da dies den Rahmen der privaten Vervielfältigung nach dem Urheberrecht überschreitet.",
     contactLabel: "Kontakt:",
     versionPrefix: "DQVC Custom List Generator by DaisukeDaisuke",
+    sourceLabel: "Quelle:",
 },
     it: {
     title: "Generatore elenco oggetti DQVC",
@@ -470,24 +475,39 @@ const translations = {
     note7: "Si prega di non salvare questo sito in archivi web come Wayback Machine, poiché supera i limiti della copia privata secondo la legge sul diritto d’autore.",
     contactLabel: "Contatto:",
     versionPrefix: "Generatore elenco personalizzato DQVC di DaisukeDaisuke",
+    sourceLabel: "Fonte:",
 }
 };
 
-    // 指定言語を適用する関数
-    function applyLang(lang) {
-    // Alt（自動判別）の場合、ブラウザ言語を利用
-    let t;
+function getLang(lang) {
     if (lang === "alt") {
-    t = translations["ja"] || translations.en;
-} else {
-    t = translations[lang] || translations.ja;
+        return translations["ja"] || translations.en;
+    } else {
+        return translations[lang] || translations.ja;
+    }
 }
+
+function applSource(lang){
+    let t = getLang(lang);
+    if(state.sourceUrl) {
+        el(`linktext`).innerHTML = t.sourceLabel + ' <a href="' + state.sourceUrl + '" target="_blank" rel="noopener noreferrer" style="color: var(--fg);">' + state.sourceUrl + '</a>';
+    }else{
+        el(`linktext`).innerHTML = t.sourceLabel;
+    }
+}
+
+    // 指定言語を適用する関数
+function applyLang(lang) {
+    // Alt（自動判別）の場合、ブラウザ言語を利用
+    let t = getLang(lang);
 
     // ヘルパー：要素が存在する場合のみ書き換え
     const setText = (selector, text) => {
-    const el = document.querySelector(selector);
-    if (el) el.innerText = text;
-};
+        const el = document.querySelector(selector);
+        if (el) el.innerText = text;
+    };
+
+    applSource(lang);
 
     // 単純テキスト置換
     setText("h1", t.title);
@@ -817,6 +837,7 @@ const state = {
     nextRid: 1, // incremental runtime id
     filterSelected: false, // whether to filter Selected list by master search
     sortSelected: true, // default ON per spec
+    sourceUrl: undefined,
 };
 
 // ===== Runtime instance helpers =====
@@ -1585,7 +1606,7 @@ function setupMainTextDragBlock(){
             state.byItem = new Map();
             state.nextRid = 1;
 
-            el(`linktext`).innerHTML = 'link: <a href="' + preset.link + '" target="_blank" rel="noopener noreferrer" style="color: var(--fg);">' + preset.link + '</a>';
+            state.sourceUrl = preset.link;
 
             // addInstance 部分は既存の関数を使う
             preset.items.forEach((it) => {
@@ -1597,6 +1618,7 @@ function setupMainTextDragBlock(){
                 addInstance(id, {price, min, max});
             });
             render();
+            applSource(lang);
         };
 
         sel.addEventListener('change', applyFromSelect);

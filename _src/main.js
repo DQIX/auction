@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.1.0";
+const versionJS = "1.1.1";
 const index_file_var = "2";
 
 const items = {};
@@ -586,7 +586,7 @@ const translations = {
           <li>${t.note5}</li>
           <li>${t.note6}</li>
           <li>${t.note7}</li>
-          <li>${t.contactLabel} <a href="https://x.com/Daisuke76897125" target="_blank" rel="noopener">https://x.com/Daisuke76897125</a></li>
+          <li>${t.contactLabel} <a href="https://x.com/Daisuke76897125" target="_blank" rel="noopener noreferrer">https://x.com/Daisuke76897125</a></li>
         </ul>
         <div style="font-weight:700; margin:8px 0 4px;">copyright</div>
         <ul style="margin:0 0 8px 18px; padding:0; line-height:1.6">
@@ -1576,8 +1576,6 @@ function setupMainTextDragBlock(){
             }else{
                 items = itemsData;
             }
-
-            console.log(items)
             const preset = items[localIndex];
             if (!preset || !Array.isArray(preset.items)) return;
 
@@ -1586,6 +1584,8 @@ function setupMainTextDragBlock(){
             state.order = [];
             state.byItem = new Map();
             state.nextRid = 1;
+
+            el(`linktext`).innerHTML = 'link: <a href="' + preset.link + '" target="_blank" rel="noopener noreferrer" style="color: var(--fg);">' + preset.link + '</a>';
 
             // addInstance 部分は既存の関数を使う
             preset.items.forEach((it) => {

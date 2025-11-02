@@ -454,7 +454,7 @@
   /** ライトテーマの時に、これがないと読み込み時にポリゴンショックするので必須。*/
 
   /** バージョン */
-  const version = "1.1.0";
+  const version = "1.1.2";
 
   /** HTMLのdata-theme属性を設定 */
   function applyTheme(theme) {
@@ -541,7 +541,8 @@
       <div class="body">
         <!-- Preset fixed-list bulk set (from dqvcListings) -->
         <div id="presetBox" class="bulk" style="margin-top: 0; margin-bottom: 8px">
-          <div class="title" id="presetTitle">固定リストを適用</div>
+          <div class="title" id="presetTitle" style="margin-bottom: 8px">固定リストを適用</div>
+          <div class="muted" id="linktext" style="margin-bottom: 8px">link: </div>
           <div class="fields" style="gap:8px; flex-wrap:wrap; align-items:center;">
             <label class="muted" id="presetSelectLabel" for="presetSelect">リスト</label>
             <select id="presetSelect" class="select" style="width:356px; height:40px; line-height:40px;">

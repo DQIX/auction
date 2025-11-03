@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NARC 簡易リーダー</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NARC 簡易リーダー">
+    <meta property="og:description" content="任天堂ds独自のzipアーカイブである、NARCフォーマットをブラウザ上でを読み込み、内蔵ファイルを個別ダウンロードできる簡易ツールです。リトルエンディアンのみ対応しています。">
+    <meta property="og:url" content="https://dqix.github.io/auction/">
+    <meta property="og:site_name" content="NARC 簡易リーダー">
+    <meta property="og:locale" content="ja_JP">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="NARC 簡易リーダー">
+    <meta name="twitter:description" content="任天堂ds独自のzipアーカイブである、NARCフォーマットをブラウザ上でを読み込み、内蔵ファイルを個別ダウンロードできる簡易ツールです。リトルエンディアンのみ対応しています。">
+    <meta name="twitter:url" content="https://dqix.github.io/auction/">
+    <meta name="twitter:site" content="@Daisuke76897125">
+    <meta name="twitter:creator" content="@Daisuke76897125">
+
+    <meta name="description" content="任天堂ds独自のzipアーカイブである、NARCフォーマットをブラウザ上でを読み込み、内蔵ファイルを個別ダウンロードできる簡易ツールです。リトルエンディアンのみ対応しています。">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; margin-top: 0; }
+        .drop-zone {
+            border: 3px dashed #ccc;
+            border-radius: 8px;
+            padding: 60px 20px;
+            text-align: center;
+            background: #fafafa;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .drop-zone.drag-over {
+            border-color: #4CAF50;
+            background: #e8f5e9;
+        }
+        .drop-zone:hover {
+            border-color: #999;
+        }
+        .info-panel {
+            margin: 20px 0;
+            padding: 16px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        .file-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 16px 0;
+        }
+        .file-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .file-item:hover {
+            background: #f9f9f9;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-item .file-name {
+            flex: 1;
+            font-family: 'Consolas', monospace;
+            word-break: break-all;
+        }
+        .file-item .file-info {
+            color: #666;
+            font-size: 12px;
+            margin-right: 12px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 8px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #2196F3;
+        }
+        .btn-secondary:hover {
+            background: #0b7dda;
+        }
+        .btn-danger {
+            background: #f44336;
+        }
+        .btn-danger:hover {
+            background: #da190b;
+        }
+        .actions {
+            margin-top: 16px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 200px;
+        }
+        .folder-item {
+            padding: 8px 16px;
+            background: #e3f2fd;
+            border-bottom: 1px solid #90caf9;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .indent-1 { padding-left: 32px; }
+        .indent-2 { padding-left: 48px; }
+        .indent-3 { padding-left: 64px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🗃️ NARC Reader/Writer (FNT対応)</h1>
+
+    <div class="drop-zone" id="dropZone">
+        <p style="font-size: 18px; margin: 0;">📁 NARCファイルをここにドロップ</p>
+        <p style="color: #666; margin-top: 8px;">またはクリックしてファイルを選択</p>
+        <input type="file" id="fileInput" style="display:none" accept=".narc">
+    </div>
+
+    <div id="infoPanel" class="info-panel" style="display:none">
+        <h3 style="margin-top:0">NARC情報</h3>
+        <div id="narcInfo"></div>
+    </div>
+
+    <div id="fileListContainer" style="display:none">
+        <h3>ファイル一覧</h3>
+        <div class="file-list" id="fileList"></div>
+        <div class="actions">
+            <button id="saveNarc">NARC保存</button>
+            <button id="addFile" class="btn-secondary">ファイル追加</button>
+            <label>
+                <input type="checkbox" id="keepFnt" checked> FNT保持
+            </label>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let _Narc;
+
+    async function loadNarc() {
+        if (_Narc) return _Narc;
+        try {
+            await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.1/_src/narc.min.js');
+            if (!Narc) throw new Error('Narc not loaded');
+            _Narc = Narc;
+            return _Narc;
+        } catch (e) {
+            console.error(e);
+            throw new Error('Failed to load narc.min.js');
+        }
+    }
+
+    async function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+            document.head.appendChild(script);
+        });
+    }
+
+
+    class BinWriter {
+        constructor(){ this.a = []; }
+        putByte(v){ this.a.push(v & 0xFF); }
+        putLShort(v){ this.a.push(v & 0xFF, (v>>>8) & 0xFF); }
+        putLInt(v){
+            this.a.push(v & 0xFF, (v>>>8)&0xFF, (v>>>16)&0xFF, (v>>>24)&0xFF);
+        }
+        putBytes(bytes){ for(const b of bytes) this.a.push(b); }
+        putAscii(str){ for(const b of new TextEncoder().encode(str)) this.a.push(b); }
+        align(n, pad=0){ while(this.a.length % n) this.a.push(pad); }
+        toUint8(){ return Uint8Array.from(this.a); }
+        get length(){ return this.a.length; }
+    }
+    class BinReader {
+        constructor(bytes){ this.b = bytes; this.o = 0; }
+        get eof(){ return this.o >= this.b.length; }
+        getByte(){ return this.b[this.o++]; }
+        getLShort(){ const v = this.b[this.o] | (this.b[this.o+1]<<8); this.o+=2; return v>>>0; }
+        getLInt(){
+            const v = (this.b[this.o] | (this.b[this.o+1]<<8) | (this.b[this.o+2]<<16) | (this.b[this.o+3]<<24))>>>0;
+            this.o+=4; return v;
+        }
+        skip(n){ this.o += n; }
+        slice(n){ const out = this.b.slice(this.o, this.o+n); this.o += n; return out; }
+        readString(n){ return new TextDecoder().decode(this.slice(n)); }
+        getPos(){ return this.o; }
+        setPos(p){ this.o = p; }
+    }
+
+    // ===================== 4. UI ロジック =====================
+    let currentNarc = null;
+    let currentFileName = 'output.narc';
+
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const infoPanel = document.getElementById('infoPanel');
+    const narcInfo = document.getElementById('narcInfo');
+    const fileListContainer = document.getElementById('fileListContainer');
+    const fileList = document.getElementById('fileList');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('drag-over');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        if(e.dataTransfer.files.length > 0){
+            loadNarcFile(e.dataTransfer.files[0]);
+        }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        if(e.target.files.length > 0){
+            loadNarcFile(e.target.files[0]);
+        }
+    });
+
+    async function loadNarcFile(file){
+        const Narc = await loadNarc(); // ← ここで確実にロード済みにする
+        currentFileName = file.name;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                currentNarc = Narc.load(new Uint8Array(e.target.result));
+                displayNarcInfo();
+                displayFileList();
+            } catch(err) {
+                alert('NARCファイルの読み込みに失敗: ' + err.message);
+            }
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    function displayNarcInfo(){
+        const hasFnt = currentNarc.fnt && currentNarc.fnt.files.length > 0;
+        narcInfo.innerHTML = `
+    <strong>ファイル数:</strong> ${currentNarc.files.length}<br>
+    <strong>エンディアン:</strong> ${currentNarc.endian === 'big' ? 'Big' : 'Little'}<br>
+    <strong>FNT:</strong> ${hasFnt ? '有り' : '無し'}
+  `;
+        infoPanel.style.display = 'block';
+    }
+
+    function displayFileList(){
+        fileList.innerHTML = '';
+
+        const hasFnt = currentNarc.fnt && currentNarc.fnt.files.length > 0;
+
+        if(hasFnt){
+            renderFolder(currentNarc.fnt, fileList, 0);
+        } else {
+            currentNarc.files.forEach((file, i) => {
+                addFileItem(i, `[${i}]`, file.length, fileList);
+            });
+        }
+
+        fileListContainer.style.display = 'block';
+    }
+
+    function renderFolder(folder, container, indent){
+        if(indent > 0){
+            const folderDiv = document.createElement('div');
+            folderDiv.className = `folder-item indent-${Math.min(indent, 3)}`;
+            folderDiv.textContent = `📁 ${folder.name}/`;
+            container.appendChild(folderDiv);
+        }
+
+        for(let i = 0; i < folder.files.length; i++){
+            const id = folder.firstId + i;
+            const name = folder.files[i];
+            const size = currentNarc.files[id]?.length || 0;
+            addFileItem(id, name, size, container, indent + 1);
+        }
+
+        for(const sub of Object.values(folder.folders)){
+            renderFolder(sub, container, indent + 1);
+        }
+    }
+
+    function addFileItem(id, name, size, container, indent = 0){
+        const item = document.createElement('div');
+        item.className = `file-item indent-${Math.min(indent, 3)}`;
+        item.innerHTML = `
+    <span class="file-name"><strong>${id}:</strong> ${name}</span>
+    <span class="file-info">${size} B</span>
+    <div>
+      <button onclick="downloadFile(${id})" class="btn-secondary">DL</button>
+      <button onclick="replaceFile(${id})" class="btn-secondary">置換</button>
+      <button onclick="removeFile(${id})" class="btn-danger">削除</button>
+    </div>
+  `;
+        container.appendChild(item);
+    }
+
+    window.downloadFile = (id) => {
+        const blob = new Blob([currentNarc.files[id]]);
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const name = currentNarc.fnt.getFilenameOf(id) || `file_${id}.bin`;
+        a.href = url;
+        a.download = name.replace(/\//g, '_');
+        a.click();
+        URL.revokeObjectURL(url);
+    };
+
+    window.replaceFile = (id) => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                currentNarc.files[id] = new Uint8Array(ev.target.result);
+                displayFileList();
+                alert('置換完了');
+            };
+            reader.readAsArrayBuffer(file);
+        };
+        input.click();
+    };
+
+    window.removeFile = (id) => {
+        if(confirm('削除しますか?')){
+            currentNarc.files.splice(id, 1);
+            displayFileList();
+            displayNarcInfo();
+        }
+    };
+
+    document.getElementById('saveNarc').addEventListener('click', () => {
+        const keepFnt = document.getElementById('keepFnt').checked;
+        const data = currentNarc.save(keepFnt);
+        const blob = new Blob([data]);
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = currentFileName;
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('addFile').addEventListener('click', () => {
+        const name = prompt('ファイル名 (空欄可):');
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                currentNarc.addFile(ev.target.result, name || null);
+                displayFileList();
+                displayNarcInfo();
+                alert('追加完了');
+            };
+            reader.readAsArrayBuffer(file);
+        };
+        input.click();
+    });
+</script>
+</body>
+</html>

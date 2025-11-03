@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.1.3";
+const versionJS = "1.2.0";
 const index_file_var = "2";
 
 const items = {};
@@ -670,22 +670,30 @@ class BinWriter {
     constructor(){ this.a = []; }
     putByte(v){ this.a.push(v & 0xFF); }
     putLShort(v){ this.a.push(v & 0xFF, (v>>>8) & 0xFF); }
-    putLInt(v){ this.a.push(v & 0xFF, (v>>>8)&0xFF, (v>>>16)&0xFF, (v>>>24)&0xFF); }
+    putLInt(v){
+        this.a.push(v & 0xFF, (v>>>8)&0xFF, (v>>>16)&0xFF, (v>>>24)&0xFF);
+    }
     putBytes(bytes){ for(const b of bytes) this.a.push(b); }
     putAscii(str){ for(const b of new TextEncoder().encode(str)) this.a.push(b); }
+    align(n, pad=0){ while(this.a.length % n) this.a.push(pad); }
     toUint8(){ return Uint8Array.from(this.a); }
+    get length(){ return this.a.length; }
 }
 class BinReader {
     constructor(bytes){ this.b = bytes; this.o = 0; }
     get eof(){ return this.o >= this.b.length; }
     getByte(){ return this.b[this.o++]; }
     getLShort(){ const v = this.b[this.o] | (this.b[this.o+1]<<8); this.o+=2; return v>>>0; }
-    getLInt(){ const v = (this.b[this.o] | (this.b[this.o+1]<<8) | (this.b[this.o+2]<<16) | (this.b[this.o+3]<<24))>>>0; this.o+=4; return v; }
+    getLInt(){
+        const v = (this.b[this.o] | (this.b[this.o+1]<<8) | (this.b[this.o+2]<<16) | (this.b[this.o+3]<<24))>>>0;
+        this.o+=4; return v;
+    }
     skip(n){ this.o += n; }
     slice(n){ const out = this.b.slice(this.o, this.o+n); this.o += n; return out; }
-    remaining(){ return this.b.length - this.o; }
+    readString(n){ return new TextDecoder().decode(this.slice(n)); }
+    getPos(){ return this.o; }
+    setPos(p){ this.o = p; }
 }
-
 // ===================== RC4 =====================
 function ksaMasterKey(keyStr){
     const key = new TextEncoder().encode(keyStr); // bytes (UTF-8)
@@ -744,47 +752,110 @@ function calc_fix_bytes_for_zero_hash(buf32){
     ]);
 }
 
-// ===================== Packet build/parse =====================
-function makeItemPackets(ids, metaMap){
+
+function NARCWriterJP(){
+    const NARCWriter = new _Narc();
     const w = new BinWriter();
     let count = 0;
+    // header commands
+    w.putLShort(0x65); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    w.putLShort(0x64); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    // expiry
+    w.putLShort(0x6a); w.putByte(3); w.putByte(0x15); w.putLInt(2099>>>0); w.putLInt(12>>>0); w.putLInt(31>>>0); count++;
+    w.putLShort(0x69); w.putByte(1); w.putByte(0); w.putLInt((12 + 4) >>>0); count++;
+    w.putLInt(0xff_ff_ff_ff); w.putLInt(0xff_ff_ff_ff);
 
-    // ボディヘッダー(必須)
-    w.putLShort(0x65); // command
-    w.putByte(1);      // one arg
-    w.putByte(0);      // mode 0
-    w.putLInt(0);      // 0
-    count++;
 
-    w.putLShort(0x64); // command
-    w.putByte(1);      // one arg
-    w.putByte(0);      // mode 0
-    w.putLInt(0);      // 0
-    count++;
+    const body = w.toUint8();
 
-    // 期限(固定: 2099/12/31)
-    w.putLShort(0x67); // command
-    w.putByte(3);      // 3 args
-    w.putByte(0x15);   // mode 0x15
-    w.putLInt(2099 >>> 0);
-    w.putLInt(12 >>> 0);
-    w.putLInt(31 >>> 0);
-    count++;
+    const hdr = new BinWriter();
+    hdr.putLInt(count);
+    hdr.putLInt(body.length);
+    hdr.putLInt(335);
+    hdr.putLInt(0x3);
+    hdr.putBytes(body);
 
-    for(const id of ids){
-        const meta = metaMap && metaMap.get(id) || { price: 10, min: 1, max: 100 };
-        const price = (meta.price>>>0); const min = (meta.min>>>0); const max = (meta.max>>>0);
-        w.putLShort(0x68); // command
-        w.putByte(4);      // 4 args
-        w.putByte(0x55);   // mode 0x55
-        w.putLInt(id >>> 0);      // id
-        w.putLInt(price);         // 販売価格
-        w.putLInt(min);           // 最小個数
-        w.putLInt(max);           // 最大個数
-        count++;
-    }
-    return { body: w.toUint8(), count };
+    const utf8Text = "やみのせかいのロクサーヌ「" +
+        "いらっしゃい。\n" +
+        "　ここは　ひこうしきの　やみいちリストよ。\n" +
+        "　このリストは　ファンが　つくったもので、" +
+        "<PAGE>" +
+        "やみのせかいのロクサーヌ「" +
+        "スクエニなどの　かいしゃとは\n" +
+        "　かんけいありません。\n" +
+        "　BY DAISUKEDAISUKE" +
+        "<PAGE>" +
+        "DAISUKE76897125「" +
+        "このリストは　つぎのサイトで\n" +
+        "　つくられました。\n" +
+        "　DQIX.GITHUB.IO" +
+        "<PAGE>" +
+        "DAISUKE76897125「" +
+        "ツールをつかったカセットを　ゆうりょうで\n" +
+        "　はんばいしているひとを　みかけたら\n" +
+        "　ツイッターで　おしえてね" +
+        "<PAD_WAIT><END>";
+
+// UTF-8文字列をShift_JISに変換
+    const utf8Array = _Encoding.stringToCode(utf8Text);
+    const sjisArray = _Encoding.convert(utf8Array, 'SJIS', 'UNICODE');
+    const sjisUint8 = new Uint8Array(sjisArray);
+    hdr.putBytes(sjisUint8);
+    hdr.putByte(0x00 >> 0);
+    hdr.putByte(0xff >> 0);
+    NARCWriter.addFile(hdr.toUint8(), 'mes.bin');
+    const w1 = new BinWriter();
+    w1.putLInt(0xff_ff_ff_ff)
+    NARCWriter.addFile(w1, 'font.mes');
+
+    let bytes = NARCWriter.save(true);
+    const pad1 = (16 - (bytes.length % 16)) % 16;
+    if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
+    bytes = concat(bytes, MARKER);
+    const enc = rc4(bytes, KEY);
+    // Replace tail marker with checksum, keeping appended text and padding consistent
+    // For simplicity, reuse existing buildFile tail process
+    let final = enc.slice(0, enc.length - 4);
+    const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
+    final = concat(final, fix);
+    const chk = lay_d_23_CheckChecksum(final);
+    if(chk !== 0){ console.warn('Checksum not zero:', chk); }
+    return final;
 }
+
+function NARCWriterUSA() {
+    const w = new BinWriter();
+
+    let count = 0;
+    // header commands
+    w.putLShort(0x65); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    w.putLShort(0x64); w.putByte(1); w.putByte(0); w.putLInt(0); count++;
+    w.putLShort(0x6a); w.putByte(3); w.putByte(0x15); w.putLInt(2000>>>0); w.putLInt(1>>>0); w.putLInt(1>>>0); count++;
+
+    const body = w.toUint8();
+    const hdr = new BinWriter();
+    hdr.putLInt(count);
+    hdr.putLInt(body.length);
+    hdr.putLInt(0x316);
+    hdr.putLInt(0x7);
+    hdr.putBytes(body);
+
+    let bytes = hdr.toUint8();
+    const pad1 = (16 - (bytes.length % 16)) % 16;
+    if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
+    bytes = concat(bytes, MARKER);
+    const enc = rc4(bytes, KEY);
+    // Replace tail marker with checksum, keeping appended text and padding consistent
+    // For simplicity, reuse existing buildFile tail process
+    let final = enc.slice(0, enc.length - 4);
+    const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
+    final = concat(final, fix);
+    const chk = lay_d_23_CheckChecksum(final);
+    if(chk !== 0){ console.warn('Checksum not zero:', chk); }
+    return final;
+}
+
+// ===================== Packet build/parse =====================
 
 function parseFile(bin){
     // verify checksum
@@ -1254,53 +1325,88 @@ function buildFileFromInstances(){
     return final;
 }
 
+let _JSZip, _Encoding, _Narc;
+
 async function loadJSZip() {
     if (_JSZip) return _JSZip;
-
-    // 1) まず ESM 版を import() で試す（jsDelivr の +esm を利用）
     try {
         const mod = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm');
-        _JSZip = mod.default || mod; // default エクスポート or モジュール自体
-        return _JSZip;
-    } catch (err) {
-        // import に失敗したらフォールバックへ（古いブラウザや CSP のせいで import が失敗することがある）
-        // 既にグローバルにあるならそれを使う
-        if (window.JSZip) {
-            _JSZip = window.JSZip;
-            return _JSZip;
-        }
-
-        // 2) UMD を動的に読み込む（script 要素挿入）
-        await new Promise((resolve, reject) => {
-            const s = document.createElement('script');
-            s.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
-            s.onload = resolve;
-            s.onerror = () => reject(new Error('Failed to load JSZip UMD'));
-            document.head.appendChild(s);
-        });
-
-        if (!window.JSZip) throw new Error('JSZip not available after loading UMD');
+        _JSZip = mod.default || mod;
+    } catch {
+        if (window.JSZip) return (_JSZip = window.JSZip);
+        await loadScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
         _JSZip = window.JSZip;
-        return _JSZip;
+    }
+    return _JSZip;
+}
+
+async function loadEncoding() {
+    if (_Encoding) return _Encoding;
+    try {
+        // encoding-japanese は ESM 版がないため直接 UMD をロード
+        await loadScript('https://cdn.jsdelivr.net/npm/encoding-japanese@2.0.0/encoding.min.js');
+        if (!window.Encoding) throw new Error('Encoding not loaded');
+        _Encoding = window.Encoding;
+        return _Encoding;
+    } catch (e) {
+        console.error(e);
+        throw new Error('Failed to load encoding-japanese');
     }
 }
 
+async function loadNarc() {
+    if (_Narc) return _Narc;
+    try {
+        await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.0/_src/narc.min.js');
+        if (!window.Narc) throw new Error('Narc not loaded');
+        _Narc = window.Narc;
+        return _Narc;
+    } catch (e) {
+        console.error(e);
+        throw new Error('Failed to load narc.min.js');
+    }
+}
+
+// 共通ユーティリティ：UMDスクリプトを動的ロード
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = () => reject(new Error(`Failed to load ${src}`));
+        document.head.appendChild(s);
+    });
+}
+
+async function loadAll() {
+    await Promise.all([loadJSZip(), loadEncoding(), loadNarc()]);
+}
+
 async function onDownload(){
-    const JSZip = await loadJSZip();
+    await loadAll();
 
     const bin = buildFileFromInstances();
+    const megJP = NARCWriterJP();
+    const megUSA = NARCWriterUSA();
 
     const size = bin.length;
-    const listTxt = `output.bin\t\tauction\t\t\t${size}\r\r`;
+    const size1 = megJP.length;
+    const size2 = megUSA.length;
+    const listTxtJP = `output.bin\t\tauction\t\t\t${size}\r\rmeg.bin\t\tmes\t\t\t${size1}\r\r`;
+    const listTxtUSA = `output.bin\t\tauction\t\t\t${size}\r\rmeg.bin\t\tmes\t\t\t${size2}\r\r`;
 
-    const zip = new JSZip();
-    zip.file('output.bin', bin);
-    zip.file('_list.txt', new TextEncoder().encode(listTxt));
+    const zip = new _JSZip();
+    zip.file('YDQJ/output.bin', bin);
+    zip.file('YDQJ/meg.bin', megJP);
+    zip.file('YDQJ/_list.txt', new TextEncoder().encode(listTxtJP));
+    zip.file('YDQE/output.bin', bin);
+    zip.file('YDQE/meg.bin', megUSA);
+    zip.file('YDQE/_list.txt', new TextEncoder().encode(listTxtUSA));
 
     const blob = await zip.generateAsync({type:'blob'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = 'YDQJ.zip'; a.click();
+    a.href = url; a.download = 'YDQ.zip'; a.click();
     setTimeout(()=>URL.revokeObjectURL(url), 2000);
 }
 

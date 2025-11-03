@@ -1265,7 +1265,6 @@ function renderSelected(){
 }
 
 // ===================== File IO =====================
-let _JSZip = null; // 読み込み済みキャッシュ
 function buildFileFromInstances(){
     // Build packets directly from instances preserving order or sorted by item id based on flag
     const insts = getInstancesForOutput();
@@ -1357,9 +1356,9 @@ async function loadEncoding() {
 async function loadNarc() {
     if (_Narc) return _Narc;
     try {
-        await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.0/_src/narc.min.js');
-        if (!window.Narc) throw new Error('Narc not loaded');
-        _Narc = window.Narc;
+        await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.1/_src/narc.min.js');
+        if (!Narc) throw new Error('Narc not loaded');
+        _Narc = Narc;
         return _Narc;
     } catch (e) {
         console.error(e);

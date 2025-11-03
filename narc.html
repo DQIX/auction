@@ -176,7 +176,7 @@
     async function loadNarc() {
         if (_Narc) return _Narc;
         try {
-            await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.1/_src/narc.min.js');
+            await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.3/_src/narc.min.js');
             if (!Narc) throw new Error('Narc not loaded');
             _Narc = Narc;
             return _Narc;

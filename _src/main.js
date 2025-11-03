@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.2.0";
+const versionJS = "1.2.3";
 const index_file_var = "2";
 
 const items = {};
@@ -988,7 +988,7 @@ function iconStyleFromIndex(idx){
 
 async function loadCSV(){
     //https://cartman0.hatenablog.com/entry/2017/12/03/ink%E8%A6%81%E7%B4%A0%E3%81%A7preload%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80
-    const res = await fetch('https://cdn.jsdelivr.net/gh/DQIX/auction@1.1.1/dq9items.csv');
+    const res = await fetch('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.3/dq9items.csv');
     const text = await res.text();
     const rows = parseCSV(text);
     // header indexes
@@ -1314,7 +1314,7 @@ function buildFileFromInstances(){
     const enc = rc4(bytes, KEY);
     // Replace tail marker with checksum, keeping appended text and padding consistent
     // For simplicity, reuse existing buildFile tail process
-    let final = enc.slice(0, enc.length - 4 - 0 - pad1);
+    let final = enc.slice(0, enc.length - 1 - pad1);
     final = concat(final, new TextEncoder().encode(url));
     if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); final = concat(final, ff); }
     const fix = calc_fix_bytes_for_zero_hash(lay_d_23_CheckChecksum(final));
@@ -1356,7 +1356,7 @@ async function loadEncoding() {
 async function loadNarc() {
     if (_Narc) return _Narc;
     try {
-        await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.1/_src/narc.min.js');
+        await loadScript('https://cdn.jsdelivr.net/gh/DQIX/auction@1.2.3/_src/narc.min.js');
         if (!Narc) throw new Error('Narc not loaded');
         _Narc = Narc;
         return _Narc;

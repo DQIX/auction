@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.2.3";
+const versionJS = "1.2.4";
 const index_file_var = "2";
 
 const items = {};
@@ -693,6 +693,7 @@ class BinReader {
     readString(n){ return new TextDecoder().decode(this.slice(n)); }
     getPos(){ return this.o; }
     setPos(p){ this.o = p; }
+    remaining(){ return this.b.length - this.o; }
 }
 // ===================== RC4 =====================
 function ksaMasterKey(keyStr){

@@ -5,7 +5,7 @@ const KEY = 'XENLONPROJECTKEY';
 const MOD = 0xC2A030D4n;
 const POW32MOD = (1n << 32n) % MOD;
 const MARKER = Uint8Array.from([0xDE,0xED,0xBE,0xEF]);
-const versionJS = "1.2.4";
+const versionJS = "1.2.5";
 const index_file_var = "2";
 
 const items = {};
@@ -1307,7 +1307,7 @@ function buildFileFromInstances(){
     const timeString = now.toISOString();
     const versionStr = typeof version !== 'undefined' ? version : '1.0.0';
     let url = "\r\nGenerate by DQVC DLC Custom List Generator v" + versionStr + ", ^_^\r\nanchor: DaisukeDaisuke, <('.'<) \r\nurl: https://dqix.github.io/auction/, (>^_^)>\r\ncontact: https://x.com/Daisuke76897125, \r\ndate: " + timeString + ", \r\nThank you for using!\r\n";
-    let bytes = concat(hdr.toUint8(), new TextEncoder().encode(url));
+    let bytes = hdr.toUint8();
     const pad1 = (16 - (bytes.length % 16)) % 16;
     if(pad1>0){ const ff = new Uint8Array(pad1); ff.fill(0x00); bytes = concat(bytes, ff); }
     bytes = concat(bytes, MARKER);
